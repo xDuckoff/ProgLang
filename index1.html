@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Kek</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Kek</h1>
+</header>
+<h2 id="языки-программирования">Языки программирования</h2>
+<h3 id="лекция-1-03.09.2019">Лекция 1 03.09.2019</h3>
+<h4 id="вводная-часть-немного-истории">Вводная часть (немного истории)</h4>
+<ul>
+<li><strong>PL/I</strong> — не выжил, был неудобен</li>
+<li>1968 <strong>Algol-68</strong> — совсем другое дело, создан учеными.
+<ul>
+<li>Pascal, C пошли от него.</li>
+<li>“Замечательнейший” ЯП, но через 10 лет его пересмотрели.</li>
+<li>W-грамматики, может генерировать потенциально бесконечное множество контекстно-полных правил, символы генерировались особым образом, но механизм достаточно простой.</li>
+</ul></li>
+</ul>
+<h5 id="всякая-дополнительная-инфа"><em>Всякая дополнительная инфа</em></h5>
+<p><em>Ортогональность</em> ЯП: “Этот термин был введен в информатике для обозначения некой разновидности независимости или несвязанности. Два или более объекта ортогональны, если изменения, вносимые в один из них, не влияют на любой другой. В грамотно спроектированной системе программа базы данных будет ортогональной к интерфейсу пользователя: вы можете менять интерфейс пользователя без воздействия на базу данных и менять местами базы данных, не меняя интерфейса.” <em>“Программист-Прагматик. Путь от подмастерья к мастеру” Э. Хант, Д. Тома</em></p>
+<p>Чистые вычисления без изменения состояния памяти. Изменение состояния — главная задача оператора. Главный оператор в ЯП (каком?) — оператор присваивания. Операторы управляют вычислениями</p>
+<pre><code>// Pascal
+v := e; //выражение превратилось в оператор, вычисляется значение v</code></pre>
+<p>В С нет оператора присваивания, но есть оператор-выражения. Операции с побочными эффектами, присваивание — побочный эффект (а так же инкремент, декремент и т.п.). Получился ортогональный язык.</p>
+<h5 id="конец-фрагмента">конец фрагмента</h5>
+<ul>
+<li><strong>Ада</strong> — разработка на деньги военных, 50% — непосредственно разработка, 50% — последующее сопровождение.
+<ul>
+<li>Необходимость в последующей доработке и развитии языка</li>
+<li>Необходимость в сокращении расходов на сопровождение =&gt; выделили несколько основных ЯП, чтобы вести на них разработку. В итоге выработанным требованиям мог удовлетворить 1 ЯП, был объявлен конкурс 1980: ЯП Pascal, Algol-68 и PL/I. Конкурс выиграли проекты, основанные на Pascal. В финале выбрали “зеленый” язык, который назвали Ада.</li>
+<li>1983 выработали окончательный стандарт.</li>
+</ul></li>
+</ul>
+<p>2 основынх способа дизайна ЯП:</p>
+<ol type="1">
+<li>Сундук (принцип осознанных технологических потребностей) — осознается, что нужно для ЯП, и это включается в ЯП. Ада использует этот принцип, требования исследовали на протяжении 3 лет. Функции без побочных эффектов — включены, процедуры сочли избыточными.</li>
+<li>Чемодан — берется только то, без чего нельзя обойтись, принцип минимальонсти языковых конструкций. Есть проблемная область, ЯП конструируется только для этой области.</li>
+</ol>
+<p>Таким образом, Ада достаточно сложный ЯП, невозможно ни расширение, ни сужение стандарта, некоторая избыточность. Многословный язык. Основная проблемная область Ады — противоракетная оборона.Фактически яп можно считать мертвым, хотя есть GNAT — GNU транслятор для Ады. Встроенная проверка на границы массива, которую можно отключить. В С таких проверок в runtime нет. Индексирование массива (еще такое в basic и Fortran): <code>a(i)</code> ПО должно быть “реального времени”, т.е. надежным и с гарантированнм откликом.</p>
+<p>С: если поля нет у структуры, то раньше (в компиляторе К. Ричи) генерировалось предупреждение, компилятор ставил нулевое смещение, теперь выдается ошибка.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" data-line-number="1">p-&gt;name;</a></code></pre></div>
+<p>В Аде нужна была надежность, поэтому:</p>
+<ol type="1">
+<li>Runtime поддержка и статический контроль компилятором;</li>
+<li>Работа в реальном времени;</li>
+<li>Читабельность (из-за этого многословность, но не факт, что разраюотчики добились этим, чего хотели).</li>
+</ol>
+<p>_</p>
+<ul>
+<li><strong>Java</strong>, 1995: первоначальная идея — пересылка программ по сети, создание апплетов (потом от этого октазались), так что Write Once Run Anywhere (WORA). Принцип работает из-за наличия Java-машин, но они не все совместимы: JVM (virtual machine) + JRTE (runtime edition, для каждой системы может быть свой, от этого и несовместимость).
+<ul>
+<li>JWI — интерфейс</li>
+</ul></li>
+</ul>
+<p>Таким образом, любая попытка создать единый ЯП ведет к неудаче, каждый хорош в своей отрасли. =&gt; Нужно определить само понятие ЯП.</p>
+<h5 id="виды-программирования">Виды программирования</h5>
+<ol type="1">
+<li>Игровое (учебное)</li>
+<li>Научное</li>
+<li>Индустриальное</li>
+</ol>
+<p>Нам нужно индустриальное</p>
+<h3 id="лекция-2-03.09.2019">Лекция 2 03.09.2019</h3>
+<blockquote>
+<p>Почему интерпретатор С — неуловимый Джо? Потому что его никто не ловит.</p>
+</blockquote>
+<p>(Разговор за бэкенд и фронтенд) Go: динамическая сборка мусора, нет классов (в этом отличия от С++), &gt;Go — сильно улучшенный С</p>
+<h4 id="парадигма-программирования">Парадигма программирования</h4>
+<p>Совокупность всех навыков, методов, инструментов и систем</p>
+<p>3 парадигмы:</p>
+<ol type="1">
+<li>Процедурная (императивная) — от архитектуры Фон Неймана
+<ul>
+<li>Fortran</li>
+<li>Assembler</li>
+<li><strong>C</strong> — императивный</li>
+<li>Появление ООП (классы, состоящие из экземпляров. Instance variables; class variables - статические данные). Объектно-императивные ЯП:
+<ul>
+<li><strong>C#</strong></li>
+<li><strong>C++</strong></li>
+<li><strong>python</strong></li>
+</ul></li>
+</ul></li>
+<li>Функицональная
+<ul>
+<li><strong>Рефал</strong></li>
+<li><strong>Lisp</strong></li>
+</ul></li>
+<li>Логическая
+<ul>
+<li><strong>Prolog</strong></li>
+</ul></li>
+</ol>
+<blockquote>
+<p>Мой научный руководитель, уважаемый человек, пожилой… Ну сидел, извините меня, старый пердун, медленно по клавишам стучал, да вот я сейчас так же</p>
+</blockquote>
+<h3 id="лекции-3-4-10.09.19">Лекции 3, 4 10.09.19</h3>
+<h4 id="примеры-парадигм-программирования-пп">Примеры парадигм программирования (ПП)</h4>
+<p>Все парадигмы зародились примерно в 50-е.</p>
+<ol type="1">
+<li>Императивная (процедурная) ООПП (объектно-императивн). Сейчас доминирует. Состояние, методы (определяют поведение объекта), алгоритмы. Сильно опирается на состояние. Изобретатель парадигмы — Алан Кей (Alan Key). SamllTalk — 1975. Главное в ООП (по Алану Кею) — посылка сообщений и их динамическая обработка. Императивное программирование зашло в тупик? (70-е)</li>
+<li>Функциональная</li>
+<li>Логическа</li>
+</ol>
+<p>Начнем с императивной ПП.</p>
+<h4 id="c">C</h4>
+<p>ОС написаны на С (иначе пришлось бы прогать на ассемблере, С заменил его). В 2000-е ассемблерные программы начали переписывать на С++ Страуструп: &gt; C++ is better C</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span><span class="pp"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">// контекст трансляций, информация для компиялтора, имена (набор неких имен, неопределенных в программе, но используемых)</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span><span class="pp"> </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">/** имя — идентификатор (с точки зрения императивных ЯП), таким образом здесь — набор стандартных идентификаторов (integer, printf...), так в Pascal</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">в компиляторе C НЕТ стандартного контекста!!! int, float и т.д. не идентификаторы, а ключевые слова. Так же во многих современныз ЯП.</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">передаем headers &lt;&gt; — стандартная билиотека. Наши headers — &quot; &quot;. Далее — обработка препроцессором. Явное импортирование контекста.</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">слово extern — дурной стиль!!! Не употребляется в С (но вот в ассемблере можно), Эвы не понимаете С, если используете&quot;, внешнему имени должно тогда соответствовать корректное объявление (но должно быть определение)</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw">extern</span> <span class="dt">int</span> i; <span class="co">// m1.c — extern из m2.c</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">/**</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="dt">double</span> i; <span class="co">/** m2.c — здесь double =&gt; может быть ошибка, несоответствие размеров. Даже если соответствуют, то тоже плохо. Нет контроля за межмодульными связями. Определение и объявление могут не соответствовать. Таким образом, весь интерфейс ДОЛЖЕН БЫТЬ в m1.h!!!</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">*/</span></a></code></pre></div>
+<p>И недостаток, и достоинство в том, что С — язык ассемблера. Контроль межмодульных связей отсутствует. Дальнейшее развитие для С++ 20 — обсудить понятие модуля, но тогда будет ли это С++?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="pp">#define BUF_SIZE 1024; </span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">/** пишется большими буквами, так как это константа препроцессора, нужно это выделить (препроцессорные имена — не совсем имена в общем понимании, вместо BUF_SIZE будет подставлено 1024, переменная не может быть объявлена еще) Имена переменных, тэги структур и препроцессорные имена — все виды имен в С. Тэги структур: область видимости как для переменных препроцессора */</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">struct</span> bar {</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">    <span class="kw">struct</span> foo {<span class="dt">int</span> i;} </a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">    i;<span class="co">// область видимости типа структуры отсюда и ниже</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">} c;</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="kw">struct</span> foo c1;</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">/** struct time: time(...) */</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="dt">char</span> buffer[BUF_SIZE];</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">/** в первой версии языка С — если функция ничего не возвращала, то по умолчанию она возвращала int:</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">main(argc, char ** argv) {} */</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> ** argv) <span class="co">// или int main()</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">{</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22">    <span class="dt">int</span> ch;</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23">    <span class="dt">int</span> index = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb4-24" data-line-number="24">    <span class="co">// ТАК ПИСАТЬ НЕ СТОИТ!!!</span></a>
+<a class="sourceLine" id="cb4-25" data-line-number="25">    </a>
+<a class="sourceLine" id="cb4-26" data-line-number="26">        buffer[index++] = ch; </a>
+<a class="sourceLine" id="cb4-27" data-line-number="27">        <span class="co">/** может быть buffer override — уязвимость программы. Таким образом хакеры, зная код, могут перетирать память за буфером и вставлять свой вредоносный код. </span></a>
+<a class="sourceLine" id="cb4-28" data-line-number="28"><span class="co">        SQL-injection — вставка вредоносного SQL кода. Поэтому сейчас производится предварительная интерпретация SQL запроса, строится дерево, и только потом производится        вставка. */</span></a>
+<a class="sourceLine" id="cb4-29" data-line-number="29">        <span class="co">/** В С есть функция, которую нельзя употреблять! — gets(char *buf), нет никакого предохранения. Есть функции с &#39;_s&#39; — значит, что они безопасны. Используйте fgets(...), gets_s(...)</span></a>
+<a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">        */</span></a>
+<a class="sourceLine" id="cb4-31" data-line-number="31">        </a>
+<a class="sourceLine" id="cb4-32" data-line-number="32">    }</a>
+<a class="sourceLine" id="cb4-33" data-line-number="33">    <span class="cf">while</span> ((ch = getchar()) != EOF) {</a>
+<a class="sourceLine" id="cb4-34" data-line-number="34">        <span class="cf">if</span> (index == BUF_SIZE) {</a>
+<a class="sourceLine" id="cb4-35" data-line-number="35">            fprintf(stderr, <span class="st">&quot;...&quot;</span>);</a>
+<a class="sourceLine" id="cb4-36" data-line-number="36">            exit <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb4-37" data-line-number="37">        }</a>
+<a class="sourceLine" id="cb4-38" data-line-number="38">        buffer[index++] = ch;</a>
+<a class="sourceLine" id="cb4-39" data-line-number="39">    }</a>
+<a class="sourceLine" id="cb4-40" data-line-number="40">}</a></code></pre></div>
+<p>Но это неполное решение, могут быть строки только до 1024.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="pp">#define BUF_SIZE 1024; </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="dt">char</span> * buffer;</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="dt">int</span> size;</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> ** argv) {</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">    <span class="dt">int</span> ch;</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    <span class="dt">int</span> index = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">    buffer = (<span class="dt">char</span> *) malloc(BUF_SIZE);</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">    size = BUF_SIZE;</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">    <span class="cf">while</span> ((ch = getchar()) != EOF) {</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">        <span class="cf">if</span> (index == size) {</a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">            realloc( </a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">            <span class="co">/** увеличивать в 2 раза, но проблема realloc — нужны непрерывные куски памяти, поэтому нужна проверка. Не надо выделять size+1, иначе будет фрагментация памяти. В других ЯП есть сборщики мусора: работа с памятью прекращается, находится то, что не нужно (может выполнятся в фоновом режиме, параллельно) и начинается дефрагментация. Указатели замораживаются (но можно явно указать, чтобы не замораживались, как например в С#).</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">// С runtime — стандартная библиотека С (нет такого, как в Java — JRT)</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">        }</a>
+<a class="sourceLine" id="cb5-18" data-line-number="18">        buffer[index++] = ch;</a>
+<a class="sourceLine" id="cb5-19" data-line-number="19">    }</a>
+<a class="sourceLine" id="cb5-20" data-line-number="20">    <span class="cf">for</span> (index; index &gt;= <span class="dv">0</span>; index--) </a>
+<a class="sourceLine" id="cb5-21" data-line-number="21">        printchar(buffer[index]); </a>
+<a class="sourceLine" id="cb5-22" data-line-number="22">        </a>
+<a class="sourceLine" id="cb5-23" data-line-number="23">    <span class="co">// будет работать очень медленно, в каждой итерации — системный вызов, а это прерывание, замедляет программу.</span></a>
+<a class="sourceLine" id="cb5-24" data-line-number="24">}</a></code></pre></div>
+<p>В С89 появился еще VLA — variable length array. Еще минусы С:</p>
+<blockquote>
+<p>В С совершенно уродский синтаксис.</p>
+</blockquote>
+<p>И: &gt; Если программа на С не будет эффективнее, чем на любом другом ЯП, то вы неправильно написали программу на С.</p>
+<p>? для ассемблера ? <span class="math display">\[\frac {T_L}  {T_{AS}} &gt; 1\]</span> <span class="math display">\[T_{AS} &gt; T_L\]</span> Для С (L — любой ЯП): <span class="math display">\[ \frac {T_C} {T_L} &lt; 1\]</span></p>
+<h4 id="c-1">C#</h4>
+<p>Все на свете — класс.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">public</span> <span class="kw">class</span> Program{}</a></code></pre></div>
+<p>Есть методы экземпляра и методы класса.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Main</span>(Sring[] args) <span class="co">// язык со строгой типизацией</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">{</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">    String s = System.<span class="fu">Console</span>.<span class="fu">In</span>.<span class="fu">ReadToEnd</span>(); <span class="co">// String — из стандартного контекста, string — ключевое слово</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="co">/** до конца файла. Аллокация памяти, алгоритм — какой-то, неизвестно, как именно, универсальный алгоритм может быть неэффективен в частных случаях</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">    */</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">    <span class="co">/** С: можно модифицировать quicksort, вместо среднего элемента массива — медиана трех (в среднем будет хуже, но для некоторых частных случаев, когда надо перебросить часть массива полностью, более оптимален)</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">    */</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="kw">for</span> (<span class="dt">int</span> i = s.<span class="fu">Length</span> - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; i--) </a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">        System.<span class="fu">Console</span>.<span class="fu">Write</span>(s[i]); <span class="co">// такой код считается достаточно низкоуровневым</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">    <span class="co">/** Идея: просто указать, что делать с объектом, т.е. не указывается цикл, а указывается последовательность, в каком порядке и что с ней делать. Но метода s.Reverse для строк нет, нашлось только в PHP. Но reverse есть для массива! (не зависит от семантики, игнорируется способ записи символов e&#39; и прочих). Строка в С#  — immutable, а массив — mutable. Должна быть функция преобразования строки в массив*/</span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">    char[]c = s.ToCharArray();</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">    c.Reverse();</span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">    System.Console.Write(c);</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">    </span></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">    /** Проблема класса — он и модуль, и тип данных. Иногда удобно, а иногда и нет.</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">    System — пространство имен</span></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="co">    Console — имя класса из System</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">    In — статический член класса Console</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co">    У класса TextReader есть метод ReadToEnd</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co">    Получается дуализм</span></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co">    */</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22">    <span class="co">/** нигде нет подключения модулей: это можно сделать в опциях проекта*/</span></a>
+<a class="sourceLine" id="cb7-23" data-line-number="23"><span class="co">}</span></a></code></pre></div>
+<h4 id="python">Python</h4>
+<p>Задумываался как просто “чемоданчик с инструментами”. Интерпретируемый язык. Для него работает REPL — Read Evaluate Print Loop. Интерпретатор берет какую-то часть (оператор) и выполняет его. В Питоне короткие программы (для простейшей нужо два оператора, один из которых import)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="im">import</span> sys</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">raw <span class="op">=</span> sys.stdin.read()</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">l <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> raw] <span class="co"># list comprehension</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">l.reverse() <span class="co"># ничего не возвращает (проверено в интерпретаторе), у лектора l.reverse сразу было в join</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;&#39;</span>.join(l)) <span class="co"># раньше в python2 был оператором, потом в python3 стал функцией</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># a= ...</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">b <span class="op">=</span> a[<span class="dv">0</span>:<span class="bu">len</span>(a)] <span class="co"># копирование всего массива</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">b <span class="op">=</span> a[:<span class="op">-</span><span class="dv">1</span>] <span class="co"># копирование без послледнего элемента</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># правильное &quot;короткое&quot; копирование:</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">b <span class="op">=</span> a[:]</a></code></pre></div>
+<p>Можно коротко написать:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="im">import</span> sys</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="bu">print</span>(sys.stdin.read()[::<span class="op">-</span><span class="dv">1</span>]) <span class="co">#[::-1] — reverse</span></a></code></pre></div>
+<blockquote>
+<p>В Lisp: (abc) воспримется как один символ, поэтому (print reverse read) выведет (abc). Надо подавать как (a b c).</p>
+</blockquote>
+<h4 id="c-2">C++</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="pp">#include </span><span class="im">&lt;algorithm&gt;</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="pp">#include </span><span class="im">&lt;vector&gt;</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="pp">#include </span><span class="im">&lt;iterator&gt;</span><span class="pp"> </span><span class="co">//  содержит полезные итераторы (итераторы работы с вводом-выводом и класс inserter: для вставки в начало/конец нужной структуры)</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">// для вектора существует только back_inserter, в целях эффективности</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">using</span> <span class="kw">namespace</span> std;</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">    vector&lt;<span class="dt">char</span>&gt; v;</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">    copy(istream_iterator&lt;<span class="dt">char</span>&gt;(cin) <span class="co">/** аналог функции begin()*/</span>, istream_iterator&lt;<span class="dt">char</span>&gt;(), back_iterator(v));</a>
+<a class="sourceLine" id="cb11-10" data-line-number="10">    copy(v.rbegin(), v.rend(), ostream_iterator&lt;<span class="dt">char</span>&gt;(cout));</a>
+<a class="sourceLine" id="cb11-11" data-line-number="11">    <span class="cf">return</span> <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb11-12" data-line-number="12">}</a></code></pre></div>
+<h4 id="go">Go</h4>
+<p>Есть интерфейсы и динамическая сборка мусора, нет ООП. Модульный язык. Стандартный контекст достаточно маленький, все, что нужно, должно быть импортировано.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">package</span> main</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">import</span> (<span class="st">&quot;fmt&quot;</span>; <span class="st">&quot;io/ioutil&quot;</span>; <span class="st">&quot;os&quot;</span>; <span class="st">&quot;strings&quot;</span>) <span class="co">//  модули</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">func</span> main() {</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">    rdr := os.Stdin <span class="co">// автообъявление с помощью :=, тип выводится из типа правой части</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">    <span class="co">// в С++ появилось auto и decltype()</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">    b, err := ioutil.ReadAll(rdr) <span class="co">// вернется строка (последовательность байтов) и признак ошибки, если есть</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">    <span class="kw">if</span> err != <span class="ot">nil</span> {</a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">        <span class="bu">panic</span>(<span class="st">&quot;bad input&quot;</span>)</a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">    s := <span class="dt">string</span>(b)</a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">    x := <span class="dt">string</span>.Split(s, <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">    <span class="kw">for</span> i := <span class="bu">len</span>(x) - <span class="dv">1</span>; i &gt;= <span class="dv">0</span>; i-- {</a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">        fmt.Print(x[i]) </a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">    }   </a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">}</a></code></pre></div>
+<h3 id="лекция-5-6-17.09.19">Лекция 5, 6 17.09.19</h3>
+<h4 id="обобщенная-парадигма-программирования">Обобщенная парадигма программирования</h4>
+<p>Входит в императивную парадигму. Есть понятие состояния. Суть — статическая параметризация типов данных:</p>
+<ul>
+<li>надежно, так как типы контролируются во время трансляции,</li>
+<li>эффективно</li>
+</ul>
+<p>В Питоне не может быть статической параметризации (там динамическая, так как на этапе трансляции типов еще нет, есть объекты и их взаимодействие).</p>
+<h4 id="функциональная-парадигма">Функциональная парадигма</h4>
+<h4 id="лисп">Лисп</h4>
+<p>1959 Pure Lisp — образец функционального программирования. Из Лиспа выкинули все, связанное с процедурностью (так как иначе — мультипарадигмальность). List Processing Но на самом деле — язык обработки S-expression, символьное вырадение (список — самый частый представитель). Самый популярный стандарт Лиспа — Common Lisp.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><a class="sourceLine" id="cb13-1" data-line-number="1">SET Q EXPR <span class="op">//</span> Чистое понятие состояния</a></code></pre></div>
+<ul>
+<li><strong>Данные</strong> Крайне простые структуры данных, с котроым он работает. Атом — данные, не обладающие внутренней структурой. Символ — идентификатор + некоторое расширение (а, +, Т…). Базовые лексемы — () . ; остальное — символы. Отсутствует понятие “строка”. S-выражение (точечная пара): a.b, где a и b — либо атомы, либо S-выражения. S-выражения — 2 ячейки, в одной указатель на первую переменную, во второй — на другую (либо на таблицу атомов, либо на другой список/S-выражение). CAR — head списка CDR — tail списка Специальный атом — пустой список, нулевой указатель, можно рассматривать как список (одновременно и атом, и список). Список — S-выражение особого вида, где последний элемент — пустой список (2 ячейки, первая — указатель на спиок/что-то там еще, вторая — пустой список). Фактически, список в Лиспе — это дерево. Левая часть может быть либо атомом, либо списком. Правая часть всегда ссылка на список.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><a class="sourceLine" id="cb14-1" data-line-number="1">a.NIL <span class="op">//</span> короткое обозначение — (а)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">a.(b.NIL) <span class="op">//</span> указатель на а . указатель на ( указатель на b . пустой список)</a></code></pre></div>
+<ul>
+<li><strong>Операции</strong> Вычисление атомов: первым символом должен стоять тот, с которым связано функциональное значение, а дальше:</li>
+</ul>
+<pre><code>(+, a1, ..., an)</code></pre>
+<p>Если нет побочных действий, то порядок вычисления неважен. Результат вычисления — то, что выдает функция, например, для +: список из одного элемента: (+ 1 2 3 4 5) -&gt; (15) Должен быть набор встроенных функций:</p>
+<pre><code>(CAR S) // head of S, либо атом, либо список
+(CDR S) // tail of S, всегда список (пустой или нет)
+(read) // список из результата функции read
+(1) // список из одного символа
+(abc) // abc воспринимается как один символ
+(a b c) // список из трех элементов
+reverse(read) // если read вернет список, то будет reverse от списка, если атом, то атом
+print(reverse(read)) // вывод списка в обратном порядке
+(NULL S) // если S — пустой список, то выдаст Т, если ложь, то пустой список (аналог False)
+(COND (S1) res1
+      (S2) res2
+       ...
+      (Sn) resn
+) //вычисляется, пока не сработает одно из условий
+(COND (S1) res1
+      (T)  res2 
+) // аналог if, для простоты будем использовать (IF (S1) res1)
+(append S1 S2) // объединение списков (сначала S1, потом идет S2 в конец). Можно записать через cons (?)
+(cons a.b) // конструирование списка
+(ATOM S) // атом или нет
+</code></pre>
+<p>#####Позиции рассмотрения языка:</p>
+<ul>
+<li><strong>Технологическая</strong>: должен отражать те или иные технологические потребности в зависимости от технологической ниши языка (некоторой отрасли яп), например, системное программирование (здесь лидирует С, вытеснив ассемблер), научно-технические вычисления (лидирует/-овал Fortran, теперь вытесняется R, matlab).</li>
+<li><strong>Авторская</strong> добавление какой-либо функциональности (модули, динамическое программирование) при необходимости.</li>
+<li><strong>Реализаторская</strong></li>
+<li><strong>Семиотическая</strong></li>
+<li><strong>Социальная</strong></li>
+</ul>
+<p>RAD — rapid application development REPL — read-evaluate-print</p>
+<p><strong>Функция reverse на Lisp</strong></p>
+<pre><code>(defun Sym (Sym1 Sym2 ... Symn) S) //Symj — аргументы
+(defun reverse1(S) 
+    (IF (NULL S) ()
+        (append (reverse(CDR S)) (CAR S)) // тут все упадет на CAR, если там атом, так как аргументы append — 2 списка, поэтому надо вот так:
+        (append (reverse(CDR S)) (cons (CAR S)))
+    )
+) // это все будет долго и неэффективно работать, для reverse должно быть достаточно одного прохода (с вспомогательной функцией shift):
+(defun shift(l r) // берет голову l и переносит в r
+    (IF (NULL l) r
+        (shift (CDR l) (cons (CAR l) r))
+    )
+)
+(defun reverse1(S) 
+    (shift S ())
+)
+    </code></pre>
+<h3 id="лекция-7-8-24.09.19">Лекция 7, 8 24.09.19</h3>
+<h4 id="refal">REFAL</h4>
+<p>60-е годы, придуман физиком Турчиным. Нужен был формализм для обработки сивмольной информации. Во всех смыслах “Марковский” язык (алгоритмы Маркова). В языке: либо символ, либо выражение (с номерами, чтобы отличать их).</p>
+<pre><code>s.n // символ    
+s.1    
+e.m // выражение    
+e.2    
+s.1 e.1 s.1 // образец. такому образцу соответствует строка, которая начинается и заканчивается на один и тот же символ. справа должно стоять то, как выражение преобразовывается: ? = ?? - поле ввода = преобразование</code></pre>
+<pre class="refal"><code>$ENTRY GO
+{
+     = &lt;Prout  &lt; REVERSE &lt;card&gt;&gt;&gt;; // пустое поле ввода
+}
+REVERSE
+{
+    // не пустая строка =&gt; символ и произвольная строка (мб пустая):
+    s.1 e.1 = &lt; REVERSE e.1&gt; s.1 /; // / — завершение
+    // если пустая строка:
+     = ;
+}</code></pre>
+<h4 id="базисные-понятия-яп">Базисные понятия ЯП</h4>
+<p>(Для всех парадигм)</p>
+<ol type="1">
+<li>Данные</li>
+<li>Операции</li>
+<li>Связывание</li>
+</ol>
+<h5 id="данные-и-операции">Данные и операции</h5>
+<p>Программы обрабатывают данные. В каждом ЯП есть понятия данных и операций (самые базисные понятия, для общности ЯП их сложно уточнить, так как суть весьма прозрачна и понятна). Для каждого конкретного ЯП эти понятия можно определить очень точно.</p>
+<p><em>Немного о С:</em> Простой в плане понятий данных и операций, но стандарт очень сложен, не все реализации, например, гарантируют “2+2=4” (представим двухбитный процессор: 2+2 вызовет переполнение). Не гарантируется правильность вычисления:</p>
+<pre><code>l(i++, ++i)</code></pre>
+<p>будет зависеть от компилятора (порядок вычисления).</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb21-1" data-line-number="1">p != NULL &amp;&amp; *p &gt; <span class="dv">0</span></a></code></pre></div>
+<p>— ленивые вычисления, пример зависимости от порядка вычислений.</p>
+<p><em>В С:</em></p>
+<pre><code>strlen(s) // операция</code></pre>
+<p><em>В С++:</em></p>
+<pre><code>// basic_string&lt;char&gt; 
+string.size() // выдаст данные </code></pre>
+<p>То, что является данными, может являться результатом выполнения каких-то операций. Ленивые вычисления (lazy evaluation) — вычисление (взятие данных из структуры и тд) происходит ровно в тот момент, когда это нужно. Например, в python2:</p>
+<pre class="python2"><code>range(N) # список от 0 до N - 1 [0; N)
+xrange(N) # генератор (сущность)</code></pre>
+<p>В python3 уже нет xrange, он перешел в range. Список можно получить как list(range()).</p>
+<p><em>С#:</em></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">    <span class="kw">public</span> <span class="dt">int</span> Y;</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="co">/**/</span></a>
+<a class="sourceLine" id="cb25-6" data-line-number="6">X a = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb25-7" data-line-number="7">a.<span class="fu">Y</span> = <span class="dv">1</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co">// &quot;смотрите: настоящий ООП&quot;</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">    <span class="kw">private</span> <span class="dt">int</span> _y;</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">    <span class="kw">public</span> <span class="dt">int</span> Y { <span class="co">// публичное свойство, нужны get и set</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5">        <span class="kw">set</span> { _y = value; } <span class="co">// value - неявный параметр set</span></a>
+<a class="sourceLine" id="cb26-6" data-line-number="6">        <span class="kw">get</span> { <span class="kw">return</span> _y; }</a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb26-9" data-line-number="9"><span class="co">/*</span></a>
+<a class="sourceLine" id="cb26-10" data-line-number="10"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-11" data-line-number="11">X a = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb26-12" data-line-number="12">a.<span class="fu">Y</span> = <span class="dv">1</span>; <span class="co">// вызовется set с value=1, это не просто присваивание.</span></a>
+<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="co">// наглядно реализовано в интерфейсах, например </span></a>
+<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="co">/*</span></a>
+<a class="sourceLine" id="cb26-15" data-line-number="15"><span class="co">window w; // нужно привязать окно к какой-то точке</span></a>
+<a class="sourceLine" id="cb26-16" data-line-number="16"><span class="co">w.x = 0; // на самом деле изменение геометрии не гарантируется, владелец окна может это запретить. значение меняются через get и set, но это скрыто от пользователя.</span></a>
+<a class="sourceLine" id="cb26-17" data-line-number="17"><span class="co">w.y = 1;</span></a>
+<a class="sourceLine" id="cb26-18" data-line-number="18"><span class="co">*/</span></a>
+<a class="sourceLine" id="cb26-19" data-line-number="19"><span class="dt">int</span> j = a.<span class="fu">Y</span>; <span class="co">// вызовется get</span></a></code></pre></div>
+<p>Некоторый дуализм данных и операций, но с точки зрения теории операции первичны. ? types are not values ?</p>
+<p><em>Абстрактные типы данных</em> — АТД (ADT)</p>
+<p>Данные харакатеризуют:</p>
+<ul>
+<li>Диапазон значений</li>
+<li>Операции над ними (даже в большей степени!)</li>
+</ul>
+<p>АТД характеризуют ОПЕРАЦИИ! (происходит отход от важности значений данных).</p>
+<p>В чистых ОО ЯП АТД превратились в интерфейсы — “голые” сигнатуры операций (допускаются статические данные). Когда придумывались АТД, имелось в виду, что описываться будут не только сигнатуры, но и свойства этих данных. Например: определим стек и операции в нем — pop(s, x) и push(s) <span class="math display">\[ \forall stack(s) \forall value(x)     push(s, x) =&gt; pop(s) = x \]</span></p>
+<p>Есть типы данных (ТД). Есть объекты данных (над чем выполняются операции) Есть значения, каждое принадлежит какому-то ТП. Понятие “переменная” есть в любом ЯП. Отличие значения и переменной — (есть из переменной можно взять значение и можно его изменить — это императивная парадигма) у переменной есть имя, а значение, как правило, анонимно, например “3” — целый тип данных, но без имени. Можно дать имя значению, тогда это будет константа — частный случай переменной. Нотации не имеют понятия переменных: LAMBDA(X) (+ 1 X) — лямбда-функция, ее можно вызвать, вернуть. А если LAMBDA(X) (+ X Y) — Y переменная из области видимости:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="op">//</span> Lisp</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">(<span class="kw">defun</span><span class="fu"> ADDX </span>(Y)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">    (LAMBDA (X) (<span class="op">+</span> X Y)) <span class="op">//</span> Y </a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co">// JavaScript</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="kw">function</span> <span class="at">addY</span>(Y) <span class="op">{</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">    <span class="cf">return</span> X <span class="op">=&gt;</span> X <span class="op">+</span> Y</a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="op">}</span></a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">var</span> f <span class="op">=</span> <span class="at">addY</span>(<span class="dv">5</span>) <span class="co">// f - функция, 5 оказалась захвачена в функции только на чтение, функциональное значение безымянно</span></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="at">f</span>(<span class="dv">2</span>) <span class="co">// 7</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7"><span class="co">// переменные с типом данных не связаны</span></a></code></pre></div>
+<p>В С# между типами данных есть отношение наследования, переменная принадлежит какому-то ТД, есть статический тип, который не изменяется, и есть динамический тип — то, что туда положили на самом деле. ССылка на значение — X a = new X() — a становится ссылкой на значение, объектно-референциальный ЯП (C#, Java…). а может потом пменяться: a = new Y(), new Х() останется того же типа, так как анонимное значение, и потеряется, если не сохранить на него ссылку. Массивы тоже являются референциальными.</p>
+<h5 id="область-видимости-scope">Область видимости (scope)</h5>
+<p>Связана с понятием имени В том блоке, где объявлена. Или внутри класса (наследуемые классы образуют вложенные области видимости). Все ЯП являются проективными (одна структура вкладывается в другую). C именем связано понятие определяющего вхождения (декларация, определение). Видимость тэгов структур в С — от определяющего вхождения до конца файла (даже если вложено).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">struct</span> foo </a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">{</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">    <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">    <span class="kw">struct</span> bar</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">    {</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">        <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7">        <span class="dt">int</span> foo;</a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">} foo, bar; <span class="co">// В С можно (для тэгов отдельная таблица), в С# и Java так нельзя</span></a></code></pre></div>
+<p>Нужна была совместимость с UNIX, а там есть struct time time.</p>
+<p>Область видимости и несколько определяющих вхождений? Раньше могло быть только одно для каждого имени. Появление перегрузки для имен функций (верно почти для всех ЯП, где есть понятие перегрузки). Понятие определяющего вхождения и использующего вхождения. В некоторых ЯП можно использовать переменные без декларации, как тогда определить, что это то самое определяющее вхождение?</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">function</span> <span class="at">f</span>(i) <span class="op">{</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">    <span class="cf">if</span> (i <span class="op">&lt;</span> <span class="dv">1</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3">        x <span class="op">=</span> <span class="dv">1</span> <span class="co">// что такое х?</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4">    <span class="op">}</span> <span class="co">// если транслятор увидит х, то он его перенесет выше как undefined, а потом задаст значение в ветке if. Но что тогда может быть в ветке else?</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">    <span class="cf">else</span> <span class="op">{</span>...<span class="op">}</span> <span class="co">// в некоторых расширениях JavaScript переменные обязаны быть определены (JSX)</span></a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="op">}</span></a></code></pre></div>
+<h5 id="область-действия-extent">Область действия (extent)</h5>
+<p>Связано с понятием значения (но не имени). Являются проективными во всех ЯП (вложенность друг в друга). В функциональных ЯП:</p>
+<pre><code>(defun f(x) (
+    // тут х имеет одно значение
+    )
+) ( LET x () ) // переменная попала в захват и продолжит действовать (действует значение)</code></pre>
+<p>В императивных языках область действия распространяется и на переменные.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">function</span> <span class="at">counter</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">    <span class="kw">var</span> n <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">    <span class="cf">return</span> () <span class="op">=&gt;</span> n<span class="op">++</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="op">}</span><span class="co">// вернет функциональное значение без параметров и захватит n, поэтому у n  будет область действия как и у возвращаемого функционального значения</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6">...</a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="at">counter</span>()() <span class="co">// вернет 0</span></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8"><span class="at">counter</span>()() <span class="co">// тоже вернет 0, так как разные значения n</span></a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="at">alert</span>(<span class="at">counter</span>()())<span class="co">// (вызов pop-up), вернет 0</span></a>
+<a class="sourceLine" id="cb32-11" data-line-number="11"><span class="at">alert</span>(<span class="at">counter</span>()())</a>
+<a class="sourceLine" id="cb32-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb32-13" data-line-number="13"><span class="kw">var</span> foo <span class="op">=</span> <span class="at">counter</span>()</a>
+<a class="sourceLine" id="cb32-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb32-15" data-line-number="15"><span class="at">alert</span>(<span class="at">foo</span>()) <span class="co">// 0</span></a>
+<a class="sourceLine" id="cb32-16" data-line-number="16"><span class="at">alert</span>(<span class="at">foo</span>()) <span class="co">// 1 - захвачено значение</span></a></code></pre></div>
+<p>Можно захватывать только read-only значения. В Java захват лямбдой переменной из внешней области разрешен только для final или effectively final переменных (констант или переменных, для которых компилятор может определить, что они являются константами) <strong>closure</strong> X =&gt; X + Y // захват переменной</p>
+<blockquote>
+<p>В С++ throw, а не raise, потому что С++ писался под UNIX (должна была быть совместимость), а там raise — посылка сигнала самому себе.</p>
+</blockquote>
+<p>Все объекты данных имеют набор атрибутов. Например, в императивных ЯП — адрес</p>
+<pre><code>&amp;v // C
+v&#39;ADDR // Ada</code></pre>
+<p>Можно передавать по значению и по ссылке В функциональных ЯП нет такого понятия. Значение как-то передается (зависит от реализации), например, в Лиспе, атом — ссылка на таблицу атомов, передастся эта ссылка. <strong>“Как хранятся, так и передаются”</strong> В императивных ЯП нужно четко понимать, ссылка это, или значение.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">foo</span>() {</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">        <span class="dt">int</span> i; <span class="co">// будет храниться в виде 4 байтов </span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4">        <span class="bu">Integer</span> j = <span class="dv">1</span>; <span class="co">// объект, класс-оболочка, в него завернуто значение, j — ссылка на анонимный объект в динамической памяти.</span></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5">        <span class="dt">int</span> a[], b[]; <span class="co">// появилась ссылка</span></a>
+<a class="sourceLine" id="cb34-6" data-line-number="6">        a = <span class="kw">new</span> <span class="dt">int</span>[N]; <span class="co">// разместили массив в памяти</span></a>
+<a class="sourceLine" id="cb34-7" data-line-number="7">        b = a; <span class="co">// указывают на одно и то же</span></a>
+<a class="sourceLine" id="cb34-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb34-9" data-line-number="9">}</a></code></pre></div>
+<h5 id="связывание-binding">Связывание (binding)</h5>
+<ul>
+<li>Статическое связывание (до точки входа в программу)</li>
+</ul>
+<pre><code>static int i = 0; //(может осуществляться компоновщиком или загрузчиком)</code></pre>
+<ul>
+<li>Квазистатическое связывание Связывание локальных переменных с адресом (похоже на статическое, но формально происходит во время выполнения программы, вычисляется статическое смещение относительно регистра стека — между ESP и EBP)</li>
+</ul>
+<pre><code>void f(int i) {
+    int j; 
+} 
+// в ассемблерном коде: (EBP - указатель конца фрейма на стеке)
+asm {
+    MOV EAX, j[EBP]
+};
+
+/* */
+static int q = 0;
+asm {
+    MOV EBX, q
+}</code></pre>
+<p>Все становится плохо, когда доходит до VLA (variable length array) в С99. Нужно к адресу а прибавлять длину а в байтах, и после нее загружать b. Мы не можем знать статическое смещение всех переменных в эом случае!</p>
+<pre><code>char a[i], b[i];
+/**/
+asm{
+    MOV EAX, b[i[EBP]] // ???
+}</code></pre>
+<pre><code>// FORTRAN
+SUBROUTINE P(N)
+DIMENSION REAL A(N)</code></pre>
+<p><em>C#:</em></p>
+<pre><code>void foo(int i) 
+{
+    int[] a = new int[N];
+    a[i] = 0; // квазистатическая проверка 0&lt;=i&lt;N, как если бы компилятор знал значение i
+}</code></pre>
+<p><em>С++ STL:</em> “Бескомпромиссное стремление к эффективности”: индексирование не проверяется, это не дает прибавку к эффективности. Проверяется только vec.at(i) (квазистатически).</p>
+<ul>
+<li>Динамическое связывание Атрибут связывается со своим значением в момент выполнения. Динамическое связывание адреса и динамических переменных.</li>
+</ul>
+<h3 id="лекция-9-10-01.10.19">Лекция 9, 10 01.10.19</h3>
+<h4 id="связывание">Связывание</h4>
+<p>Конструкция ЯП связывается с набором атрибутов (выбор из некоторого конечного множества)</p>
+<ul>
+<li><em>Переменная и адрес</em></li>
+<li><em>Момент связывания</em>: квазистатическое связывание переменной с адресом (статическое смещение относительно указателя на фрейм). Еще может быть статическим и динамическим.</li>
+<li><em>Время жизни связывания</em>. Для императивных: совпадает с временем жизни переменных. Не для всех языков это так: чем ниже уровень языка, тем это вернее (связывание переменных с адресом характерно для низкоуровневых ЯП).</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="co">// в ЯП со сборщиком мусора может возникать дефрагментация памяти</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="dt">byte</span>[] ab = <span class="kw">new</span> <span class="dt">byte</span>[N]; <span class="co">// динамический массив, ссылка в С#, подверженная сборщику мусора и менеджеру памяти</span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="kw">unsafe</span> <span class="co">// помечается атрибутом unsafe</span></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">{ </a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">    <span class="kw">fixed</span>(<span class="dt">byte</span> *p = ab) <span class="co">// происхоит фиксация адреса в р</span></a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">    {</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7">        p++; <span class="co">// внутри фиксированного блока можно использовать malloc и т.д., и таким образом можно делать по сути &quot;вставки&quot; из С или С++, убираем сборку мусора.</span></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb40-9" data-line-number="9">} </a></code></pre></div>
+<ul>
+<li><em>Переменная и значение</em>. Связывание на уровне языка.
+<ul>
+<li>Императивные языки. Переменная отличается от константы временем жизни связывания. В какой момент происходит связывание константы? Ограничение накладывается на время жизни связывания, и it depends. К. Ричи был против констант в С++, так как не понятно, в какой момент вычислять константы. В С вычислялись на этапе препроцессирования или компиляции, а константы типа “const X a;” — ?</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="pp">#define H (B - A)/N </span><span class="co">// неправильно</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="pp">#define H (B - A)/(N) </span><span class="co">// верно, так как вместо N тоже может быть макрос </span></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">    </a>
+<a class="sourceLine" id="cb41-4" data-line-number="4"><span class="at">const</span> <span class="dt">int</span> N = <span class="dv">10</span>;</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5"><span class="dt">int</span> a[N]; <span class="co">// — код из С++, но не С.</span></a></code></pre></div>
+<blockquote>
+<p>В С++ появились прототипы функций, потому что компилятор генерировал код, основываясь на том, передавать ли параметр по ссылке или по значению. В С прототип функции изначально был просто “type function()”, компилятор даже не проверял параметры.</p>
+</blockquote>
+<ul>
+<li>–//–<br />
+<ul>
+<li>В функциональных языках остается связывание вызова фактических переменных функций и формальных.</li>
+<li>И там и там связывание динамическое, в функциональных языках время жизни связывания совпадает с временем жизни переменной. Связывание происходит раз и на всегда, нет понятия состояния, переменная не меняет значение. Переменные ведут себя как константы в императивных ЯП.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>В С# конкретизация шаблонов происходит во время трансляции.</p>
+</blockquote>
+<p><em>В C#:</em></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="dt">const</span> <span class="dt">int</span> N = <span class="dv">10</span>; <span class="co">// const по умолчанию статические, связывание выполняется статически</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="dt">int</span> M = <span class="dv">10</span>; <span class="co">// должно быть членом какого-то класса, если не статический объект, то инициализация происходит во время выполнения, так как объекты появляются на этом этапе</span></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">readonly</span> <span class="dt">int</span> L = <span class="dv">10</span>; <span class="co">// динамическая инициализация, время жизни связывания совпадает с временем жизни переменной</span></a>
+<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="co">// инициализация статических объектов (эффективно) реализуется в отдельном статическом потоке, запускаемые системой времени выполнения</span></a></code></pre></div>
+<p><em>В C++:</em></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="at">const</span> X a; <span class="co">// инициализация происходит в runtime</span></a></code></pre></div>
+<ul>
+<li><em>Переменная и тип данных</em>. &gt; Интерпретатор языка С никому не нужен (хотя его можно написать), так как он будет работать в десятки раз медленне, чем откомпилированный код.</li>
+</ul>
+<p>Компилируемые языки: T_{comp} T_{inter} 1</p>
+<h4 id="типа-данных-и-операции">Типа данных и операции</h4>
+<h5 id="базисные-типы">Базисные типы</h5>
+<ul>
+<li><p>Скалярные типы компилятор знает про эти типы. Не имеют внутренней структуры.</p></li>
+<li><p>Структурные типы</p></li>
+</ul>
+<blockquote>
+<p>Компилятор С “ничего не знает” о типах из стандартных библиотек В других языках есть мимикрирующие под стандартную библиотеку</p>
+</blockquote>
+<h5 id="скалярные-базисные-типы-данных-в-оояп">Скалярные базисные типы данных в ООЯП</h5>
+<ul>
+<li>Числовые типы данных
+<ul>
+<li>Целочисленные</li>
+<li>Вещественные</li>
+</ul></li>
+<li>Логический тип данных
+<ul>
+<li>В С не было</li>
+</ul></li>
+<li>Символьные типы данных</li>
+<li>Перечислимые типы данных
+<ul>
+<li>До 2005 не было в Java</li>
+<li>Создатель С#: это красиво и удобно при использовании IDE</li>
+</ul></li>
+<li>Диапазоны
+<ul>
+<li>Впоследствии вылетел из ЯП. Раньше использовался для задания массивов: ```Pascal array[0..N-1] of T; // диапазон, но задан неявно</li>
+</ul></li>
+</ul>
+<p>```</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode modula-2"><code class="sourceCode modula2"><a class="sourceLine" id="cb44-1" data-line-number="1">array.IndexType of T; // квадратные скобки  — свойство диапазона, а не массива, граница изменения индексов</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">Type T = [<span class="dv">1</span>..N];</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">Type T1 = <span class="dt">CARDINAL</span>[<span class="dv">0</span>..N];</a></code></pre></div>
+<ul>
+<li>Указатели/ссылки
+<ul>
+<li>В некторых языках нет указателей, а ссылка не является отдельным типом (есть референциальный тип данных — классы, объекты, массивы, интерфейсы)</li>
+</ul></li>
+<li>Функциональные типы данных</li>
+<li>Строки (могут быть отнесены и к структурным).
+<ul>
+<li>В python и Go нет символьного типа данных</li>
+<li>Как правило, неизменяемый объект</li>
+<li>В С++ — тип из отдельной библиотеки</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Оберон — ООЯП, в отличие от Modula-2, но при этом более простой и компактный. Компилятор на Обероне занимает около 4к строк. С выходом Оберон-2 компилятор стал занимать 400-500 строк.</p>
+</blockquote>
+<pre class="оберон"><code>ARRAY N OF T // диапазоны выпали из Оберона
+ARRAY OF T // открытый массив, динамический</code></pre>
+<p>Нет типов currency и date, хотя они были бы очень полезны. Существуют в отдельных библиотеках.</p>
+<p>Есть типы, а есть оболочки — типы-заглушки (например, int и Int32 в С#, int и Integer в Java). Сделано, чтобы базисные типы стали объектами: <strong>boxing</strong> (упаковка типов).</p>
+<h5 id="числовые-типы-данных">Числовые типы данных</h5>
+<ol type="1">
+<li>Представление (диапазон). Есть понятие регистров общего назначения с определенной разрядностью. int — базисный тип, родной дла заданной архитектуры (4 или 8), могут быть типы меньшей размерности: byte, short; int. long, long long — если не хватает int. В C# есть byte — 1, short — 2, int — 4, long — 8 (оболочки — UInt8, Int16, Int32, Int64). Аналогично в Java (фиксированные размеры, не как в С)</li>
+</ol>
+<div class="sourceCode" id="cb46"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="cf">for</span> (<span class="dt">unsigned</span> <span class="dt">int</span> i = <span class="dv">0</span>; i &lt; c.size(); i++) {} <span class="co">// size() — вернет size_t (unsigned int)</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="cf">for</span> (<span class="dt">unsigned</span> <span class="dt">int</span> i = c.size(); i &gt;=<span class="dv">0</span>; i--) {} <span class="co">// будет зацикливание, смешение знаковых и беззнаковых операций</span></a></code></pre></div>
+<blockquote>
+<p>Зачем нужны беззнаковые типы? — Нет беззнакового типа — нет беззнаковых проблем.</p>
+</blockquote>
+<p>Операции сдвига для знаковых и беззнаковых типов работает по-разному (в знаковых: если знак — 0, то в начале забьются нули, если 1, то 1. Арифметический — деление на степени двойки, — и логический сдвиг — беззнаковый тип). По-хорошему, надо приводить к unsigned и делать сдвиг (логический сдвиг — операция &gt;&gt;&gt;). С++ изначально: смешивать знаковые и беззнаковые типы нельзя. Были перекомпилированы утилиты UNIX, ни одна из них не прошла проверку на несмешивание знаковых и беззнаковых типов. В итоге было разрешено смешивать. В C#: sbyte (знаковый byte, так как сам byte беззнаковый), ushort и т.д. Разрешены преобразования byte -&gt; ushort -&gt; uint -&gt; ulong, byte -&gt; short, ushort -&gt; int и т.д.</p>
+<p>В Обероне нет беззнаковых типов в целях минимизации.</p>
+<h3 id="лекция-11-12-08.10.19">Лекция 11, 12 08.10.19</h3>
+<h4 id="числовые-типы-данных-1">Числовые типы данных</h4>
+<p>Числовые типы данных — <strong>целочисленные</strong>:</p>
+<ol type="1">
+<li><em>Беззнаковые?</em></li>
+</ol>
+<div class="sourceCode" id="cb47"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb47-1" data-line-number="1"> i &lt; c.size() <span class="co">// i - int, size() - uint</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"> <span class="co">// integer overflow</span></a>
+<a class="sourceLine" id="cb47-3" data-line-number="3"> checked {...}</a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"> unchecked {...}</a></code></pre></div>
+<blockquote>
+<p>С точки зрения вычислений знаковый тип главнее. С точки зрения кода битовое представление знаковых и беззнаковых типов неразличимы (первый бит может быть после интерпретирован по-разному). Компилируемость определяется врменем связывания (если короткое, то проще компилировать, иначе — интерпретировать).</p>
+</blockquote>
+<ol start="2" type="1">
+<li><em>Представление (размерность)</em>
+<ul>
+<li>Динамическая типизация (интерпретируемость). JavaScript (нет знаковых и беззнаковых, есть один тип — number, из-за этого все вычисления неточные). Python (int; long — вычисления с произвольной длиной, в Python3 отказались от двух типов, остался int, который по факту long из Python2 — по сути ссылка на объект из динамической памяти, строка = числу). Ссылки можно присвоить одна другой и они будут ссылаться на один и тот же объект (это проверятся в Python операцией is), и через ссылку можно добраться до свойств объекта.</li>
+<li>Статическая типизация (компилируемость) — более производительны. Есть беззнаковые (кроме Java, там byte, short, int, long — все знаковые). C, C++, C#, Go (int8, int16, int32, int64 и byte, uin16, uint32, uint64; int, uint, uintptr), Swift (Int8, int16, Int32, Int64 и Uint8, Uint16, Uint32, Uint64; int, uint, uintptr). В основном объектно-референциальные языки. Проблема: что является родным размером int? Регистры общего назначения, если int будет меньше, то будет падение эффективности, не все возможности процессора будут использованы.</li>
+</ul></li>
+</ol>
+<blockquote>
+<p>Разговор за процессоры</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>short</th>
+<th>int</th>
+<th>long</th>
+<th>pointer</th>
+<th>long long</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LP32</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>ILP32</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>ILP64*</td>
+<td>2</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>LP64</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>LLP64</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>IA-32 (1987) IA-64 (2001) -&gt; x86-64</p>
+<p><strong>Вещественные числа</strong></p>
+<p>Можно представлять с плавающей точой, а можно с фиксированной (как в раннних компьютерах: числа хранились в десятичном формате по цифрам, каждая занимала 4 бита. В Python есть тип Decimal, который хранится подобным образом). mantissa * base ^ p 1 base &lt;= mantissa &lt; 1</p>
+<p>В Ada (последний ЯП с фиксированными типами):</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">type</span> T <span class="kw">is</span> <span class="kw">digits</span> <span class="dv">8</span>; // точность <span class="dv">8</span> знаков</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">type</span> MESH <span class="kw">is</span> <span class="kw">delta</span> H <span class="kw">range</span> L..R; // в пределах от L до R с шагом H, статические константы</a></code></pre></div>
+<p>По стандарту IEEE-754 (1985): float, double, long long double.</p>
+<ol type="1">
+<li><p><em>Стандартное представление</em> 32 и 64 бита: 1 бит знак, мантисса (23 или 52 бита) и порядок — p’ (8 или 11 бит). p’ из всех 0 или 1 зарезервированы. p’ = p + 2^(n-1) - 1 p’ = p + 127 (float) p’ = p + 1023 (double)</p></li>
+<li><em>Underflow </em>(не хватает мантиссы), возникает понятие Nan. Nan всегда не равен другому числу d (даже если d=Nan). В операциях с другими числами даст Nan. Нужно обрабатывать случаи возникновения Nan.
+<ul>
+<li>Overflow* (не хватает порядка), возникает понятие +-inf. 1/(+-inf).</li>
+</ul></li>
+</ol>
+<blockquote>
+<p>— Как поймать 6 львов? — Поймать 10 и 4 выпустить.</p>
+</blockquote>
+<h4 id="логический-тип-данных">Логический тип данных</h4>
+<p>Логические операции так или иначе есть во всех ЯП, но типа данных может и не быть 0 = false #0 =&gt; true =&gt; 1 (в VisualBasic -1) and or not (xor — иногда, equal) f(e1, e2, …, eN): может вычисляться компилятором в любом порядке, например:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb49-1" data-line-number="1">f(i++, ++i) <span class="co">// здесь порядок важен, но компилятор может вычислить в любом порядке</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2">cout &lt;&lt; i++ &lt;&lt; ++i; </a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="co">/**</span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="co">((cout &lt;&lt; i++) &lt;&lt; ++i); </span></a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="co">operator&lt;&lt;( operator&lt;&lt;(cout, i++), ++i) как правило сначала вычислится ++i, а потом i++ (так в большинстве реализаций)</span></a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="co">нестандартизовано</span></a>
+<a class="sourceLine" id="cb49-7" data-line-number="7"><span class="co">нежелательно употребляять выражения, вычисления которых зависят от порядка операндов.</span></a>
+<a class="sourceLine" id="cb49-8" data-line-number="8"><span class="co">*/</span></a></code></pre></div>
+<p>В процедурных языках для двуместных логических операций характерно ленивое вычисления:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode pascal"><code class="sourceCode pascal"><a class="sourceLine" id="cb50-1" data-line-number="1">i:=<span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">while</span> (i &lt;= N) <span class="kw">and</span> (A[i] &lt;&gt; x) <span class="kw">do</span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3">    i:= i + <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">/** </a>
+<a class="sourceLine" id="cb50-5" data-line-number="5">не удовлетворяет стандартам, компилятор может вычислять в любом порядке. корректно работает только когда х есть в массиве. Если i за пределами массива и компилятор вычисляет все, то будет выход за пределы массива</a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">тогда нужно вынести второе условие</a>
+<a class="sourceLine" id="cb50-7" data-line-number="7">TurboPascal, C, C++.. требуют ленивые вычисления, все выражение не будет вычислено, если i за пределами массива:</a>
+<a class="sourceLine" id="cb50-8" data-line-number="8"><span class="kw">while</span> (i &lt; N &amp;&amp; a[i] != x) i++;</a>
+<a class="sourceLine" id="cb50-9" data-line-number="9">*/</a></code></pre></div>
+<pre><code>A x = null;
+if (x != null) {}</code></pre>
+<p>В JavaScript и Python можно использовать логические операции с не логическими типами. В Python false — 0, None, [], {}, () (пустые структуры), в JavaScript — 0, null, undefined, [].</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb52-1" data-line-number="1">v1 <span class="op">&amp;&amp;</span> v2 <span class="co">// если v1 false, то v1. Если v1 true, то значение v2</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">v1 <span class="op">||</span> v2 <span class="co">// если v1 true, то v1. Если v1 false, то значение v2</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="co">// верно для любого типа данных</span></a></code></pre></div>
+<h4 id="символьные-типы">Символьные типы</h4>
+<p>В Go, C нет символьного типа данных. В С ‘a’ — константа типа int, а в С++ — типа char. C: int getchar(). В какой-то степени char, wchar_t — символьные типы данных, но с арифметическими свойствами. С++:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb53-1" data-line-number="1">basic_string&lt;T&gt;</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">string s; <span class="co">// basic_string&lt;char&gt;</span></a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">wstring ws; <span class="co">// basic_sring&lt;wchar_t&gt;</span></a></code></pre></div>
+<p>В Python, JavaScript, Go — нет char, но есть string (на уровне базового понятия языка).</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1">l<span class="op">=</span>[<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>]</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">s <span class="op">=</span> <span class="st">&quot;&quot;</span>.join(l)</a></code></pre></div>
+<p>Swift: пришел на замену Objective C.</p>
+<p>Счетчик ссылок (в Objective C так строилось взаимодействие между объектами):</p>
+<pre><code>if (_ref_count == 0) {
+    delete this;
+    return 0;
+}</code></pre>
+<blockquote>
+<p>Яблоки не люблю вообще, особенно грызенные.</p>
+</blockquote>
+<h3 id="лекция-13-14-15.10.19">Лекция 13, 14 15.10.19</h3>
+<h4 id="символьные-типы-данных-и-строки">Символьные типы данных и строки</h4>
+<p>. ? ! ASCII 7 * JS, Python, PHP, … — динамически типизируемые языки (не содержат типа char, только строки) * Статически типизируемые — как правило есть тип char, но в Go — тип rune (=uint32), нет отдельного символьного типа. Java: char =&gt; ushort.</p>
+<p>70—80-e: какие представления текста использовать? * Однобайтовые кодировки символов (SBCS — single byte) * Двухбайтовые кодировки (DBCS — double byte) * MBCS</p>
+<p>Система кодировки символов появилась в 19 веке (с появлением телеграфа), появились символы BackSpace (сдвиг каретки назад), Del (игнорировать послежний символ), CR (carriage return), LF (line feed), FF (form feed).</p>
+<p>Однобайтовая кодировка: первые 128 символов — англ (американский стандартный код, ASCII7, ANSI-7), остальное можно использовать 128-255 под другие символы (национальные кодировки, а их достаточно много =&gt; как разграничить?). Появилось разграничение на алфавиты восточной и западной Европы. Была разработана ISO-Latin1 для западной Европы, для остальных — ISO-Latin2, ISO-Latin3… . Японцам и китайцам пришлось упростить иероглифы и придумать свою кодировку (сначала двухбайтовую, потом многобайтовую). Есть глобализованные приложения, а есть локализованные (все, что является текстом, должно отображаться в целочисленные идентификаторы, которые потом отображается в конкретные строки, загружаемые по их идентификаторам, строковые литералы, которые зависят от национального представления, в программе появляться не должны) =&gt; для подготовки локализации достаточно просто перевести текст. Но интерфейс должен адаптироваться к размерам ресурсов (например, размеру экрана). Глобализация — работа приложения везде, то есть нужно универсальное представление символов. Локализация требует перекомпиляции, но глобализация должна быть универсальной, требуется универсальное представление текстов =&gt; <strong>Появление UNICODE (1991)</strong> CP1252 CP1251 CP866 — кодировка кириллицы в MSDOS UNICODE не стандарт кодировки, это стандарт алфавита.</p>
+<ol type="1">
+<li>Стандартизуются алфавиты (наборы символов, Universal Character Set) — стандартизуются названия символов (например, small latin latter ‘a’).</li>
+<li>Не стандартизуется представление (глиф). Например, в арабском: 23 буквы, у каждой до 4 написаний (для разных мест в слове).</li>
+<li>Стандартизованы коды (уникальный номер символа) — Code Point. Кодировка отличается от Code Point тем, что говорит, как именно представить код в компьютере. UTF32 (то, как UCS переводится в кодировку 0—0х10FFFF). Для символов <code>:</code> можно либо выделить отдельные символы для букв с accents (é), либо сделать accent модифицирущим символом (если accent идет за буквой, то глиф будет объединением двух символов).</li>
+</ol>
+<p>Наиболее используемые кодировки:</p>
+<ul>
+<li>UTF-8</li>
+<li>UTF-16</li>
+<li>UTF-32</li>
+</ul>
+<p>Старый UNICODE получил название BMP (Basic Multilingual Plane). Символы стали обозначаться U+AB — это символ из BMP. Всего плоскостей 16. U+81FAB. 1..F. Максимальный символ — 0x10FFFF. &gt; Все эти эмотиконс.. Эмоджики…</p>
+<p><em>С:</em> Все стандартные функции для работы со строками находятся в библиотеке &lt;string.h&gt;</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb56-1" data-line-number="1">strlen(<span class="dt">char</span> *);</a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">wcstrlen(<span class="dt">wchar_t</span> *);</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">strcat(x, y);</a>
+<a class="sourceLine" id="cb56-4" data-line-number="4">wcstrcat(wx, wy);</a></code></pre></div>
+<p><strong>BOM (byte order mark)</strong></p>
+<p>0xFFFE</p>
+<ul>
+<li>В машинах с прямой адресацией: FF FE</li>
+<li>Little endian: FE FF</li>
+</ul>
+<p>В сети прямой порядок, поэтому нужны функции htons(), htonl(), wtohs(), wtohl() (при необходимости переводят формат). В файлах сначала указывается BOM (кодируется тремя байтами), поэтому пустые файлы не совсем пустые (хотя для UTF-8 BOM не имеет значения). <em> Java, C#:</em> char — 2 байта &gt; UTF-16 — наихудшая из всех возможных кодировок UNICODE</p>
+<p><em>JavaScript:</em> line[0] — не всегда первый символ строки. Строку в символы можно превратить с помощью функции s.split(&quot;&quot;).</p>
+<p><em>Go:</em> Строки — последовательность байтов (не последовательность символов или рун). Последовательность байтов кодирует последовательность из UTF-8.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb57-1" data-line-number="1">s <span class="dt">string</span> = <span class="st">&quot;line&quot;</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2">fmt.printf(s[<span class="dv">0</span>]) <span class="co">// выдаст код символа l</span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3">s1 <span class="dt">string</span> = <span class="st">&quot; &quot;</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4">frm.printf(s1[<span class="dv">0</span>]) <span class="co">// выдаст 32 — код пробела</span></a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="bu">len</span>(s) <span class="co">// число байтов в кодировке</span></a></code></pre></div>
+<p>Тип rune, модуль utf8:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb58-1" data-line-number="1">DecodeRuneInString(s) <span class="co">// выдаст пару (r rune, s size)</span></a>
+<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="bu">len</span>(s);  <span class="co">// ++i — нет такой операции</span></a>
+<a class="sourceLine" id="cb58-3" data-line-number="3">{</a>
+<a class="sourceLine" id="cb58-4" data-line-number="4">    <span class="co">// автоматическая декларация</span></a>
+<a class="sourceLine" id="cb58-5" data-line-number="5">    r, sz := DecodeRuneInString(s[i:]) <span class="co">// вырезка, строка, начинающаяся с i-го байта</span></a>
+<a class="sourceLine" id="cb58-6" data-line-number="6">    <span class="co">// может быть только 110, 11110, 1110, 0_... (10 - продолжение)</span></a>
+<a class="sourceLine" id="cb58-7" data-line-number="7">    i += sz</a>
+<a class="sourceLine" id="cb58-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb58-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb58-10" data-line-number="10"><span class="co">// или</span></a>
+<a class="sourceLine" id="cb58-11" data-line-number="11"><span class="kw">for</span> r, sz in s {</a>
+<a class="sourceLine" id="cb58-12" data-line-number="12">    do_something()</a>
+<a class="sourceLine" id="cb58-13" data-line-number="13">    <span class="co">// ?</span></a>
+<a class="sourceLine" id="cb58-14" data-line-number="14">}</a></code></pre></div>
+Длина “café” — 4, &quot;cafe
+</body>
+</html>

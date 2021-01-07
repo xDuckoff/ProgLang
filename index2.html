@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Kek</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Kek</h1>
+</header>
+<h3 id="лекции-15-16">Лекции 15, 16</h3>
+<h4 id="перечисления">Перечисления</h4>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">enum</span> Color {</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    Red   = <span class="bn">0xFF0000</span>,</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    Green = <span class="bn">0x00FF00</span>,</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    Blue  = <span class="bn">0x0000FF</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="dt">var</span> c = Color.<span class="fu">Red</span>;</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">c++; <span class="co">// Now has value 0xFF0001.</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw">enum</span> Planet {</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">    Earth,</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">    Mars</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">}</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="dt">var</span> c = Planet.<span class="fu">Earth</span>;</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">c++; <span class="co">// Now has value Planet.Mars.</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">enum</span> TrafficColor:<span class="dt">byte</span> {</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    Red,</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    Yellow,</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    Green</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="dt">var</span> tc = TrafficColor.<span class="fu">Red</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">enum</span> FileMode {</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    Read      = <span class="bn">0x1</span>,</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    Write     = <span class="bn">0x2</span>,</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    ReadWrite = Read | Write</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">}</a></code></pre></div>
+<p>В С# есть механизм атрибутов (в частности это используется для задания опций компилятора, как pragma в С), можно задать, какие операции доступны для перечислимых типов:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb4-1" data-line-number="1">[Flags] </a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">enum</span> FileMode {</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    Read      = <span class="bn">0x1</span>,</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    Write     = <span class="bn">0x2</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    ReadWrite = Read | Write</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">}</a></code></pre></div>
+<p><em>C++11:</em></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">// enum class</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">auto</span> c = Color::Red;</a></code></pre></div>
+<p>Допускаются неявные преобразования из целого типа в перечислимый. Обратно – необходимо явное приведение. pragma не стандартизовано, зависит от компилятора.</p>
+<h4 id="указатели-и-ссылки">Указатели и ссылки</h4>
+<p>В Pascal – не отдельный тип данных (просто способ передачи параметров). Ссылки как отдельный тип данных – С++ и Algol-68. Algol-68 – ортогональность языка, стерта разница между оператором и выражением, каждый оператор может иметь значение (например, оператор цикла имеет значение последнего выполненного оператора).</p>
+<pre class="algol-68"><code>ref int
+ref T
+ref ref int</code></pre>
+<p>В С ref перешли в *, чтобы не вводить отдельно новую концепцию (уже есть понятие машинного адреса, адресная арифметика). По факту вместо индексации массивов можно использовать адресную арифметику (так как массив в С – непрерывный участок памяти, для индексации достаточно знать начало массива и размер типа данных). В С++ &amp; появилась как отдельный тип данных (так как не все можно выразить через понятие адреса, он слишком тесно связан с адресной арифметикой), например, невозможно обойтись без этого типа при перегрузке операторов.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">class</span> MyVector {</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">    <span class="dt">int</span> *_body;</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">    <span class="dt">int</span> _size;</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="kw">explicit</span> MyVector(<span class="dt">int</span> size) {...}</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">    MyVector(MyVector &amp; v) {...} <span class="co">// во избежание рекурсивного вызова конструкторов значение передается по ссылке</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">    <span class="co">// необходимо перегрузить операцию присваивания, потому что если оставить дефолтную, то будут утечки памяти</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="co">// проблема висячих ссылок, когда сслка считается определенной, но она уже недействительна</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">    <span class="dt">int</span>&amp; <span class="kw">operator</span>[](<span class="dt">int</span> i) {<span class="cf">return</span> _body[i];}<span class="co">// lvalue and rvalue. без &amp; -- только rvalue</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">    MyVector&amp; <span class="kw">operator</span>=(<span class="at">const</span> MyVector &amp; v) {</a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">        ...</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">        <span class="cf">return</span> *<span class="kw">this</span>;</a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">    }</a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">};</a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">MyVector v(<span class="dv">30</span>), v1(<span class="dv">20</span>);</a>
+<a class="sourceLine" id="cb7-17" data-line-number="17">v = v1; <span class="co">// проблема образования мусора (менеджер динамической памяти считает ее занятой, но на нее никто не ссылается), поэтому надо переобпределить операцию присваивания</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18">MyVector v2(v); <span class="co">// v2 = v</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19">v[j] = v1[i]; <span class="co">// нужно переопределить операцию []</span></a></code></pre></div>
+<blockquote>
+<p>CLR: есть указатели, а есть gc^ (garbage collect)</p>
+</blockquote>
+<p><em>Oberon:</em></p>
+<pre class="oberon"><code>RECORD D
+    I:INTEGER   // закрытое поле
+    J*:INTEGER  // открыто на чтение и запись
+    J*-:INTEGER // открыто на чтение</code></pre>
+<p>T &amp; a – в С++ для ссылки доступна только операция иницаилизации (полный аналог имени).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" data-line-number="1">T &amp; a = * <span class="kw">new</span> T(); <span class="co">// a -- имя безымянной переменной T()</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">X &amp; b(*<span class="kw">new</span> X());</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">T &amp; c = a; <span class="co">// &quot;Остапа занесло&quot;, у объекта два имени, создает путаницу, так писать не надо</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">// как удалить? нужно получить адрес:</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">delete</span> &amp;a; <span class="co">// разыменование, и это работает, так у Страуструпа!</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">f(<span class="dt">int</span> &amp; i) {} <span class="co">// инициализация i происходит в момент вызова</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">f(k);</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">class</span> Y {</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">    <span class="dt">int</span> &amp;ri; <span class="co">// где инициализировать? в конструкторе:</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">    Y(<span class="dt">int</span> rri) : ri(rri) {...} <span class="co">// &quot;порядочные компиляторы будут тут ругаться&quot;, переменная передается по значению (локальная переменная), инициализируем переменную значением стека!</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="dt">int</span>* f() {</a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">    <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb10-9" data-line-number="9">    <span class="cf">return</span> &amp; i; <span class="co">// висячая ссылка, будет ошибкой</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="dt">int</span>&amp; f1()n {</a>
+<a class="sourceLine" id="cb10-13" data-line-number="13">    <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb10-14" data-line-number="14">    <span class="cf">return</span> i; <span class="co">// висячая ссылка, будет ошибкой</span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15">}</a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="dt">int</span> f2(<span class="dt">int</span> &amp;k); <span class="co">// обязательное предварительное объявление функций (так как возник второй способ передачи параметров, по ссылке)</span></a></code></pre></div>
+<p><strong>В объектно-референциалных ЯП:</strong></p>
+<p>Типы данных: * типы-значения (Value Types) * референциальные (обращение к ним возможно только через ссылку, именовать можно только ссылки, объекты являются анонимными): * классы * интерфейсы * массивы (как правило. Исключение: Go (но он по факту не объектно-референциальный))</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb11-1" data-line-number="1">X x = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="dt">int</span>[] a = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">30</span>];</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="dt">int</span>[] b = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">20</span>];</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">a = b; <span class="co">// теперь а и b ссылаются на одну область</span></a></code></pre></div>
+<p>JavaScript: строки immutable, они не копируются, копируются только ссылки.</p>
+<p>Проблема поверхностного копирования: копирование только указателя или ссылки. Как обеспечить глубокое копирование (вдруг есть ссылка на узел в дереве, что тогда копировать? Только узел, поддерево, или вообще все дерево? Нет универсального способа, где-то нужно делать полную копию, а где-то частичную, это указывается автором структуры данных).</p>
+<p>В С указатели играют роль и ссылок. С помощью адресной арифметики можно обрабатывать произвольный набор данных (struct, union, T[N]). Указатель в С по сути играет 2 роли, и, например, в объявлении функции мы не всегда можем понять, для чего именно будет служить указатель (либо как адрес – strcpy(char <em>pa, char </em>pb), либо как передача значения – swap(char <em>pa, char </em>pb)).</p>
+<p><em>Pascal:</em></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode pascal"><code class="sourceCode pascal"><a class="sourceLine" id="cb12-1" data-line-number="1">P.field;</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">// := - присваивание, ^ - разыменование</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">P.all; <span class="co">// обращение ко всей переменной</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb13-1" data-line-number="1">T:<span class="dt">INTEGER</span>;</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">T&#39;access;</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">PROCEDURE</span> P <span class="kw">is</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">    <span class="kw">begin</span>:</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">    ...</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">    <span class="kw">end</span> P;</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">P&#39;access;</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="kw">type</span> PT <span class="kw">is</span> <span class="kw">access</span> <span class="kw">all</span> T;</a></code></pre></div>
+<p>Проблема владения: если структура объявлена внутри объекта, то объект ответственен за освобождение структуры. Приобретение ресурса – инициализация (RAII, resource acquisition is initialization). С++: свертка стека – при выходе из фрейма для всех локальных переменных гарантируется вызов деструкторов в обратном порядке, кроме случая аварийного завершения (при использовании исключений деструкторы будут вызваны).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb14-1" data-line-number="1">{</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">    <span class="co">// конструкция CWaitCursor w() означает прототип функции, поэтому надо (либо через new)</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">    CWaitCursor w; <span class="co">// захватывает курсор при инициализации, заменяет на waitcursor</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">    LongOp(); <span class="co">// как бы не закончилась эта операция, будет вызван деструктор для w</span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="cf">try</span> {}</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">finally{} <span class="co">// здесь можно сделать освобождение памяти</span></a></code></pre></div>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co">// IDisposable</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">using</span> (X p = <span class="kw">new</span> <span class="fu">X</span>()) {</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">    s1...<span class="fu">sn</span> <span class="co">// операторы</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6">    X p = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb16-7" data-line-number="7">    s1...<span class="fu">sn</span> <span class="co">// операторы</span></a>
+<a class="sourceLine" id="cb16-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb16-9" data-line-number="9"><span class="kw">finally</span> { <span class="co">// гарантируется, что выполнится</span></a>
+<a class="sourceLine" id="cb16-10" data-line-number="10">    ((IDispose)p).<span class="fu">Dispose</span>; <span class="co">// освобождение неуправляемых ресурсов</span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11">}</a></code></pre></div>
+<p><em>С++:</em></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb17-1" data-line-number="1">p-&gt;field;</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="kw">class</span> SP {</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">    ...</a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb17-5" data-line-number="5">    ... </a>
+<a class="sourceLine" id="cb17-6" data-line-number="6">    SP* <span class="kw">operator</span>-&gt;() {} <span class="co">// возвращает что-то, к чему применима -&gt; (pointer)</span></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7">};</a></code></pre></div>
+<p>&lt;вроде как до 11 года&gt;:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">template</span>&lt;<span class="kw">typename</span> T&gt;</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">class</span> auto_ptr {</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">    ...</a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5">    <span class="kw">explicit</span> auto_ptr(T *p = <span class="kw">nullptr</span>);</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">    auto_ptr(<span class="at">const</span> auto_ptr&lt;T&gt; &amp;);</a>
+<a class="sourceLine" id="cb18-7" data-line-number="7">    auto_ptr&amp; <span class="kw">operator</span>=(auto_ptr&lt;T&gt; &amp;);</a>
+<a class="sourceLine" id="cb18-8" data-line-number="8">    T* get();</a>
+<a class="sourceLine" id="cb18-9" data-line-number="9">    T* <span class="kw">operator</span>-&gt;();</a>
+<a class="sourceLine" id="cb18-10" data-line-number="10">    T&amp; <span class="kw">operator</span>*();</a>
+<a class="sourceLine" id="cb18-11" data-line-number="11">    <span class="dt">void</span> swap(auto_ptr&lt;T&gt; &amp;p);</a>
+<a class="sourceLine" id="cb18-12" data-line-number="12">    ~auto_ptr(); <span class="co">// delete</span></a>
+<a class="sourceLine" id="cb18-13" data-line-number="13">    <span class="co">// Можно прописывать свои deleter&#39;ы</span></a>
+<a class="sourceLine" id="cb18-14" data-line-number="14">    ...</a>
+<a class="sourceLine" id="cb18-15" data-line-number="15">    <span class="co">// в конструкторе и деструкторе не должно быть исключений (потому что деструкторы могут быть вызваны во время свертки стека)</span></a>
+<a class="sourceLine" id="cb18-16" data-line-number="16">};</a>
+<a class="sourceLine" id="cb18-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb18-18" data-line-number="18"><span class="kw">template</span>&lt;<span class="kw">typename</span> T&gt;</a>
+<a class="sourceLine" id="cb18-19" data-line-number="19"><span class="dt">void</span> swap(auto_ptr&lt;T&gt; &amp;p1, auto_ptr&lt;T&gt; &amp;p2);</a>
+<a class="sourceLine" id="cb18-20" data-line-number="20">...</a>
+<a class="sourceLine" id="cb18-21" data-line-number="21">auto_ptr&lt;X&gt; px(<span class="kw">new</span> X());</a>
+<a class="sourceLine" id="cb18-22" data-line-number="22">pr-&gt;field;</a>
+<a class="sourceLine" id="cb18-23" data-line-number="23">auto_ptr&lt;X&gt; make() {</a>
+<a class="sourceLine" id="cb18-24" data-line-number="24">    auto_ptr&lt;X&gt; p(<span class="kw">new</span> X());</a>
+<a class="sourceLine" id="cb18-25" data-line-number="25">    ...</a>
+<a class="sourceLine" id="cb18-26" data-line-number="26">    <span class="cf">return</span> p; <span class="co">// будет работать конструктор копирования, который создаст новый auto_ptr (в нем нет const, по факту применяется операция swap)</span></a>
+<a class="sourceLine" id="cb18-27" data-line-number="27">}</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="dt">void</span> foo(auto_ptr&lt;X&gt; p) {</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">    ...</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">    <span class="co">// конструктор копирования, а затем деструктор (?!)</span></a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb19-6" data-line-number="6">auto_ptr&lt;X&gt; p(<span class="kw">new</span> X());</a>
+<a class="sourceLine" id="cb19-7" data-line-number="7">foo(p);</a>
+<a class="sourceLine" id="cb19-8" data-line-number="8">p-&gt;bar(); <span class="co">// BOOOOM</span></a>
+<a class="sourceLine" id="cb19-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb19-10" data-line-number="10"><span class="co">// исправление:</span></a>
+<a class="sourceLine" id="cb19-11" data-line-number="11"><span class="dt">void</span> foo(<span class="at">const</span> auto_ptr&lt;X&gt; &amp; p) {}</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">struct</span> s {</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">    <span class="dt">int</span> id;</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">    auto_ptr&lt;X&gt; p; <span class="co">// операция присваивания будет автоматической</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">    s();</a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb20-6" data-line-number="6">s s1;</a>
+<a class="sourceLine" id="cb20-7" data-line-number="7">s s2;</a>
+<a class="sourceLine" id="cb20-8" data-line-number="8">s2 = s1;</a>
+<a class="sourceLine" id="cb20-9" data-line-number="9">s1.p-&gt;field; <span class="co">// НЕЛЬЗЯ, p уже ни на что не ссылается</span></a></code></pre></div>
+<p>Проблема auto_ptr: вместо copy-семантики используется move-семантика. Не пользуйтесь auto_ptr!!! В 11 году: введение типа данных – ссылки на rvalue (временные объекты).</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb21-1" data-line-number="1">T &amp;&amp; x = T();</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb22-1" data-line-number="1">T &amp; x = T(); <span class="co">// временный объект будет уничтожен на выходе из блока</span></a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb23-1" data-line-number="1">X a = getX();</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">X &amp;&amp; b = getX(); <span class="co">// создается временный объект, которому будет присвоена ссылка на временный объект. конструктор копирования для временного объекта</span></a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">X d(getX()); </a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">X c;</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">c = getX(); <span class="co">// здесь работает операция присваивания. После этого временный объект уничтожался. Компилятор: если объект поддерживает move-семантику, то надо ее использовать.</span></a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb23-7" data-line-number="7"><span class="co">// в классе Х:</span></a>
+<a class="sourceLine" id="cb23-8" data-line-number="8">X(X&amp;&amp;);</a>
+<a class="sourceLine" id="cb23-9" data-line-number="9">X&amp; <span class="kw">operator</span>=(X&amp;&amp;); </a></code></pre></div>
+<p>Аналог в С++14:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="bu">std::</span>unique_ptr&lt;X&gt; p;</a></code></pre></div>
+<p>Проблема в использовании копирования. В C++11 это сделано приватным методом (копирование и присваивание с const X&amp;). В С++14 введено ключевое слово delete.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb25-1" data-line-number="1">X(<span class="at">const</span> X&amp;) = <span class="kw">delete</span>;</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="bu">std::</span>unique_ptr&lt;X&gt; p, p1;</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">p = <span class="bu">std::</span>move(p1); <span class="co">// сколько байтов кода будет сгенерировано? нисколько, по факту просто приведение типов.</span></a></code></pre></div>
+<h3 id="лекции-17-18">Лекции 17, 18</h3>
+<h3 id="виды-памяти">Виды памяти</h3>
+<ul>
+<li>Статическая</li>
+<li>Квазистатическая (привязка статическая относительно стека во фрейме), проблем не возникает, так как все современные архитектуры поддерживают стек, есть соответствующие регистры (EBP, ESP)</li>
+<li>Динамическая, тут возникают основные проблемы.
+<ul>
+<li>Явное управление динамической памятью:
+<ul>
+<li>C</li>
+<li>C++</li>
+<li>Rust</li>
+</ul></li>
+<li>Неявное управление:
+<ul>
+<li>Java</li>
+<li>C#</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>Swift</li>
+<li>Go</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Понятие <strong>владение</strong>: владелец памяти ответственен за ее освобождение В С++: концепция единоличного владения – auto_ptr (неудачная попытка) Копирование противоречит концепции единоличного владения, с auto_ptr сложно отследить моменты копирования. unique_ptr решает проблему, так как отсутствуют оператор присваивания и конструктор копирования в обычном понимании.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb27-1" data-line-number="1">&lt;Объявление метода&gt; = <span class="kw">delete</span>; <span class="co">// этого метода по сути нет, он отменен (чтобы, например, не генерировался дефолтный конструктор копироавания)</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">X(X &amp;&amp; rval) {}</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="kw">operator</span>=(X&amp;&amp; rval) {}</a></code></pre></div>
+<p>У unique_ptr<T> есть операции *, -&gt;, T* get() &lt;=&gt; единоличное владение shared_ptr<T> – *, -&gt;, T* get() &lt;=&gt; совместной владение. Заводится счетчик ссылок. Методы этого класса могут отслеживать ссылки друг на друга.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">struct</span> Item {</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">    <span class="bu">std::</span>shared_ptr&lt;Item&gt; pItem;</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">    string name;</a>
+<a class="sourceLine" id="cb28-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb28-7" data-line-number="7">    <span class="kw">auto</span> Foo = make_shared&lt;item&gt;(); <span class="co">// внутри вызывается new, создается динамический блок, есть обычный указатель и много другой информации и методов</span></a>
+<a class="sourceLine" id="cb28-8" data-line-number="8">    <span class="bu">std::</span>shared_ptr&lt;Item&gt; Bar = make_shared&lt;Item&gt;(<span class="co">/*аргументы отсюда передаются в конструктор*/</span>);</a>
+<a class="sourceLine" id="cb28-9" data-line-number="9">    <span class="co">// аналогично и с unique</span></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10">    <span class="co">// Для них можно добавлять custom deleter</span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11">    Foo-&gt;pItem = Bar;</a>
+<a class="sourceLine" id="cb28-12" data-line-number="12">    <span class="co">// деструкторы: вызовется деструктор shared_ptr. Bar разрушится, потом разрушится Foo, и автоматически все будет освобождено.</span></a>
+<a class="sourceLine" id="cb28-13" data-line-number="13">}</a></code></pre></div>
+<p>custom deleter: например, для FILE* – deleter, который делает fclose().</p>
+<p>Главная проблема подсчета ссылок – перекрестные ссылки (cross-reference)</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">struct</span> Item {</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">    <span class="bu">std::</span>shared_ptr&lt;Item&gt; pItem;</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">    string name;</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7">    <span class="kw">auto</span> Foo = make_shared&lt;item&gt;();</a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">    <span class="bu">std::</span>shared_ptr&lt;Item&gt; Bar = make_shared&lt;Item&gt;();</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">    Foo-&gt;pItem = Bar;</a>
+<a class="sourceLine" id="cb29-10" data-line-number="10">    Bar-&gt;pItem = Foo;</a>
+<a class="sourceLine" id="cb29-11" data-line-number="11">    <span class="co">// ни один деструктор не вызовется, указатели разрушатся, а сам объект - нет, так как счетчик ссылок будет не нулевой. Поэтому было введено понятие слабых указателей</span></a>
+<a class="sourceLine" id="cb29-12" data-line-number="12">}</a></code></pre></div>
+<p>Слабые ссылки – возникли в ЯП с динамической сборкой мусора. Слабая ссылка – ссылка на объект, который не был разрушен, но на него уже никто не ссылается. Слабая ссылка может стать сильной (то есть станет действительной).</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="bu">std::</span>weak_ptr&lt;T&gt; wptr; <span class="co">// не владеет объектом и не может его разрушать</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="co">// нет операций * и -&gt;</span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="co">// есть методы:</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="dt">bool</span> expired(); <span class="co">// можно сказать, валидна ли ссылка. в многопоточном окружении может быть небезопасным</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="bu">std::</span>shared_ptr&lt;T&gt; lock(); <span class="co">// переводит weak в разряд сильных ссылок</span></a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="cf">if</span> (<span class="kw">auto</span> t = wptr.lock()) {</a>
+<a class="sourceLine" id="cb30-7" data-line-number="7">    <span class="co">// здесь безопасно работать с t</span></a>
+<a class="sourceLine" id="cb30-8" data-line-number="8">    t-&gt;...</a>
+<a class="sourceLine" id="cb30-9" data-line-number="9">    <span class="co">// при необходимости объект будет разрушен</span></a>
+<a class="sourceLine" id="cb30-10" data-line-number="10">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb30-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb30-12" data-line-number="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">struct</span> Item {</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">    <span class="bu">std::</span>weak_ptr&lt;Item&gt; pItem;</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">    string name;</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb31-7" data-line-number="7">    <span class="kw">auto</span> Foo = make_shared&lt;item&gt;();</a>
+<a class="sourceLine" id="cb31-8" data-line-number="8">    <span class="bu">std::</span>shared_ptr&lt;Item&gt; Bar = make_shared&lt;Item&gt;();</a>
+<a class="sourceLine" id="cb31-9" data-line-number="9">    Foo-&gt;pItem = Bar;</a>
+<a class="sourceLine" id="cb31-10" data-line-number="10">    Bar-&gt;pItem = Foo;</a>
+<a class="sourceLine" id="cb31-11" data-line-number="11">    <span class="co">// Ссылки становятся слабыми. Мы не владеем объектом, занчит, мы не можем к нему обращаться.Но решает проблему перекрестных ссылок. </span></a>
+<a class="sourceLine" id="cb31-12" data-line-number="12">    <span class="co">// Также weak_ptr будет являться &quot;наблюдателем&quot; </span></a>
+<a class="sourceLine" id="cb31-13" data-line-number="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">struct</span> Item {</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">    <span class="bu">std::</span>unique_ptr&lt;Item&gt; pItem; <span class="co">// тут может быть сообщение об ошибке, так как для структур будет генерироваться конструктор копирования и оператор присваивания, нужно обеспечивать move-семантику</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">    <span class="co">// unique_ptr нельзя передавать по значению, так как нет конструктора копирования</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">    string name;</a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">    ...</a>
+<a class="sourceLine" id="cb32-6" data-line-number="6">};</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="co">// (const) X * const - тип this</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">enable_shared_from_this(<span class="kw">this</span>) <span class="co">// тогда должно быть:</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="kw">class</span> X : <span class="kw">public</span> enabled_shared_from_this {...};</a></code></pre></div>
+<h3 id="структурный-базис">Структурный базис</h3>
+<ul>
+<li>Массив</li>
+<li>Запись (структуры в С/С++). В дальнейшем перешли в классы</li>
+<li>Файлы. В дальнейшем ушли в стандартную библиотеку</li>
+<li>Множества. В дальнейшем ушли в стандартную библиотеку или стали таблицами</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode pascal"><code class="sourceCode pascal"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">set</span> <span class="kw">of</span> T; <span class="co">// отображение в числа от 0 до N-1</span></a></code></pre></div>
+<p><code>Modula2 -? BITSET SET OF [0..N-1]</code> <em>Кортеж:</em> одновременное присваивание. Неизменяем (в питоне) В С++ тоже появились кортежи:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="bu">std::</span>tuple&lt;<span class="dt">int</span>, <span class="dt">char</span>*&gt; t;</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="bu">std::</span>get&lt;i&gt;(t);</a></code></pre></div>
+<p><em>Массивы:</em> операция индексирования A: D x … x D (n раз) [ ]: A, i -&gt; ref D // возваращается ссылка По факту динамическая операция Массивы – изменяемый объект. Строки в большинстве ЯП нельзя рассматривать как массивы Нет выравнивания <em>Запись:</em> обращение к полю R: D1 x … x Dn . : R, name -&gt; ref Di Время связывания статическое Выравнивание -&gt; можно делать масивы структур</p>
+<p>Но в JavaScript все не совсем так. Массив – напрерывная область памяти, да, но записей в JS нет, есть объекты:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">var</span> o <span class="op">=</span> <span class="op">{}</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="va">o</span>.<span class="at">prop</span> <span class="op">=</span> <span class="dv">1</span> <span class="co">// свойство с именем prop отыскивается во время выполнения</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="co">// если такого свойства нет, то оно добавится. Объект - как хэш-таблица свойств</span></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="co">// аналогично с индексированием:</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">o[<span class="st">&quot;prop&quot;</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co">// эта запись аналогична предыдущей, кроме того, что индекс может быть произвольным значением, приведенным к строке</span></a>
+<a class="sourceLine" id="cb36-6" data-line-number="6"><span class="co">// индексирование и обращение к полю - вычисление хэш-функции</span></a>
+<a class="sourceLine" id="cb36-7" data-line-number="7"><span class="kw">var</span> i <span class="op">=</span> <span class="va">o</span>.<span class="at">prop</span> <span class="co">// если свойства prop нет, то значение i  будет &quot;undefined&quot;</span></a>
+<a class="sourceLine" id="cb36-8" data-line-number="8"><span class="kw">delete</span> <span class="va">o</span>.<span class="at">prop</span> <span class="co">// добавленное свойство можно удалить</span></a></code></pre></div>
+<h4 id="массивы">Массивы</h4>
+<p>A: D x … x D (n раз) [ ]: A, i -&gt; ref D // возваращается ссылка В общем случае применимы и другие операции: Length: A -&gt; n Если эта операция выполняется в runtime, то массивы динамические, связывание такой операции динамическое (C#, Java, JS, list в Python). Проблема настоящего динамического массива <em>C#:</em></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb37-1" data-line-number="1">T[] t = <span class="kw">new</span> T[N]; <span class="co">// N - длина массива</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">t.<span class="fu">Length</span>;<span class="co">// N</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="co">// IList&lt;T&gt; List&lt;T&gt; могут динамически менять длину, но могут быть не эффективны по памяти</span></a></code></pre></div>
+<p><em>Python:</em></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">-28</span>]</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">l.append(<span class="st">&quot;line&quot;</span>)</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="co"># l[0] = 1</span></a>
+<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="co"># l[4] = &quot;line&quot;</span></a>
+<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="co"># l[5] - error</span></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="co"># l[-1] = &quot;line&quot;, -1 is  len(l) - 1</span></a></code></pre></div>
+<p><em>JavaScript:</em></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">var</span> a <span class="op">=</span> <span class="kw">new</span> <span class="at">Array</span>()</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">a[i] <span class="op">=</span> i <span class="co">// расширение массива, если элемента с таким индексом нет, то он появится</span></a>
+<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="kw">delete</span> a[i] <span class="co">// удаление элемента</span></a></code></pre></div>
+<p>Есть ЯП, в которых длина массива – статическая функция: <em>Pascal:</em></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode pascal"><code class="sourceCode pascal"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">type</span> ARR = <span class="kw">array</span>[<span class="dv">1</span>..N] <span class="kw">of</span> <span class="dt">integer</span>;</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="kw">function</span> SumARR(<span class="kw">var</span> A:ARR) : <span class="dt">integer</span>;</a></code></pre></div>
+<p>Modula, Oberon – понятие открытого массива</p>
+<pre><code>PROCEDURE SumARR( var A:ARRAY OF INTEGER):INTEGER; // неявно передается длина массива
+// HIGH(A) - значение последнего индекса в открытом массиве</code></pre>
+<p><em>C:</em></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb42-1" data-line-number="1">pipe(<span class="dt">int</span> fd[<span class="dv">2</span>]);<span class="co">// передается именно массив, а не указатель</span></a></code></pre></div>
+<p><em>Go:</em></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">var</span> N <span class="dt">int</span> = <span class="dv">8</span></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">var</span> arr [N]<span class="dt">int</span> <span class="co">// нельзя</span></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="kw">var</span> arr [<span class="dv">8</span>]<span class="dt">int</span> <span class="co">// можно</span></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="bu">len</span>(arr) <span class="co">// статически заменяется на 8</span></a></code></pre></div>
+<p>Вырезка (срез, slice) <em>Python:</em></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="co"># вырезка применима к общему объекту, который дает итератор и возможность индексирования</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">l[i:j:step] <span class="co"># default step = 1, default j = len(l), default i = 0</span></a>
+<a class="sourceLine" id="cb44-3" data-line-number="3">l[:] <span class="co"># весь массив</span></a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5">l1 <span class="op">=</span> l</a>
+<a class="sourceLine" id="cb44-6" data-line-number="6">l[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb44-7" data-line-number="7">l1[<span class="dv">0</span>] <span class="co"># станет 0</span></a>
+<a class="sourceLine" id="cb44-8" data-line-number="8">l1 <span class="op">=</span> l[:] <span class="co"># полная копия</span></a>
+<a class="sourceLine" id="cb44-9" data-line-number="9">l <span class="op">=</span> [<span class="dv">1</span>, [<span class="dv">1</span>,<span class="dv">2</span>], <span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb44-10" data-line-number="10">l1 <span class="op">=</span> l[:] <span class="co"># &quot;копия глубокая, да не очень&quot;</span></a>
+<a class="sourceLine" id="cb44-11" data-line-number="11">l1[<span class="dv">1</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">-1</span> <span class="co"># ссылка на второй элемент, он изменится</span></a>
+<a class="sourceLine" id="cb44-12" data-line-number="12"><span class="bu">print</span>(l) <span class="co"># выведется [1, [1,-1], 3]</span></a>
+<a class="sourceLine" id="cb44-13" data-line-number="13">l1 <span class="op">=</span> l[::<span class="op">-</span><span class="dv">1</span>] <span class="co"># последовательность в обратном порядке, step=-1</span></a></code></pre></div>
+<p><em>Swift:</em></p>
+<pre class="swift"><code>l[i..&lt;j] // &quot;окошко, через которое мы смотрим на массив&quot;
+let a = l[1:3]
+// можно обращаться только к a[1], a[2], a[3]</code></pre>
+<p><em>Go:</em></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co">// окошко, через которое мы глядим на отдельный массив, как будто это отдельный массив</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">var</span> arr = [<span class="dv">4</span>]<span class="dt">int</span>{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="co">// вырезка от элемента i до j - 1</span></a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="co">// вырезка:</span></a>
+<a class="sourceLine" id="cb46-5" data-line-number="5"><span class="kw">var</span> s []<span class="dt">int</span></a>
+<a class="sourceLine" id="cb46-6" data-line-number="6">s = arr[<span class="dv">1</span>:<span class="dv">3</span>] <span class="co">// все элементы, кроме первого и последнего</span></a>
+<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="kw">var</span> arr1 = []<span class="dt">int</span>{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</a>
+<a class="sourceLine" id="cb46-8" data-line-number="8"><span class="kw">var</span> s1 []<span class="dt">int</span></a>
+<a class="sourceLine" id="cb46-9" data-line-number="9">s = arr1[<span class="dv">1</span>:<span class="dv">4</span>] <span class="co">// индексы 1, 2, 3</span></a>
+<a class="sourceLine" id="cb46-10" data-line-number="10"><span class="co">// функция make</span></a>
+<a class="sourceLine" id="cb46-11" data-line-number="11">a := <span class="bu">make</span>([]<span class="dt">int</span>, <span class="dv">5</span>, <span class="dv">10</span>) <span class="co">// 5 - len 10 - capacity, тип а - вырезки из int, массив будет длины 10, в вырезку войдут только 5 элементов</span></a></code></pre></div>
+<p>Detailed work of <code>make</code>:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb47-1" data-line-number="1">a := <span class="bu">make</span>([]<span class="dt">int</span>, <span class="dv">5</span>, <span class="dv">6</span>);</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">b := a[<span class="dv">2</span>:<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb47-3" data-line-number="3">fmt.Println(a, <span class="bu">len</span>(a), <span class="bu">cap</span>(a), <span class="bu">len</span>(b), <span class="bu">cap</span>(b)) <span class="co">// [0 0 0 0 0] 5 6 1 4</span></a>
+<a class="sourceLine" id="cb47-4" data-line-number="4">c := <span class="bu">append</span>(a, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb47-5" data-line-number="5">fmt.Println(a, <span class="bu">len</span>(a), <span class="bu">cap</span>(a), <span class="bu">len</span>(b), <span class="bu">cap</span>(b)) <span class="co">// [0 0 0 0 0] 5 6 1 4</span></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6">fmt.Println(c, <span class="bu">len</span>(c), <span class="bu">cap</span>(c), <span class="bu">len</span>(c), <span class="bu">cap</span>(c)) <span class="co">// [0 0 0 0 0 1] 6 6 6 6</span></a>
+<a class="sourceLine" id="cb47-7" data-line-number="7">d := <span class="bu">append</span>(c, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb47-8" data-line-number="8">fmt.Println(d, <span class="bu">len</span>(d), <span class="bu">cap</span>(d)) <span class="co">// [0 0 0 0 0 1 2] 7 12</span></a></code></pre></div>
+<h3 id="лекции-19-20">Лекции 19, 20</h3>
+<ul>
+<li>Многомерные массивы</li>
+<li>Записи и объединения</li>
+<li>Кортежи</li>
+<li>Таблицы (словари)</li>
+</ul>
+<h3 id="многомерные-массивы">Многомерные массивы</h3>
+<p>Есть типы-значения, а есть референциальные типы. &gt; Тип данных = Набор значений + Набор операций</p>
+<p>Язык без референциальных типов –</p>
+<p>Семантика размещения объектов в памяти: * Референциальные типы — значения в динамической памяти, доступны по ссылке * Объекты типов-значений — не все так однозначно: в зависимости от контекста объявления/появления соответствующего значения * Ассемблер: данные располагаются только внутри какого-то сегмента * Другие языки: возникает понятие области видимости — * Модуль. В С переменные, объявленные в модуле, помещаются в глобальный сегмент данных, данные загружаются в память, когда файл загружается в память (это происходит еще до точки входа в программу). В модульных языках по-другому. С точки зрения привязки к адресам — статические переменные. В модульных яп данные появляются в оперативной памяти: модуль загружается в память (но загрузка может быть динамической, хотя все равно привязка будет считаться статической) * Блок. В С у таких переменных класс памяти — стек. * Класс. Значеня типов-значений расположены внутри объектов этого класса.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">    T a = <span class="kw">new</span> <span class="fu">T</span>(); <span class="co">// ссылка</span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3">    T b;</a>
+<a class="sourceLine" id="cb48-4" data-line-number="4">    <span class="fu">X</span>(T bb) { b = bb; }</a>
+<a class="sourceLine" id="cb48-5" data-line-number="5">}</a></code></pre></div>
+<pre><code>int a[2][10]; // расположение в памяти по строкам (по столбцам только в Fortran)</code></pre>
+<p><em>Непрямоугольный массив:</em> В яп типа С можно только моделировать.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> **argv) {}</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> *argv[]) {} <span class="co">// более наглядно, что argv - массив из указателей. здесь argv константный, в отличие от **argv, хотя они почти эквивалентны.</span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="co">// **argv и *argv[] могут моделировать непрямоугольные массивы</span></a></code></pre></div>
+<p>Для типов-значений нужно знать длину массива, чтобы компилятор мог разместить в памяти. Если не требуется сразу, то это референциальный тип. Исключение — динамические массивы в Ada.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="co">// Java</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="kw">class</span> <span class="bu">Point</span>{...}</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="bu">Point</span>[] p = <span class="kw">new</span> <span class="bu">Point</span>[N];</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">procedure</span> P(N: <span class="dt">integer</span>) <span class="kw">is</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">    var a: <span class="kw">array</span>(<span class="dv">0</span>..N<span class="dv">-1</span>) <span class="kw">of</span> <span class="dt">integer</span>;</a>
+<a class="sourceLine" id="cb52-3" data-line-number="3">    <span class="kw">begin</span></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb52-5" data-line-number="5">    <span class="kw">end</span> P;</a></code></pre></div>
+<p>Динамические массивы из Ada перешли в C в виде VLA (C 99).</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="dt">int</span> n = atoi(argv[<span class="dv">1</span>]);</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="dt">int</span> a[n];</a>
+<a class="sourceLine" id="cb53-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb53-4" data-line-number="4"><span class="dt">void</span> *alloca(<span class="dt">size_t</span> n); <span class="co">// выделяет память на стеке</span></a></code></pre></div>
+<p><em>Java:</em></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="dt">int</span>[][] b = <span class="kw">new</span> <span class="dt">int</span>[N][];</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; N; i++) </a>
+<a class="sourceLine" id="cb54-3" data-line-number="3">    b[i] = <span class="kw">new</span> <span class="dt">int</span>[i + <span class="dv">1</span>];</a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="co">// b[i][j]</span></a>
+<a class="sourceLine" id="cb54-5" data-line-number="5"><span class="dt">int</span> [,]a = <span class="kw">new</span> <span class="dt">int</span>[<span class="dv">10</span>, <span class="dv">5</span>]; <span class="co">// Заметка от студента: НЕТ ТАКОГО СИНТАКСИСА В JAVA!</span></a></code></pre></div>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">struct</span> Point {</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">    <span class="dt">int</span> x;</a>
+<a class="sourceLine" id="cb55-3" data-line-number="3">    <span class="dt">int</span> y;</a>
+<a class="sourceLine" id="cb55-4" data-line-number="4">    <span class="kw">public</span> <span class="fu">Point</span>(<span class="dt">int</span> x, <span class="dt">int</span> y) { <span class="kw">this</span>.<span class="fu">x</span> = x; <span class="kw">this</span>.<span class="fu">y</span> = y; }</a>
+<a class="sourceLine" id="cb55-5" data-line-number="5">    <span class="dt">int</span> X {</a>
+<a class="sourceLine" id="cb55-6" data-line-number="6">        <span class="kw">get</span> {<span class="kw">return</span> x;}</a>
+<a class="sourceLine" id="cb55-7" data-line-number="7">        <span class="kw">set</span> {x = value;}</a>
+<a class="sourceLine" id="cb55-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb55-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb55-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb55-11" data-line-number="11">Point[] p = <span class="kw">new</span> Point[<span class="dv">1</span>]; <span class="co">// будет рассматриваться как массив объектов структур, семантика типа-значения (если бы Point был классом, то это был бы массив ссылок, и памяти затрачивалось бы больше)</span></a>
+<a class="sourceLine" id="cb55-12" data-line-number="12"><span class="co">// структуры нельзя наследовать. Есть класс struct, все структуры являются неявными наследниками этого класса</span></a>
+<a class="sourceLine" id="cb55-13" data-line-number="13"><span class="dt">void</span> <span class="fu">foo</span>() {</a>
+<a class="sourceLine" id="cb55-14" data-line-number="14">    Point p = <span class="kw">new</span> <span class="fu">Point</span>(<span class="dv">1</span>,<span class="dv">2</span>); <span class="co">// р будет расположен в стеке</span></a>
+<a class="sourceLine" id="cb55-15" data-line-number="15">}</a>
+<a class="sourceLine" id="cb55-16" data-line-number="16"><span class="kw">class</span> X{</a>
+<a class="sourceLine" id="cb55-17" data-line-number="17">    Point p = <span class="kw">new</span> <span class="fu">Point</span>(<span class="dv">1</span>,<span class="dv">2</span>); <span class="co">// p будет расположен внутри  объекта класса</span></a>
+<a class="sourceLine" id="cb55-18" data-line-number="18">}</a>
+<a class="sourceLine" id="cb55-19" data-line-number="19"><span class="dt">void</span> <span class="fu">bar</span>(<span class="dt">object</span> o) {} <span class="co">// в функцию можно передать все что угодно, если речь об ООП</span></a>
+<a class="sourceLine" id="cb55-20" data-line-number="20"><span class="fu">bar</span>(p);</a></code></pre></div>
+<h3 id="записи-и-объединения">Записи и объединения</h3>
+<p><em>Visual Basic: </em></p>
+<pre class="basic"><code>type S is
+    name as string * 20
+    surname as string * 40
+end type</code></pre>
+<p>Записи (record) появились в языке COBOL, они использовались для записи структур данных в файл. S. : точка позволяет получить ссылку на поле (ref field) – статическая операция, вычисление смщения относительно адреса начала записи. Запись – совокупность переменных.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="bu">Math</span>.<span class="fu">sin</span>(x)</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2">...</a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="co">// в Java нет статических классов</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="dt">static</span> <span class="kw">import</span> Math.*</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">static</span> <span class="kw">class</span> Path{...} <span class="co">// в С# есть статические классы</span></a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="dt">double</span> <span class="fu">Integrate</span>(<span class="dt">double</span> A, <span class="dt">double</span> B, <span class="dt">double</span> EPS, <span class="dt">double</span> (*()(<span class="dt">double</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">abstract</span> <span class="kw">class</span> Integral {</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">Integrate</span>(<span class="dt">double</span> A, <span class="dt">double</span> B, <span class="dt">double</span> EPS) {..}</a>
+<a class="sourceLine" id="cb60-3" data-line-number="3">    <span class="kw">public</span> <span class="kw">abstract</span> <span class="dt">double</span> <span class="fu">F</span>(<span class="dt">double</span>);</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb60-5" data-line-number="5"><span class="kw">new</span> Integral {</a>
+<a class="sourceLine" id="cb60-6" data-line-number="6">    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">F</span>(<span class="dt">double</span> x) {<span class="kw">return</span> <span class="fu">sin</span>(x);}</a>
+<a class="sourceLine" id="cb60-7" data-line-number="7">}().<span class="fu">Integrate</span>(<span class="dv">0</span>, PI, <span class="fl">1E-6</span>); <span class="co">// new можно делать у анонимного абстрактного класса, у просто абстрактного нельзя</span></a></code></pre></div>
+<h3 id="кортежи">Кортежи</h3>
+<p>В динамически типизированных яп понятия структур нет. В Python есть понятие кортеж (размещаетяс в динамической памяти, имеет ссылочую семантику, но менятьего нельзя)</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" data-line-number="1">l <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;string&quot;</span>)</a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="co">#l[0], l[1], l[2]</span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">a, b, s <span class="op">=</span> l <span class="co">#значения кортежа будут распакованы в эти переменные</span></a>
+<a class="sourceLine" id="cb61-4" data-line-number="4">f((a, b, s)) <span class="co">#запаковали a, b, s в новый кортеж</span></a>
+<a class="sourceLine" id="cb61-5" data-line-number="5">l <span class="op">=</span> (a, b, s) <span class="co">#значения запакованы в кортеж</span></a>
+<a class="sourceLine" id="cb61-6" data-line-number="6">f(l)</a></code></pre></div>
+<h3 id="словарь">Словарь</h3>
+<p><em>Python:</em></p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1">d <span class="op">=</span> {<span class="st">&quot;a&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;b&quot;</span>:<span class="dv">2</span>, <span class="st">&quot;s&quot;</span>:<span class="st">&quot;string&quot;</span>}</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2">d[<span class="st">&quot;a&quot;</span>] <span class="co"># обычный синтаксис обращения к словарю</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="co"># ключом может быть только неизменяемый объект (hashable, immutable)</span></a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="co"># можно динамически вычислять имя записи</span></a>
+<a class="sourceLine" id="cb62-5" data-line-number="5"><span class="co"># словарь как частный случай записи</span></a>
+<a class="sourceLine" id="cb62-6" data-line-number="6"><span class="co"># коллизии - значение хэш-функции для разных ключей одинаково. Разрешение коллизий</span></a></code></pre></div>
+<p>В JavaScript словарь будет объектом:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb63-1" data-line-number="1">d <span class="op">=</span> <span class="op">{</span><span class="st">&quot;a&quot;</span><span class="op">:</span><span class="dv">1</span><span class="op">,</span> <span class="st">&quot;b&quot;</span><span class="op">:</span><span class="dv">2</span><span class="op">,</span> <span class="st">&quot;s&quot;</span><span class="op">:</span><span class="st">&quot;string&quot;</span><span class="op">}</span> <span class="co">// стандартный способ работы с объектами, так задается любой объект, объект по определению является словарем</span></a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="va">d</span>.<span class="at">a</span> <span class="co">// чтение: если не найдено свойство, то переходим к прототипу и так далее</span></a>
+<a class="sourceLine" id="cb63-3" data-line-number="3"><span class="va">d</span>.с <span class="op">=</span> <span class="va">d</span>.<span class="at">s</span> <span class="co">// запись: если свойства нет, то оно появится</span></a></code></pre></div>
+<p><em>C++:</em></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb64-1" data-line-number="1">std::unordered_map&lt;&gt;; <span class="co">// </span></a></code></pre></div>
+<p><em>PHP:</em></p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode php"><code class="sourceCode php"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">$a</span><span class="ot">[]</span> = <span class="dv">1</span>  </a>
+<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="kw">$a</span><span class="ot">[</span><span class="dv">1</span><span class="ot">]</span> <span class="co">// операция доступа к элементу массива, если он есть</span></a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="kw">$a</span><span class="ot">[</span><span class="st">&quot;1&quot;</span><span class="ot">]</span> <span class="co">// массив работает как хэш-таблица. Любой массив одновременно является хэш-таблицей с внутренним разрешением коллизий</span></a></code></pre></div>
+<h3 id="кортежи-продолжение">Кортежи (продолжение)</h3>
+<p><em>Go:</em> осталось понятие структуры (кортежи тоже есть в каком-то виде). Структуры по сути нужны были для того, чтобы функция могла вернуть несколько значений, в Go можно так:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb66-1" data-line-number="1">val, _ = Fun(...)</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="co">//или</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3">val, err = Fun(...)</a></code></pre></div>
+<p><em>C++:</em></p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="bu">std::</span>tuple&lt;<span class="dt">int</span>, <span class="dt">int</span>, <span class="bu">std::</span>string&gt; p = mstd::make_tuple(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;string&quot;</span><span class="co">/*const char* -&gt; std::string*/</span>);</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="bu">std::</span>get&lt;<span class="dv">0</span>&gt;(p); <span class="co">// p[0]</span></a>
+<a class="sourceLine" id="cb67-3" data-line-number="3"><span class="co">// C++14 - расширение стандарта для кортежей произвольных размеров (переменный список параметров в шаблоне)</span></a></code></pre></div>
+<h3 id="объединение-типов">Объединение типов</h3>
+<p>###Лекции 21, 22</p>
+<h3 id="объединение-типов-1">Объединение типов</h3>
+<p>(Pascal — вариантные записи) Некоторый вариант структуры: * Размеченные (дискриминированные) * Неразмеченные</p>
+<p>Дискриминант: * Code: Bar Code — 4 int (NS, MC, PC, C), or QR Code — string * Event: Event Type — Mouse click, Keyboard event…</p>
+<p>Если в размеченном объединении убрать дискриминант, оно станет неразмеченным (так реализовано в С — union, все элементы начинаются с одного и того же адреса). Каждый из этих типов начинается со своего short-поля (которое по факту можно считать дискриминантом объединения).</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">struct</span> sockaddr {</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">    <span class="dt">short</span> family; <span class="co">// указатель на реальный адрес приводить к этому типу</span></a>
+<a class="sourceLine" id="cb68-3" data-line-number="3">};</a>
+<a class="sourceLine" id="cb68-4" data-line-number="4"><span class="dt">int</span> bind(<span class="dt">int</span> sd,  <span class="kw">struct</span> sockaddr *pAddr);</a>
+<a class="sourceLine" id="cb68-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb68-6" data-line-number="6"><span class="co">/* Структура sockaddr_in описывает сокет для работы с протоколами IP. </span></a>
+<a class="sourceLine" id="cb68-7" data-line-number="7"><span class="co">Значение поля sin_family всегда равно AF_INET. */</span></a>
+<a class="sourceLine" id="cb68-8" data-line-number="8"><span class="kw">struct</span> sockaddr_in {</a>
+<a class="sourceLine" id="cb68-9" data-line-number="9">    <span class="dt">short</span> sin_family;</a>
+<a class="sourceLine" id="cb68-10" data-line-number="10">    <span class="kw">struct</span> addr_in;</a>
+<a class="sourceLine" id="cb68-11" data-line-number="11">};</a>
+<a class="sourceLine" id="cb68-12" data-line-number="12"><span class="kw">struct</span> sockaddr_un {</a>
+<a class="sourceLine" id="cb68-13" data-line-number="13">    <span class="dt">short</span> sun_family; <span class="co">/* AF_UNIX */</span></a>
+<a class="sourceLine" id="cb68-14" data-line-number="14">    <span class="dt">char</span> path[<span class="dv">108</span>]; <span class="co">/* Pathname */</span></a>
+<a class="sourceLine" id="cb68-15" data-line-number="15">};</a></code></pre></div>
+<p>Описываем варианты дискриминанта с помощью конечного числа констант (дискриминант — перечислимый тип).</p>
+<blockquote>
+<p>Самое страшное, конечно, это сексуальное насилие, а то, что там свидания — это ничего, ничего (о разделении общежитий гз на мужские и женские).</p>
+</blockquote>
+<div class="sourceCode" id="cb69"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="co">// &quot;две дыры&quot; в контроле типов (в Паскале таких нет):</span></a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">T *ptr = (T*)malloc(<span class="kw">sizeof</span>(*ptr));</a>
+<a class="sourceLine" id="cb69-3" data-line-number="3">free(ptr); <span class="co">// можно без приведения типов</span></a></code></pre></div>
+<p>В Паскале могут быть неразмеченные объединния (и это “дыра”). (См. еще тип данных ADDRESS, Modula2). В Обероне объединения убрали. “Диспетчеризация по полю типа” — плохой стиль ООП (проблема в том, что почти любое содержательное действие, кроме разве что присваивания, с объектами таких иерархий должно происходить с помощью оператора выбора), надо использовать интерфейс виртуальных функций. В отдельных случаях приходится прибегать к диспетчеризации, например, если есть вложенный цикл с только виртуальными функциями, это замедляет работу программы, можно использовать объединение с полем типом, производительность вырастет. Записи с вариантами из ЯП исчезли, так как считается, что наследование типов перекрывает необходимость в дискриминантах (и вообще это ненадежно). Например, в Ada при размещении записи в памяти, необходимо было размещать там и дискриминант (это снижало ненадежность, но не сильно). Мы могли использовать поля из другого типа объединения, и это никак не исправлялось.</p>
+<p>Концепция записи с вариантами связана с оператором выбора. И хорошо бы привязывуать туда перечислимый тип данных.</p>
+<h4 id="объединения-в-swift">Объединения в Swift</h4>
+<p>Записи появляются, если не нужно никакое наследование (нечего наследовать). Это должно быть безопасно, нужны только размеченные объединения с перечислимым типом данных. Оказалось, что концепция перечислимого типа может покрыть эту необходимость.</p>
+<pre class="swift"><code>enum Planets {
+    case mercury=1, // case намекает на использование оператора выбора
+    case venus,
+    case earth,
+    ...
+}
+let terra = Planets.earth; // (const) литералы перечисления - константы, область видимости которых - само перечисление
+var p = Planets.venus; // переменная
+p = .mars; // Planets можно убрать, если нет конфликтов перечислений (но . остается)
+// Planets становится явно выводима из целочисленного тд
+var pl:Planet =.venus;
+switch pl {
+    case .mars:  ...;
+    case .venus: ...; // break не нужны
+    ...
+    default: {...}
+}
+// let t = expr; - не нужно выносить и загрязнять область видимости
+switch let t=expr { // компактно ссылаемся на эту метку t (и показываем, что это константа)
+    case ...
+}
+enum ControlChars:AsciiCharacters {
+    case CR = &#39;\r&#39;,
+    case LF = &#39;\n&#39;,
+    case TAB = &#39;\t&#39;,
+    ...
+}</code></pre>
+<pre class="swift"><code>enum Planets:CaseIterable { // протокол
+    case mercury,
+    case venus,
+    case earth,
+    ...
+} // появится свойство  AllCases
+
+for (p in Planets.AllCases) {
+    print(p); // распечатать коллекцию всех имен
+}</code></pre>
+<pre class="swift"><code>enum Planets:String { // элементы станут строковыми константами
+    case mercury=1,
+    case venus,
+    case earth=&quot;earth&quot;,
+    ...
+}</code></pre>
+<pre class="swift"><code>enum BarCode {
+    case BC(Int, Int, Int, Int), // можем ассоциировать набор значений
+    case QR(String)
+} // запись с вариантами
+var B:BarCode = .BC; // ОШИБКА!!! Надо задать ассоциированные значения
+var B:BarCode = .BC(5, 56538, 36211, 3);
+switch B {
+    case .BC (let NS, let MC, let PC, let Check) : { // значения типизируются как ассоциированные поля, локализованы внутри этого оператора
+        print(NS); // идентификаторы из другой ветки нельзя использовать
+        print(MC);
+        print(PC);
+        print(Check);
+    }
+    // или
+    // case .BC let(NS, MC, PC, Check): {...}
+    case .QR let(S):
+        print(S);   
+}</code></pre>
+<blockquote>
+<p>Как компилятор будет хранить — не твое собачье дело, программист, ты там программируй.</p>
+</blockquote>
+<h4 id="рекурсивные-перечисления">Рекурсивные перечисления</h4>
+<p>Внутри ссылается само на себя. <em>Swift:</em> Дерево арифметических выражений</p>
+<pre class="swift"><code>enum ArExpr {
+    case Add(ArExpr, ArExpr), 
+    case Mult(ArExpr, ArExpr),
+    case Val(Int) // здесь рекурсия кончается
+}
+let two:ArExpr = .Val(2), five:ArExpr = .Val(5), three:ArExpr =.Val(3);
+let t1:ArExpr = .Add(three, five);
+let t2:ArExpr = .Mult(two, t1);
+...
+// переключатель, функция evaluate(e:ArExpr)
+{
+    switch e {
+        case .Val let(v): 
+            return v;
+        case .Mult let(l, r):
+            return evaluate(l) * evaluate(r);
+        case .Add let(l, r):
+            return evaluate(l) + evaluate(r);
+        // default не нужен
+    }
+}   </code></pre>
+<h3 id="объединение-типов-2">Объединение типов</h3>
+<p>Тип данных и его роль</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="dt">void</span> process(T *p); <span class="co">// совместить несколько  типов данных в одном Т</span></a></code></pre></div>
+<ul>
+<li>Необъектные ЯП: можно описать только с помощью неразмеченных объединений =&gt; диспетчеризация по полю типа.</li>
+<li>Объектные ЯП: наследование (но в какой-то степени тоже как диспетчеризация, см. пример)</li>
+</ul>
+<div class="sourceCode" id="cb76"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">class</span> BarCodeBase {</a>
+<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb76-3" data-line-number="3">    BarCodeType bcType; <span class="co">// поле типа</span></a>
+<a class="sourceLine" id="cb76-4" data-line-number="4">    BarCodeBase(BarCodeType b) : bcType(b) {}</a>
+<a class="sourceLine" id="cb76-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb76-6" data-line-number="6"><span class="kw">class</span> QRCode: <span class="kw">public</span> BarCodeBase {</a>
+<a class="sourceLine" id="cb76-7" data-line-number="7"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb76-8" data-line-number="8">    string s;</a>
+<a class="sourceLine" id="cb76-9" data-line-number="9">    QRCode() : BarCodeBase(QRCODE_TYPE) {}</a>
+<a class="sourceLine" id="cb76-10" data-line-number="10">};</a>
+<a class="sourceLine" id="cb76-11" data-line-number="11"><span class="kw">class</span> BarCode : publc BarCodeBase {</a>
+<a class="sourceLine" id="cb76-12" data-line-number="12"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb76-13" data-line-number="13">    <span class="dt">int</span> numberSystem,</a>
+<a class="sourceLine" id="cb76-14" data-line-number="14">        manufactureCode,</a>
+<a class="sourceLine" id="cb76-15" data-line-number="15">        productCode,</a>
+<a class="sourceLine" id="cb76-16" data-line-number="16">        check;</a>
+<a class="sourceLine" id="cb76-17" data-line-number="17">    BarCode(<span class="dt">int</span> ns, <span class="dt">int</span> mc, <span class="dt">int</span> pc, <span class="dt">int</span> c) </a>
+<a class="sourceLine" id="cb76-18" data-line-number="18">        : </a>
+<a class="sourceLine" id="cb76-19" data-line-number="19">        numberSystem(ns),</a>
+<a class="sourceLine" id="cb76-20" data-line-number="20">        manufactureCode(mc),</a>
+<a class="sourceLine" id="cb76-21" data-line-number="21">        productCode(pc),</a>
+<a class="sourceLine" id="cb76-22" data-line-number="22">        check(c),</a>
+<a class="sourceLine" id="cb76-23" data-line-number="23">        BarCodeBase(BARCODE_TYPE) </a>
+<a class="sourceLine" id="cb76-24" data-line-number="24">    {}  </a>
+<a class="sourceLine" id="cb76-25" data-line-number="25">};</a>
+<a class="sourceLine" id="cb76-26" data-line-number="26"><span class="co">// диспетчеризация по полю типа, плохой стиль</span></a>
+<a class="sourceLine" id="cb76-27" data-line-number="27"><span class="dt">void</span> Process(BarCodeBase *pBC) {</a>
+<a class="sourceLine" id="cb76-28" data-line-number="28">    <span class="cf">switch</span>(pBC-&gt;bcType) {</a>
+<a class="sourceLine" id="cb76-29" data-line-number="29">    <span class="cf">case</span> QRCODE_TYPE: {</a>
+<a class="sourceLine" id="cb76-30" data-line-number="30">        QRCode *pQR = (QRCode *)pBC;</a>
+<a class="sourceLine" id="cb76-31" data-line-number="31">        cout &lt;&lt; pQR-&gt;s;</a>
+<a class="sourceLine" id="cb76-32" data-line-number="32">        <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb76-33" data-line-number="33">    }</a>
+<a class="sourceLine" id="cb76-34" data-line-number="34">    <span class="cf">case</span> BARCODE_TYPE: {</a>
+<a class="sourceLine" id="cb76-35" data-line-number="35">        BarCode *pB = (BarCode *)pBC;</a>
+<a class="sourceLine" id="cb76-36" data-line-number="36">        cout &lt;&lt; pB-&gt;numberSystem;</a>
+<a class="sourceLine" id="cb76-37" data-line-number="37">        ...</a>
+<a class="sourceLine" id="cb76-38" data-line-number="38">        <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb76-39" data-line-number="39">    }</a>
+<a class="sourceLine" id="cb76-40" data-line-number="40">    }</a>
+<a class="sourceLine" id="cb76-41" data-line-number="41">}</a>
+<a class="sourceLine" id="cb76-42" data-line-number="42"><span class="co">// можно статически привести в нужном case </span></a>
+<a class="sourceLine" id="cb76-43" data-line-number="43">BarCode *pB = <span class="kw">static_cast</span>&lt;BarCode *&gt;(pBC);</a>
+<a class="sourceLine" id="cb76-44" data-line-number="44"><span class="co">// для полиморфных классов есть dynamic_cast, пусть есть virtual функция</span></a>
+<a class="sourceLine" id="cb76-45" data-line-number="45"><span class="dt">void</span> Process(BarCodeBase *pBC) {</a>
+<a class="sourceLine" id="cb76-46" data-line-number="46">    BarCode *pB = <span class="kw">dynamic_cast</span>&lt;BarCode*&gt;(pBC);</a>
+<a class="sourceLine" id="cb76-47" data-line-number="47">    <span class="cf">if</span> (pB) {</a>
+<a class="sourceLine" id="cb76-48" data-line-number="48">        cout &lt;&lt; pB-&gt;numberSystem;</a>
+<a class="sourceLine" id="cb76-49" data-line-number="49">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb76-50" data-line-number="50">        QRCode *pQR = <span class="kw">dynamic_cast</span>&lt;QRCode*&gt;(pBC);</a>
+<a class="sourceLine" id="cb76-51" data-line-number="51">        cout &lt;&lt; pQR-&gt;s;</a>
+<a class="sourceLine" id="cb76-52" data-line-number="52">    }</a>
+<a class="sourceLine" id="cb76-53" data-line-number="53">}</a>
+<a class="sourceLine" id="cb76-54" data-line-number="54"><span class="co">// введем virtual print() в BarCodeBase (стремиться нужно к такому коду):</span></a>
+<a class="sourceLine" id="cb76-55" data-line-number="55"><span class="dt">void</span> Process(BarCodeBase *pBC) {</a>
+<a class="sourceLine" id="cb76-56" data-line-number="56">    pBC-&gt;print(); <span class="co">// тогда нужно заранее определить набор базовых действий и поместить его в базовый класс. Это невозможно, например, при использовании API OS</span></a>
+<a class="sourceLine" id="cb76-57" data-line-number="57">}</a></code></pre></div>
+<blockquote>
+<p>Я нигде никаких дефолтов, извините за клоачный язык, не ставлю.</p>
+<p><em>Немного дополнений:</em> Словари: Go, Swift, Python — добавлены в базис языка.</p>
+</blockquote>
+<pre class="swift"><code>let s:String = &quot;A&quot;; // immutable
+var s1:String = &quot;B&quot;; // mutable</code></pre>
+<h3 id="операторы">Операторы</h3>
+<p>Изменение функцией своих параметров — побочный эффект. Изменение функцией глобальных переменных — нежелательный побочны эффект. &gt; “GOTO statement considered harmful”</p>
+<p>Все арифметико-логические команды — это выражения (expressions).</p>
+<p>Операторы: * перехода (команды управления последовательностью вычислений) * пересылки * ввода/вывода</p>
+<p>В Fortran раньше был единственный оператор управления:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">IF</span>(e) M1, M2, M3 <span class="kw">//</span> три метки <span class="kw">-</span> <span class="op">&lt;</span><span class="dv">0</span>, <span class="op">==</span><span class="dv">0</span>, <span class="op">&gt;</span><span class="dv">0</span> (изначально для трехадресных машин)</a></code></pre></div>
+<p>И один оператор цикла с фиксированным числом повторений:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">DO</span> <span class="dv">5</span> I<span class="kw">=</span><span class="dv">1</span>,<span class="dv">3</span></a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">...</a>
+<a class="sourceLine" id="cb79-3" data-line-number="3"><span class="dv">5</span> <span class="kw">CONTINUE</span></a></code></pre></div>
+<p>Оператор перехода (их было много):</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">GOTO</span> <span class="dv">5</span></a></code></pre></div>
+<p>Основные операторы циклов: * while B do S * repeat s1; …; sN until B * for i:= l1 to l2 do S</p>
+<h3 id="лекции-23-24">Лекции 23, 24</h3>
+<h3 id="операторы-1">Операторы</h3>
+<ul>
+<li>:=</li>
+<li>ветвления (if, case/switch)</li>
+<li>циклы (while, repeat, for)</li>
+<li>заменители goto (break, continue, return)</li>
+</ul>
+<p>Цикл: * Подготовка данных * Проверка данных (отсюда может быть выход из цикла) * Обработка</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="dt">int</span> ch;</a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="cf">while</span> ((ch = getchar())!=EOF)</a>
+<a class="sourceLine" id="cb81-3" data-line-number="3">    processData();</a>
+<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">// если бы присваивание не было операцией, то пришлось бы делать так:</span></a>
+<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="dt">int</span> ch;</a>
+<a class="sourceLine" id="cb81-6" data-line-number="6">ch = getchar();</a>
+<a class="sourceLine" id="cb81-7" data-line-number="7"><span class="cf">while</span> (ch!=EOF) {</a>
+<a class="sourceLine" id="cb81-8" data-line-number="8">    processData();</a>
+<a class="sourceLine" id="cb81-9" data-line-number="9">    ch = getchar();</a>
+<a class="sourceLine" id="cb81-10" data-line-number="10">    <span class="co">// дублирование кода!!!</span></a>
+<a class="sourceLine" id="cb81-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb81-12" data-line-number="12"><span class="co">// проверка данных, так например в Паскале, перед чтением надо проверять готовность данных, иначе чтение не пройдет и все свалится</span></a>
+<a class="sourceLine" id="cb81-13" data-line-number="13"><span class="cf">while</span> (checkData()) {</a>
+<a class="sourceLine" id="cb81-14" data-line-number="14">    inputData();</a>
+<a class="sourceLine" id="cb81-15" data-line-number="15">    processData();</a>
+<a class="sourceLine" id="cb81-16" data-line-number="16">    <span class="co">// тут мы не уходим от проблемы дублирования кода</span></a>
+<a class="sourceLine" id="cb81-17" data-line-number="17">}</a></code></pre></div>
+<p>Fortran, PL-1: ON OVERFLOW &lt;operators&gt; ON ENDFILE &lt;operators&gt; — авария, попытка прочитать за концом файла, оператор выхода из цикла <em>C:</em></p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="cf">for</span>(;;) { <span class="co">// бесконечный цикл</span></a>
+<a class="sourceLine" id="cb82-2" data-line-number="2">    prepareData();</a>
+<a class="sourceLine" id="cb82-3" data-line-number="3">    <span class="cf">if</span> (!ready) <span class="cf">break</span>;</a>
+<a class="sourceLine" id="cb82-4" data-line-number="4">    processData();</a>
+<a class="sourceLine" id="cb82-5" data-line-number="5">}</a></code></pre></div>
+<p>В Modula 2 оставили операторы из Паскаля и добавили бесконечный цикл: <code>Modula 2 LOOP     // operators     IF B THEN EXIT // выход из цикла END</code> <em>Swift:</em></p>
+<pre class="swift"><code>while B {
+    // operators
+}
+repeat {
+}</code></pre>
+<p><em>Go:</em></p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb84-1" data-line-number="1"><span class="co">// есть только цикл for</span></a>
+<a class="sourceLine" id="cb84-2" data-line-number="2"><span class="kw">for</span> init; cond; post {</a>
+<a class="sourceLine" id="cb84-3" data-line-number="3">    <span class="co">//</span></a>
+<a class="sourceLine" id="cb84-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb84-5" data-line-number="5"><span class="kw">for</span> i:=<span class="dv">0</span>; i &lt;= N; i++ { <span class="co">// for</span></a>
+<a class="sourceLine" id="cb84-6" data-line-number="6">    <span class="co">//</span></a>
+<a class="sourceLine" id="cb84-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb84-8" data-line-number="8"><span class="kw">for</span> i &lt;= N { <span class="co">// while</span></a>
+<a class="sourceLine" id="cb84-9" data-line-number="9">    <span class="co">//</span></a>
+<a class="sourceLine" id="cb84-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb84-11" data-line-number="11"><span class="kw">for</span> { <span class="co">// infinite</span></a>
+<a class="sourceLine" id="cb84-12" data-line-number="12">    <span class="co">//</span></a>
+<a class="sourceLine" id="cb84-13" data-line-number="13">}</a></code></pre></div>
+<blockquote>
+<p>Программистам Microsoft платят за строки, поэтому пишем, как Маяковский, — столбиком! { dosomething(); }</p>
+</blockquote>
+<p><em>Python:</em></p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="cf">while</span> B:</a>
+<a class="sourceLine" id="cb85-2" data-line-number="2">    <span class="cf">pass</span> <span class="co">#</span></a>
+<a class="sourceLine" id="cb85-3" data-line-number="3"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, N): <span class="co"># в смысле foreach</span></a>
+<a class="sourceLine" id="cb85-4" data-line-number="4">    <span class="cf">pass</span> <span class="co">#</span></a>
+<a class="sourceLine" id="cb85-5" data-line-number="5"><span class="cf">for</span> i <span class="kw">in</span> stdin.read():</a>
+<a class="sourceLine" id="cb85-6" data-line-number="6">    <span class="cf">pass</span> <span class="co">#</span></a>
+<a class="sourceLine" id="cb85-7" data-line-number="7"><span class="co"># в python есть if, но нет switch</span></a>
+<a class="sourceLine" id="cb85-8" data-line-number="8"><span class="co"># используется словарь, как и в С# встроенный в библиотеку</span></a>
+<a class="sourceLine" id="cb85-9" data-line-number="9"><span class="co"># значением словаря может быть лямбда</span></a>
+<a class="sourceLine" id="cb85-10" data-line-number="10"><span class="co"># для цикла for есть оператор else</span></a>
+<a class="sourceLine" id="cb85-11" data-line-number="11"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, N):</a>
+<a class="sourceLine" id="cb85-12" data-line-number="12">    <span class="cf">pass</span> <span class="co"># если тут будет break, то else не выполнится</span></a>
+<a class="sourceLine" id="cb85-13" data-line-number="13"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb85-14" data-line-number="14">    <span class="cf">pass</span> <span class="co"># тут может быть какая-то очистка ресурсов, например </span></a></code></pre></div>
+<blockquote>
+<p>Представьте себя маленьким симпатичным интерпретатором… Вот в 90-х у программистов шиза была — представлять себя маленькой операционной системой.</p>
+</blockquote>
+<p><em>Modula 2:</em> <code>Modula 2 for i:=e1 to e2 [step3] do S</code> Появление интерфейсов: набор методов, данных. В С++ — полностью виртуальный класс</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">class</span> ISet {</a>
+<a class="sourceLine" id="cb86-2" data-line-number="2"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb86-3" data-line-number="3">    <span class="kw">virtual</span> <span class="dt">bool</span> In(T x) = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb86-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb86-5" data-line-number="5">    <span class="kw">virtual</span> ~ISet() {} <span class="co">/* обязательно надо написать тело, он не может быть чисто виртуальным. </span></a>
+<a class="sourceLine" id="cb86-6" data-line-number="6"><span class="co">    Конструктор может быть сгенерированным, но деструктор - нет, иначе он будет не виртуальным.*/</span></a>
+<a class="sourceLine" id="cb86-7" data-line-number="7">};</a></code></pre></div>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">interface</span> IEnumerable { <span class="co">// все, что поддерживает интерфейс GetEnumerator, - коллекция</span></a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">    <span class="dt">bool</span> <span class="fu">MoveNext</span>();</a>
+<a class="sourceLine" id="cb87-3" data-line-number="3">    Object Current; <span class="kw">get</span>;</a>
+<a class="sourceLine" id="cb87-4" data-line-number="4">    <span class="dt">void</span> <span class="fu">Reset</span>();</a>
+<a class="sourceLine" id="cb87-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb87-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb87-7" data-line-number="7"><span class="co">// foreach(T x in C) S // С - коллекция, :</span></a>
+<a class="sourceLine" id="cb87-8" data-line-number="8">Iterator it = C.<span class="fu">GetEnumerator</span>();</a>
+<a class="sourceLine" id="cb87-9" data-line-number="9"><span class="kw">while</span> (it.<span class="fu">MoveNext</span>()) {</a>
+<a class="sourceLine" id="cb87-10" data-line-number="10">    x = it.<span class="fu">Current</span>;</a>
+<a class="sourceLine" id="cb87-11" data-line-number="11">    ...</a>
+<a class="sourceLine" id="cb87-12" data-line-number="12">}</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="kw">interface</span> IDisposable {</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2">    <span class="dt">void</span> <span class="fu">Dispose</span>(); <span class="co">// уничтожение элемента</span></a>
+<a class="sourceLine" id="cb88-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb88-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb88-5" data-line-number="5">Image im = Image.<span class="fu">FromFile</span>(<span class="st">&quot;C:</span><span class="sc">\\</span><span class="st">i.jpg&quot;</span>);</a>
+<a class="sourceLine" id="cb88-6" data-line-number="6"><span class="co">// мы точно не знаем, когда выполнится деструктор</span></a>
+<a class="sourceLine" id="cb88-7" data-line-number="7"><span class="co">/* здесь может возникнуть исключение, поэтому нам нужна гарантия удаления объекта: */</span></a>
+<a class="sourceLine" id="cb88-8" data-line-number="8">Image im = Image.<span class="fu">FromFile</span>(<span class="st">&quot;...&quot;</span>);</a>
+<a class="sourceLine" id="cb88-9" data-line-number="9"><span class="kw">try</span> {</a>
+<a class="sourceLine" id="cb88-10" data-line-number="10">    <span class="fu">processImage</span>(im);</a>
+<a class="sourceLine" id="cb88-11" data-line-number="11">} <span class="kw">finally</span> {</a>
+<a class="sourceLine" id="cb88-12" data-line-number="12">    ((IDisposable)im).<span class="fu">Dispose</span>(); <span class="co">// гарантированное выполнение</span></a>
+<a class="sourceLine" id="cb88-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb88-14" data-line-number="14"><span class="co">// если аварийное завершение, то все равно будет вызван деструктор</span></a>
+<a class="sourceLine" id="cb88-15" data-line-number="15">im.<span class="fu">Dispose</span>(); <span class="co">// здесь явное удаление</span></a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">using</span> (Image im = Image.<span class="fu">FromFile</span>(<span class="st">&quot;...&quot;</span>)) {</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">    <span class="fu">processImage</span>(im);</a>
+<a class="sourceLine" id="cb89-3" data-line-number="3">    <span class="co">// using блок превращается в try-finally, для im будет должным образом вызван Dispose, если im поддерживает этот интерфейс (иначе - ошибка)</span></a>
+<a class="sourceLine" id="cb89-4" data-line-number="4">}</a></code></pre></div>
+<p>try-finally присутствует во всех объектно-референциальных ЯП. <em>Java:</em></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="co">// foreach(T x in C) S</span></a>
+<a class="sourceLine" id="cb90-2" data-line-number="2"><span class="kw">for</span> (T x : C) S <span class="co">// C поддерживает коллекцию</span></a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="dt">int</span> a[] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"><span class="cf">for</span> (<span class="dt">int</span> x : a) {...}</a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="cf">for</span> (<span class="kw">auto</span> x : a) {...}</a>
+<a class="sourceLine" id="cb91-4" data-line-number="4"><span class="cf">for</span> (<span class="kw">auto</span> &amp;x : a) {<span class="co">//передача по ссылке, чтобы не копировать каждый раз, можно менять элементы}</span></a>
+<a class="sourceLine" id="cb91-5" data-line-number="5"><span class="cf">for</span> (<span class="at">const</span> <span class="kw">auto</span> &amp;x : a) {<span class="co">// передача по ссылке, менять нельзя}</span></a></code></pre></div>
+<p><em>Go:</em></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="co">// если это коллекция, то к ней применимо ключевое слово range</span></a>
+<a class="sourceLine" id="cb92-2" data-line-number="2"><span class="kw">for</span> k, v := <span class="kw">range</span> C { <span class="co">// итератор по коллекции</span></a>
+<a class="sourceLine" id="cb92-3" data-line-number="3">    <span class="co">// k - ключ, v - значение</span></a>
+<a class="sourceLine" id="cb92-4" data-line-number="4">    <span class="co">// если массив, то k - индекс, v - значение</span></a>
+<a class="sourceLine" id="cb92-5" data-line-number="5">    <span class="co">// если строка, то k - позиция от начального байта, v - rune (значение в unicode)</span></a>
+<a class="sourceLine" id="cb92-6" data-line-number="6">    <span class="co">// если map (входит в базис), k - ключ, v - значение</span></a>
+<a class="sourceLine" id="cb92-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb92-8" data-line-number="8"><span class="co">// map[тип ключа] тип значения</span></a>
+<a class="sourceLine" id="cb92-9" data-line-number="9">d <span class="kw">map</span>[<span class="dt">string</span>] <span class="dt">string</span></a>
+<a class="sourceLine" id="cb92-10" data-line-number="10"><span class="kw">for</span> _, v := <span class="kw">range</span> C { <span class="co">// фактически, foreach</span></a>
+<a class="sourceLine" id="cb92-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb92-12" data-line-number="12">}</a></code></pre></div>
+<p><em>Swift:</em></p>
+<pre class="swift"><code>for x in C {
+
+}</code></pre>
+<h3 id="средства-развития">Средства развития</h3>
+<ul>
+<li>Подпрограммы (абстракция алгоритма)</li>
+<li>Новые типы данных</li>
+<li>Модули</li>
+</ul>
+<h5 id="средства-защиты">Средства защиты</h5>
+<ul>
+<li>Инкапсуляция</li>
+<li>что-то еще</li>
+</ul>
+<p>Темы: * Передача данных в подпрограммах * Передача управления (сопрограммам и подпрограммам) * Функциональные ТД</p>
+<h4 id="передача-данных">Передача данных</h4>
+<p>Динамическое связывание Фактическаие параметры и формальные</p>
+<p>В языке Ada в функциях запрещена модификация параметров (переменные только in, не inout, как было в языке Green). Процедуры могут менять параметры, но не имеют возвращаемого значения. Не надо менять в функиях глобальные переменные!</p>
+<p><strong>InOut семантика</strong> Способы передачи параметров (связывание параметров): * <em>In семантика</em> — параметр не меняется * <em>Out семантика</em> — выходной параметр, изначальное определение параметра не требуется * <em>InOut семантика</em> — входной параметр изменяется В идеале — просто сформулировать InOut семантику, а выбор сособа передачи параметров передать компилятору. <em>Ada:</em></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">procedure</span> P (X : <span class="kw">in</span> T, I : inout T, Z : <span class="kw">out</span> T);</a></code></pre></div>
+<p>Способы (значения фактических и формальных параметров хранятся в стеке): 1. По значению (in) Фактические параметры копируются в формальные 2. По результату (out) Значения формальных параметров копируются в фактические 3. По значению/результату (inout) Фактические параметры копируются в стек перед вызовом, а по возвращении формальные копируются в фактические: вычисляются значения и места размещения фактических параметров, значения присваивают формальным параметрам, после выполнения тела подпрограммы конечные значения формальных параметров копируются обратно в места размещения, вычисленные ранее. 4. По адресу/ссылке Передаем либо адрес, либо процедуру вычисления адреса. Наиболее универсальный, с его помощью можно реализовать все 3 семантики. В Fortran изначально все параметры передавались так. 5. По имени (by name)</p>
+<blockquote>
+<p>В старых вариантах лекций, переписывая с аудио, кто-то писал “по значению результата”</p>
+</blockquote>
+<p>В современных ЯП мы специфицируем способ передачи параметров (по ссылке, по значению).</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">procedure</span> P(X, Y : inout T) <span class="kw">is</span></a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="kw">begin</span></a>
+<a class="sourceLine" id="cb95-3" data-line-number="3">    X := newval1;</a>
+<a class="sourceLine" id="cb95-4" data-line-number="4">    Y := newval2;</a>
+<a class="sourceLine" id="cb95-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb95-6" data-line-number="6"><span class="kw">end</span>;</a>
+<a class="sourceLine" id="cb95-7" data-line-number="7">// Проблемы возникают, когда передаем одно и то же значение:</a>
+<a class="sourceLine" id="cb95-8" data-line-number="8">P(A, A); // результат будет зависеть от реализации компилятора</a>
+<a class="sourceLine" id="cb95-9" data-line-number="9">P(A(i), A(j));</a>
+<a class="sourceLine" id="cb95-10" data-line-number="10">// что если внутри процедуры будет аварийная ситуация? второе значение может оказаться неопределенным</a></code></pre></div>
+<p>C: f(i++, ++i) — нестандартизовано В С++ по умолчанию все передается по значению, еси специфицируем — то по ссылке.</p>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="dt">void</span> <span class="fu">f</span>(Object o) {}</a>
+<a class="sourceLine" id="cb96-2" data-line-number="2"><span class="kw">struct</span> C {...}</a>
+<a class="sourceLine" id="cb96-3" data-line-number="3">...</a>
+<a class="sourceLine" id="cb96-4" data-line-number="4">C c = <span class="kw">new</span> <span class="fu">C</span>();</a>
+<a class="sourceLine" id="cb96-5" data-line-number="5"><span class="fu">f</span>(c); <span class="co">// неявно происходит упаковка и распаковка объекта</span></a>
+<a class="sourceLine" id="cb96-6" data-line-number="6"><span class="dt">void</span> <span class="fu">f</span>(T x) {} <span class="co">// если объект х - интерфейс, объект и тд, то по ссылке, иначе по значению</span></a>
+<a class="sourceLine" id="cb96-7" data-line-number="7">T a = <span class="kw">new</span> <span class="fu">T</span>();</a></code></pre></div>
+<p>Передача параметров по значению и по ссылке (ссылку тоже можно передать по ссылке)</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="dt">void</span> <span class="fu">f</span>(<span class="kw">ref</span> <span class="dt">int</span> i) {</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">    ...</a>
+<a class="sourceLine" id="cb97-3" data-line-number="3">    i = <span class="dv">5</span>;</a>
+<a class="sourceLine" id="cb97-4" data-line-number="4">    ...</a>
+<a class="sourceLine" id="cb97-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb97-6" data-line-number="6"><span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb97-7" data-line-number="7"><span class="fu">f</span>(<span class="kw">ref</span> i); <span class="co">// ошибка времени выполнения, ref - inout семантика, параметр должен быть определен!</span></a>
+<a class="sourceLine" id="cb97-8" data-line-number="8"><span class="fu">f</span>(<span class="kw">out</span> i); <span class="co">// задаем out семантику, i может быть неопределен</span></a>
+<a class="sourceLine" id="cb97-9" data-line-number="9"><span class="dt">int</span> a = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb97-10" data-line-number="10"><span class="fu">f</span>(<span class="kw">ref</span> a);</a>
+<a class="sourceLine" id="cb97-11" data-line-number="11"><span class="co">// Классы обертки:</span></a>
+<a class="sourceLine" id="cb97-12" data-line-number="12"><span class="dt">int</span> Int32.<span class="fu">Parse</span>(<span class="dt">string</span> s); <span class="co">// если там может быть не число, то:</span></a>
+<a class="sourceLine" id="cb97-13" data-line-number="13"><span class="dt">bool</span> Int32.<span class="fu">TryParse</span>(<span class="dt">string</span> s, <span class="kw">out</span> i); <span class="co">// не требуется изначального определения i, но i надо описать где-то</span></a>
+<a class="sourceLine" id="cb97-14" data-line-number="14"><span class="co">// чтобы избавиться от этого, внутри условного оператора можно объявить i = TryParse</span></a></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="dt">void</span> <span class="fu">Init</span>(<span class="kw">out</span> X a, <span class="kw">out</span> X b, <span class="kw">out</span> X c) {</a>
+<a class="sourceLine" id="cb98-2" data-line-number="2">    a = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb98-3" data-line-number="3">    b = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb98-4" data-line-number="4">    c = <span class="kw">new</span> <span class="fu">X</span>();</a>
+<a class="sourceLine" id="cb98-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="fu">Init</span>(<span class="kw">out</span> a, <span class="kw">out</span> b, <span class="kw">out</span> c);</a></code></pre></div>
+<p><strong>thunk</strong> — передача по имени some language:</p>
+<pre><code>procedure P(X byname T)
+    X := 0
+T a;
+P(a); </code></pre>
+<p>В Algol68 нельзя написать корректно работающую программу swap</p>
+<pre><code>procedure swap(x, y: byname int)
+    t : int;
+begin
+    t := x;
+    x := y;
+    y := t;
+end
+
+int a[10];
+int i = 0;
+swap(a[i], i); // thunk для i вычисляет адрес i, для a[i] - адрес, на основе i. будет работать некорректно</code></pre>
+<p>Перегрузка оператора присваивания</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb101-1" data-line-number="1">X &amp;<span class="kw">operator</span>=(<span class="at">const</span> X &amp;rhs) {</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2">    <span class="cf">if</span> (&amp;rhs == <span class="kw">this</span>)</a>
+<a class="sourceLine" id="cb101-3" data-line-number="3">        <span class="cf">return</span> *<span class="kw">this</span>; <span class="co">// нельзя удалять старые данные, вдруг мы присваиваем самого себя</span></a>
+<a class="sourceLine" id="cb101-4" data-line-number="4">    <span class="co">// здесь можно удалять старое и делать глубокое присваивание rhs</span></a>
+<a class="sourceLine" id="cb101-5" data-line-number="5">}</a></code></pre></div>
+<p>В Lisp параметры как-то передаются, это не так важно (ничего не меняется, никаких проблем не возникает из-за отсутствия понятия состояния).</p>
+<h4 id="передача-управления">Передача управления</h4>
+<p><em>Подпрограмма</em> Caller (глваная программа) -&gt; Call (вызов) -&gt; Callee (вызываемый) -&gt; Return -&gt; .Call (возврат в точку вызова)-&gt; продолжение программы <em>Сопрограмма</em> (похоже на два потока управления) P1 -&gt; Resume P2 -&gt; P2 -&gt; Resume P1 -&gt; .Resume P2 (возврат в точку) -&gt; &lt;…&gt; -&gt; Resume P2 -&gt; P2 -&gt; Resume P1 -&gt; .Resume P2</p>
+<h3 id="лекции-25-26">Лекции 25, 26</h3>
+<h3 id="передача-управления-1">Передача управления</h3>
+<p><strong>Сопрограмма</strong> * Для подпрограмм: Главная программа (caller) и подпрограмма (callee). Главная программа сохраняет в стеке адрес возврата (стековый фрейм). * В сопрограммах: Нет главной программы, нет ключевых слов call и return, есть resume. Но это не многопоточность, хоть речь и идет о потоках управления. Round Robin. С точки зрения реализации сопрограмма должна хранить свое состояние (адрес возобновления, стек, регистры и тд). Modula 2: <code>Modula 2 PROCEDURE NEWPROCESS     (P: PROC; N: CARDINAL; VAR C: ADDRESS); // COROUTINE; N - размер рабочей области PROCEDURE RESUME     (VAR C1: ADDRESS);// в С1 запоминается адрес памяти, в которой запомнено состояние сопрограммы С1, управление передается С2</code></p>
+<pre><code>// MODULE M[4];
+DEFINITION MODULE M[4];
+    TYPE SIGNAL
+    PROCEDURE WAIT(VAR S: SIGNAL);
+    PROCEDURE SEND(VAR S: SIGNAL);
+    PROCEDURE INIT(VAR S: SIGNAL);</code></pre>
+<pre><code>DEFINITION MODULE [4]; // типичный интерфейс
+IMPLEMENTATION MODULE [4]; // модули реализации, могли быть откомпилированы после модуля определения.</code></pre>
+<p>m.mod -&gt; m.obj m.def -&gt; m.sym</p>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb104-1" data-line-number="1">Interface IEnumerable<span class="co">/*&lt;T&gt;*/</span> {</a>
+<a class="sourceLine" id="cb104-2" data-line-number="2">    IEnumerator<span class="co">/*&lt;T&gt;*/</span> <span class="fu">GetEnumerator</span>();</a>
+<a class="sourceLine" id="cb104-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb104-4" data-line-number="4">Interface IEnumerator {</a>
+<a class="sourceLine" id="cb104-5" data-line-number="5">    Object<span class="co">/* T*/</span> Current; <span class="kw">get</span>;</a>
+<a class="sourceLine" id="cb104-6" data-line-number="6">    <span class="dt">bool</span> <span class="fu">MoveNext</span>();</a>
+<a class="sourceLine" id="cb104-7" data-line-number="7">    <span class="dt">void</span> <span class="fu">Reset</span>();</a>
+<a class="sourceLine" id="cb104-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb104-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb104-10" data-line-number="10"><span class="co">// foreach (T x in C)</span></a>
+<a class="sourceLine" id="cb104-11" data-line-number="11">IEnumerator i = C.<span class="fu">GetEnumerator</span>();</a>
+<a class="sourceLine" id="cb104-12" data-line-number="12"><span class="kw">while</span> (i.<span class="fu">MoveNext</span>()) {</a>
+<a class="sourceLine" id="cb104-13" data-line-number="13">    x = (T)<span class="co">/**/</span>i.<span class="fu">Current</span>;</a>
+<a class="sourceLine" id="cb104-14" data-line-number="14">    ...</a>
+<a class="sourceLine" id="cb104-15" data-line-number="15">}</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="kw">class</span> Iterator: IEnumerator&lt;T&gt; {</a>
+<a class="sourceLine" id="cb105-2" data-line-number="2">    T []arr;</a>
+<a class="sourceLine" id="cb105-3" data-line-number="3">    <span class="dt">int</span> index;</a>
+<a class="sourceLine" id="cb105-4" data-line-number="4">    <span class="fu">Iterator</span>(T []a) {</a>
+<a class="sourceLine" id="cb105-5" data-line-number="5">        arr = a;</a>
+<a class="sourceLine" id="cb105-6" data-line-number="6">        index = <span class="dv">-1</span>;</a>
+<a class="sourceLine" id="cb105-7" data-line-number="7">    }</a>
+<a class="sourceLine" id="cb105-8" data-line-number="8">    <span class="dt">bool</span> <span class="fu">MoveNext</span>() {</a>
+<a class="sourceLine" id="cb105-9" data-line-number="9">        index++;</a>
+<a class="sourceLine" id="cb105-10" data-line-number="10">        <span class="kw">return</span> index &lt; arr.<span class="fu">length</span>;</a>
+<a class="sourceLine" id="cb105-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb105-12" data-line-number="12">    <span class="dt">void</span> <span class="fu">Reset</span>() {</a>
+<a class="sourceLine" id="cb105-13" data-line-number="13">        index = <span class="dv">-1</span>;</a>
+<a class="sourceLine" id="cb105-14" data-line-number="14">    }</a>
+<a class="sourceLine" id="cb105-15" data-line-number="15">    T Current {</a>
+<a class="sourceLine" id="cb105-16" data-line-number="16">        <span class="kw">get</span> { <span class="kw">return</span> arr[index]; }</a>
+<a class="sourceLine" id="cb105-17" data-line-number="17">    }</a>
+<a class="sourceLine" id="cb105-18" data-line-number="18">}</a>
+<a class="sourceLine" id="cb105-19" data-line-number="19"><span class="kw">class</span> Collection: IEnumerable {</a>
+<a class="sourceLine" id="cb105-20" data-line-number="20">    T []arr = <span class="kw">new</span> T[<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb105-21" data-line-number="21">    <span class="kw">public</span> IEnumerator&lt;T&gt; <span class="fu">GetEnumerator</span>() {</a>
+<a class="sourceLine" id="cb105-22" data-line-number="22">        <span class="kw">return</span> <span class="kw">new</span> <span class="fu">Iterator</span>(arr);</a>
+<a class="sourceLine" id="cb105-23" data-line-number="23">    }</a>
+<a class="sourceLine" id="cb105-24" data-line-number="24">}</a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb106-1" data-line-number="1">IEnumerator&lt;T&gt; <span class="fu">GetEnumerator</span>() {</a>
+<a class="sourceLine" id="cb106-2" data-line-number="2">    <span class="dt">int</span> index = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb106-3" data-line-number="3">    <span class="kw">while</span> (index &lt; arr.<span class="fu">length</span>) {</a>
+<a class="sourceLine" id="cb106-4" data-line-number="4">        <span class="kw">yield</span> <span class="kw">return</span> arr[index];</a>
+<a class="sourceLine" id="cb106-5" data-line-number="5">        index++;</a>
+<a class="sourceLine" id="cb106-6" data-line-number="6">    }</a>
+<a class="sourceLine" id="cb106-7" data-line-number="7">    <span class="kw">yield</span> <span class="kw">break</span>;</a>
+<a class="sourceLine" id="cb106-8" data-line-number="8">}</a></code></pre></div>
+<p><em>Python:</em></p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="co">#python2</span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2"><span class="bu">xrange</span>(<span class="dv">1</span>, <span class="dv">1000</span>) <span class="co"># генератор</span></a>
+<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">1000</span>) <span class="co"># список</span></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4"><span class="co">#python3</span></a>
+<a class="sourceLine" id="cb107-5" data-line-number="5"><span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>) <span class="co"># генератор</span></a>
+<a class="sourceLine" id="cb107-6" data-line-number="6"><span class="kw">def</span> fib(n):</a>
+<a class="sourceLine" id="cb107-7" data-line-number="7">    a <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb107-8" data-line-number="8">    b <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb107-9" data-line-number="9">    i <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb107-10" data-line-number="10">    <span class="cf">while</span> i <span class="op">&lt;</span> n:</a>
+<a class="sourceLine" id="cb107-11" data-line-number="11">        <span class="cf">yield</span> a</a>
+<a class="sourceLine" id="cb107-12" data-line-number="12">        a, b <span class="op">=</span> b, a<span class="op">+</span>b</a>
+<a class="sourceLine" id="cb107-13" data-line-number="13">        i <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb107-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb107-15" data-line-number="15">g <span class="op">=</span> fib(<span class="dv">100</span>) <span class="co"># g - генератор</span></a>
+<a class="sourceLine" id="cb107-16" data-line-number="16"><span class="bu">next</span>(g) <span class="co"># прогон до следующего yield</span></a>
+<a class="sourceLine" id="cb107-17" data-line-number="17">...</a>
+<a class="sourceLine" id="cb107-18" data-line-number="18"><span class="co"># после 100 GeneratorExit exception</span></a>
+<a class="sourceLine" id="cb107-19" data-line-number="19"><span class="kw">def</span> gen(l):</a>
+<a class="sourceLine" id="cb107-20" data-line-number="20">    i <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb107-21" data-line-number="21">    <span class="cf">while</span> <span class="bu">len</span>(l) <span class="op">&gt;</span> i:</a>
+<a class="sourceLine" id="cb107-22" data-line-number="22">        <span class="cf">yield</span> l[i]</a>
+<a class="sourceLine" id="cb107-23" data-line-number="23">        i <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb107-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb107-25" data-line-number="25"><span class="kw">def</span> <span class="bu">sum</span>():</a>
+<a class="sourceLine" id="cb107-26" data-line-number="26">    count <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb107-27" data-line-number="27">    <span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb107-28" data-line-number="28">        count <span class="op">+=</span> (<span class="cf">yield</span>) <span class="co"># yield-выражение</span></a>
+<a class="sourceLine" id="cb107-29" data-line-number="29">        <span class="bu">print</span>(count)</a>
+<a class="sourceLine" id="cb107-30" data-line-number="30">s <span class="op">=</span> <span class="bu">sum</span>()</a>
+<a class="sourceLine" id="cb107-31" data-line-number="31"><span class="bu">next</span>(s)</a>
+<a class="sourceLine" id="cb107-32" data-line-number="32">s.send(<span class="dv">5</span>) <span class="co"># 5 в качестве yield-выражения, напечатано 5</span></a>
+<a class="sourceLine" id="cb107-33" data-line-number="33">s.send(<span class="dv">8</span>) <span class="co"># напечатается 13</span></a></code></pre></div>
+<h3 id="передача-параметров">Передача параметров</h3>
+<ol type="1">
+<li>Переменный список параметров
+<ul>
+<li>Параметры по умолчанию (но их все равно конечное число)</li>
+</ul>
+<div class="sourceCode" id="cb108"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="dt">int</span> f(<span class="dt">int</span> x=<span class="dv">0</span>, <span class="dt">int</span> y=<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb108-2" data-line-number="2">f();</a>
+<a class="sourceLine" id="cb108-3" data-line-number="3">f(<span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb108-4" data-line-number="4">f(<span class="dv">1</span>, <span class="dv">2</span>);</a></code></pre></div></li>
+<li>Позиционный способ указания параметров</li>
+</ol>
+<pre><code>f(,,,val1, ,, val2)</code></pre>
+<ol start="3" type="1">
+<li>Ключевой способ указания параметров (указание имени)</li>
+</ol>
+<pre><code>f(value1: val1, value2: val2)
+func name_func(label:name:type, ...) -&gt; type
+func sub(offset:ofs:int) -&gt; int
+sub(offset:1)</code></pre>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="dt">void</span> <span class="fu">foo</span>(<span class="dt">int</span> a, <span class="kw">params</span> <span class="dt">double</span>[] d);</a>
+<a class="sourceLine" id="cb111-2" data-line-number="2"><span class="dt">void</span> <span class="fu">foo</span>(<span class="dt">int</span> a, <span class="dt">double</span>[] d); <span class="co">// разные функции!</span></a>
+<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="fu">foo</span>(<span class="dv">0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>); <span class="co">// соберется в массив и передастся в первую функцию</span></a>
+<a class="sourceLine" id="cb111-4" data-line-number="4"><span class="fu">foo</span>(<span class="dv">0</span>, <span class="kw">new</span> <span class="dt">double</span>[]{<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>}); <span class="co">// явное задание массива double</span></a>
+<a class="sourceLine" id="cb111-5" data-line-number="5"><span class="dt">void</span> <span class="fu">foo</span>(<span class="kw">params</span> Object[] o); <span class="co">// переменный список параметов любого типа</span></a>
+<a class="sourceLine" id="cb111-6" data-line-number="6"><span class="co">// Java: void foo(Object... o)</span></a></code></pre></div>
+<p><em>Swift:</em></p>
+<pre class="swift"><code>func foo(_ a: Int, _ d: Double...) {
+    print(a, d) // 1 [2.0, 3.0, 4.0]
+}
+
+foo(1, 2, 3, 4)</code></pre>
+<p><em>Java и C#:</em></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="bu">Object</span> o = <span class="bu">Integer</span>(<span class="dv">5</span>); <span class="co">// автораспаковка</span></a>
+<a class="sourceLine" id="cb113-2" data-line-number="2">Int32 i = (Int32)o;</a>
+<a class="sourceLine" id="cb113-3" data-line-number="3"><span class="dt">int</span> ii = i;</a>
+<a class="sourceLine" id="cb113-4" data-line-number="4"><span class="bu">Object</span> o1 = <span class="dv">5</span>; <span class="co">// автоупаковка</span></a></code></pre></div>
+<h3 id="функциональные-типы-данных">Функциональные типы данных</h3>
+<div class="sourceCode" id="cb114"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="kw">typedef</span> <span class="dt">void</span> (*pvf)(); <span class="co">// pvf() - тогда должен быть указатель</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2"><span class="co">// void (*pvf())() - функция, возвращающая указатель на функцию типа void</span></a>
+<a class="sourceLine" id="cb114-3" data-line-number="3"><span class="dt">void</span> bar();</a>
+<a class="sourceLine" id="cb114-4" data-line-number="4">pvf foo = bar; <span class="co">// *foo = bar</span></a></code></pre></div>
+<p><em>Ada:</em></p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode ada"><code class="sourceCode ada"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="kw">TYPE</span> PPC = <span class="kw">PROCEDURE</span>(VAR: <span class="dt">INTEGER</span>, REAL):REAL;</a></code></pre></div>
+<p>Замыкание</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode pascal"><code class="sourceCode pascal"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="kw">procedure</span> P(i:<span class="dt">integer</span>);</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2">    <span class="kw">var</span> j, k: <span class="dt">integer</span>;</a>
+<a class="sourceLine" id="cb116-3" data-line-number="3">    <span class="kw">procedure</span> InnerP(l:<span class="dt">integer</span>);</a>
+<a class="sourceLine" id="cb116-4" data-line-number="4">        begin:</a>
+<a class="sourceLine" id="cb116-5" data-line-number="5">            ..k, j, l..</a>
+<a class="sourceLine" id="cb116-6" data-line-number="6">        <span class="kw">end</span>;</a>
+<a class="sourceLine" id="cb116-7" data-line-number="7">    begin:</a>
+<a class="sourceLine" id="cb116-8" data-line-number="8">        InnerP;</a>
+<a class="sourceLine" id="cb116-9" data-line-number="9">    <span class="kw">end</span>;</a></code></pre></div>
+<p><em>Python:</em></p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="kw">def</span> inc1(): <span class="co"># замыкание</span></a>
+<a class="sourceLine" id="cb117-2" data-line-number="2">    n <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb117-3" data-line-number="3">    <span class="kw">def</span> f():</a>
+<a class="sourceLine" id="cb117-4" data-line-number="4">        n <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb117-5" data-line-number="5">        <span class="cf">return</span> n</a>
+<a class="sourceLine" id="cb117-6" data-line-number="6">    <span class="cf">return</span> f</a>
+<a class="sourceLine" id="cb117-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb117-8" data-line-number="8"><span class="kw">def</span> incNbyM(N, M): <span class="co"># замыкание</span></a>
+<a class="sourceLine" id="cb117-9" data-line-number="9">    n <span class="op">=</span> N</a>
+<a class="sourceLine" id="cb117-10" data-line-number="10">    <span class="kw">def</span> f():</a>
+<a class="sourceLine" id="cb117-11" data-line-number="11">        n <span class="op">+=</span> M</a>
+<a class="sourceLine" id="cb117-12" data-line-number="12">        <span class="cf">return</span> n</a>
+<a class="sourceLine" id="cb117-13" data-line-number="13">    <span class="cf">return</span> f</a>
+<a class="sourceLine" id="cb117-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb117-15" data-line-number="15"><span class="kw">def</span> add(x, y):</a>
+<a class="sourceLine" id="cb117-16" data-line-number="16">    <span class="cf">return</span> x<span class="op">+</span>y</a>
+<a class="sourceLine" id="cb117-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb117-18" data-line-number="18"><span class="kw">def</span> add1(x): <span class="co"># не замыкание</span></a>
+<a class="sourceLine" id="cb117-19" data-line-number="19">    <span class="cf">return</span> add(x, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb117-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb117-21" data-line-number="21"><span class="kw">def</span> add1_1(): <span class="co"># замыкание</span></a>
+<a class="sourceLine" id="cb117-22" data-line-number="22">    <span class="kw">def</span> adder1(x):</a>
+<a class="sourceLine" id="cb117-23" data-line-number="23">        <span class="cf">return</span> add(x, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb117-24" data-line-number="24">    <span class="cf">return</span> adder1</a>
+<a class="sourceLine" id="cb117-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb117-26" data-line-number="26"><span class="kw">def</span> add1_2():</a>
+<a class="sourceLine" id="cb117-27" data-line-number="27">    <span class="cf">return</span> LAMBDA(x): add(x, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb117-28" data-line-number="28"></a>
+<a class="sourceLine" id="cb117-29" data-line-number="29">inc1 <span class="op">=</span> add1_1()</a>
+<a class="sourceLine" id="cb117-30" data-line-number="30">inc1(<span class="dv">5</span>)</a></code></pre></div>
+<p><em>JavaScript:</em></p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode javascript"><code class="sourceCode javascript"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="kw">function</span> <span class="at">add</span>(x<span class="op">,</span> y) <span class="op">{</span><span class="cf">return</span> x<span class="op">+</span> y<span class="op">}</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="kw">function</span> <span class="at">add1</span>()</a>
+<a class="sourceLine" id="cb118-3" data-line-number="3"><span class="op">{</span></a>
+<a class="sourceLine" id="cb118-4" data-line-number="4">    <span class="cf">return</span> x <span class="op">=&gt;</span> <span class="at">add</span>(x<span class="op">,</span> <span class="dv">1</span>) <span class="co">// или вот так:</span></a>
+<a class="sourceLine" id="cb118-5" data-line-number="5">    <span class="co">// function(x) {return add(x, 1)} // анонимная функция</span></a>
+<a class="sourceLine" id="cb118-6" data-line-number="6"><span class="op">}</span></a></code></pre></div>
+<p><em>С++:</em></p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb119-3" data-line-number="3">    <span class="at">static</span> <span class="dt">void</span> f(x);</a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">    <span class="dt">void</span> g() {..}</a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">    <span class="dt">int</span> j;</a>
+<a class="sourceLine" id="cb119-6" data-line-number="6">};</a>
+<a class="sourceLine" id="cb119-7" data-line-number="7"><span class="kw">typedef</span> <span class="dt">void</span> (*pvf)();</a>
+<a class="sourceLine" id="cb119-8" data-line-number="8">pvf foo;</a>
+<a class="sourceLine" id="cb119-9" data-line-number="9">foo = X::f;</a>
+<a class="sourceLine" id="cb119-10" data-line-number="10">foo = X::g; <span class="co">// ошибка, g - функция-член, для нее отдельный вид указателя</span></a>
+<a class="sourceLine" id="cb119-11" data-line-number="11"><span class="dt">int</span> X::*p; <span class="co">// указатель на член класса X типа int (должен быть static), чтобы можно было обратиться не через экземпляр класса:</span></a>
+<a class="sourceLine" id="cb119-12" data-line-number="12"><span class="co">/* int X::*pp = &amp;X::j; static int j in class X, указатель не совсем указатель, а скорее смещение от начала полей класса*/</span></a>
+<a class="sourceLine" id="cb119-13" data-line-number="13">X a;</a>
+<a class="sourceLine" id="cb119-14" data-line-number="14">p = &amp;X::j;</a>
+<a class="sourceLine" id="cb119-15" data-line-number="15">a.*p; <span class="co">// обращение к члену j</span></a>
+<a class="sourceLine" id="cb119-16" data-line-number="16">X *pa;</a>
+<a class="sourceLine" id="cb119-17" data-line-number="17">pa-&gt;*p;</a></code></pre></div>
+<h3 id="лекции-27-28">Лекции 27, 28</h3>
+<h3 id="функциональные-типы-данных-1">Функциональные типы данных</h3>
+<p><em>C++, C#, Java:</em> * Глобальные функции (статические функции-члены) * Функции-члены (нестатические)</p>
+<p><em>C++:</em></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="dt">int</span> x;</a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">class</span> A {</a>
+<a class="sourceLine" id="cb120-3" data-line-number="3"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb120-4" data-line-number="4">    <span class="at">static</span> <span class="dt">int</span> g;</a>
+<a class="sourceLine" id="cb120-5" data-line-number="5">    <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb120-6" data-line-number="6">    <span class="dt">int</span> k;</a>
+<a class="sourceLine" id="cb120-7" data-line-number="7">    <span class="dt">void</span> foo();</a>
+<a class="sourceLine" id="cb120-8" data-line-number="8">    <span class="at">static</span> <span class="dt">void</span> bar();</a>
+<a class="sourceLine" id="cb120-9" data-line-number="9">    <span class="dt">void</span> q();</a>
+<a class="sourceLine" id="cb120-10" data-line-number="10">};</a>
+<a class="sourceLine" id="cb120-11" data-line-number="11">...</a>
+<a class="sourceLine" id="cb120-12" data-line-number="12"><span class="dt">int</span> *pi;</a>
+<a class="sourceLine" id="cb120-13" data-line-number="13">pi = &amp;x;</a>
+<a class="sourceLine" id="cb120-14" data-line-number="14">pi = &amp;A::g; <span class="co">// указатель на статический член - просто как указатель на такую переменную</span></a>
+<a class="sourceLine" id="cb120-15" data-line-number="15"><span class="dt">int</span> A::g = <span class="dv">1</span>;</a>
+<a class="sourceLine" id="cb120-16" data-line-number="16">*pi = <span class="dv">2</span>;</a>
+<a class="sourceLine" id="cb120-17" data-line-number="17"><span class="dt">int</span> A::*piA;</a>
+<a class="sourceLine" id="cb120-18" data-line-number="18">piA = &amp;A::i;</a>
+<a class="sourceLine" id="cb120-19" data-line-number="19">piA = &amp;A::k;</a>
+<a class="sourceLine" id="cb120-20" data-line-number="20">A a;</a>
+<a class="sourceLine" id="cb120-21" data-line-number="21"><span class="co">// &amp;a.i - можно</span></a>
+<a class="sourceLine" id="cb120-22" data-line-number="22"><span class="co">// a.*piA</span></a>
+<a class="sourceLine" id="cb120-23" data-line-number="23">piA = &amp;A::i;</a>
+<a class="sourceLine" id="cb120-24" data-line-number="24">pi = &amp;a.i;</a>
+<a class="sourceLine" id="cb120-25" data-line-number="25"><span class="co">// a.*piA ~ *pi</span></a>
+<a class="sourceLine" id="cb120-26" data-line-number="26">pvf = &amp;A::bar;</a>
+<a class="sourceLine" id="cb120-27" data-line-number="27"><span class="dt">void</span> (A::*pf)();</a>
+<a class="sourceLine" id="cb120-28" data-line-number="28">pf = &amp;A::foo;</a>
+<a class="sourceLine" id="cb120-29" data-line-number="29">pf = &amp;A::q;</a>
+<a class="sourceLine" id="cb120-30" data-line-number="30">a.*pf();</a>
+<a class="sourceLine" id="cb120-31" data-line-number="31"><span class="co">// информацию о том, виртуальная ли функция, надо хранить с указателем</span></a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="co">// find_if(it1, it2, f) - ?</span></a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="kw">class</span> Functor {</a>
+<a class="sourceLine" id="cb121-3" data-line-number="3">    T _a;</a>
+<a class="sourceLine" id="cb121-4" data-line-number="4"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb121-5" data-line-number="5">    <span class="dt">bool</span> <span class="kw">operator</span>()(T x) {<span class="cf">return</span> x == _a;}</a>
+<a class="sourceLine" id="cb121-6" data-line-number="6">    Functor(a) {_a = a;}</a>
+<a class="sourceLine" id="cb121-7" data-line-number="7">};</a>
+<a class="sourceLine" id="cb121-8" data-line-number="8"><span class="dt">int</span> arr[N];</a>
+<a class="sourceLine" id="cb121-9" data-line-number="9"><span class="dt">int</span> k;</a>
+<a class="sourceLine" id="cb121-10" data-line-number="10">find_if(begin(arr), end(arr), Functor(k));</a>
+<a class="sourceLine" id="cb121-11" data-line-number="11"><span class="co">// it =?= end(arr)</span></a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb122-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;functional&gt;</span></a>
+<a class="sourceLine" id="cb122-2" data-line-number="2"><span class="co">// std::function&lt;R(a1, a2, ..)&gt;</span></a>
+<a class="sourceLine" id="cb122-3" data-line-number="3"><span class="bu">std::</span>function&lt;<span class="dt">void</span>()&gt; func;</a>
+<a class="sourceLine" id="cb122-4" data-line-number="4">func = &amp;A::bar();</a>
+<a class="sourceLine" id="cb122-5" data-line-number="5">func = &amp;A::foo();</a>
+<a class="sourceLine" id="cb122-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb122-7" data-line-number="7"><span class="kw">class</span> VoidFunc {</a>
+<a class="sourceLine" id="cb122-8" data-line-number="8"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb122-9" data-line-number="9">    <span class="dt">void</span> <span class="kw">operator</span>()(){..}</a>
+<a class="sourceLine" id="cb122-10" data-line-number="10">};</a>
+<a class="sourceLine" id="cb122-11" data-line-number="11">VoidFunc f;</a>
+<a class="sourceLine" id="cb122-12" data-line-number="12">func = &amp;f;</a>
+<a class="sourceLine" id="cb122-13" data-line-number="13">func(); <span class="co">// вызов</span></a></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="dt">int</span> add(<span class="dt">int</span> a, <span class="dt">int</span> b) {<span class="cf">return</span> a + b;}</a>
+<a class="sourceLine" id="cb123-2" data-line-number="2">inr sub(<span class="dt">int</span> a, <span class="dt">int</span> b) {<span class="cf">return</span> a - b;}</a>
+<a class="sourceLine" id="cb123-3" data-line-number="3"><span class="bu">std::</span>function&lt;<span class="dt">int</span>(<span class="dt">int</span>, <span class="dt">int</span>)&gt; f;</a>
+<a class="sourceLine" id="cb123-4" data-line-number="4">f = add;</a>
+<a class="sourceLine" id="cb123-5" data-line-number="5"><span class="bu">std::</span>function&lt;<span class="dt">int</span>(<span class="dt">int</span>)&gt; f1 = <span class="bu">std::</span>bind(f, <span class="dv">2</span>, <span class="dv">10</span>); <span class="co">// add</span></a>
+<a class="sourceLine" id="cb123-6" data-line-number="6"><span class="kw">auto</span> foo = <span class="bu">std::</span>bind(add, _1, <span class="dv">5</span>); <span class="co">// std::function&lt;int(int)&gt; </span></a>
+<a class="sourceLine" id="cb123-7" data-line-number="7">foo(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb123-8" data-line-number="8"><span class="kw">auto</span> bar = <span class="bu">std::</span>bind(sub, _1, <span class="dv">8</span>);</a>
+<a class="sourceLine" id="cb123-9" data-line-number="9">bar(<span class="dv">25</span>); <span class="co">// первый аргумент sub, а вторым будет 8, результат 17</span></a>
+<a class="sourceLine" id="cb123-10" data-line-number="10">bar = <span class="bu">std::</span>bind(sub, _2, <span class="dv">8</span>);</a>
+<a class="sourceLine" id="cb123-11" data-line-number="11">bar(<span class="dv">25</span>); <span class="co">// -17 (25 вместо второго аргумента)</span></a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="dt">int</span> b = <span class="dv">25</span>;</a>
+<a class="sourceLine" id="cb124-2" data-line-number="2"><span class="kw">auto</span> f = []; <span class="co">// lambda - анонимный функтор</span></a>
+<a class="sourceLine" id="cb124-3" data-line-number="3"><span class="kw">auto</span> f = [&amp;b](<span class="dt">int</span> a) {<span class="cf">return</span> b += a;};</a>
+<a class="sourceLine" id="cb124-4" data-line-number="4">f(<span class="dv">1</span>);<span class="co">// 26</span></a>
+<a class="sourceLine" id="cb124-5" data-line-number="5">f(<span class="dv">2</span>);<span class="co">// 27</span></a>
+<a class="sourceLine" id="cb124-6" data-line-number="6">...</a>
+<a class="sourceLine" id="cb124-7" data-line-number="7"><span class="kw">class</span> ...{</a>
+<a class="sourceLine" id="cb124-8" data-line-number="8">    <span class="kw">auto</span> f1 = [<span class="kw">this</span>](<span class="dt">int</span> a) {<span class="dt">int</span> k...}</a>
+<a class="sourceLine" id="cb124-9" data-line-number="9">    <span class="co">// глобальные переменные не входят в замыкание</span></a>
+<a class="sourceLine" id="cb124-10" data-line-number="10">    <span class="co">// неявные ссылки на глобальные переменные запрещены</span></a>
+<a class="sourceLine" id="cb124-11" data-line-number="11">};</a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb125-1" data-line-number="1"><span class="dt">int</span> arr[<span class="dv">10</span>];</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2"><span class="dt">int</span> k;</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3">find_if(begin(arr), end(arr), [k](<span class="dt">int</span> x) {<span class="cf">return</span> x == k;});</a></code></pre></div>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb126-1" data-line-number="1">type fii = <span class="fu">function</span>(i, j : integer) : integer;</a></code></pre></div>
+<p><em>C#:</em></p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb127-1" data-line-number="1"><span class="co">// все есть класс</span></a>
+<a class="sourceLine" id="cb127-2" data-line-number="2"><span class="co">//System Delegate</span></a>
+<a class="sourceLine" id="cb127-3" data-line-number="3"><span class="co">//  MulticastDelegate</span></a>
+<a class="sourceLine" id="cb127-4" data-line-number="4">pvf cb;</a>
+<a class="sourceLine" id="cb127-5" data-line-number="5"><span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb127-6" data-line-number="6">    <span class="kw">delegate</span> <span class="dt">void</span> <span class="fu">pvf</span>();</a>
+<a class="sourceLine" id="cb127-7" data-line-number="7">    <span class="dt">void</span> <span class="fu">foo</span>() {..}</a>
+<a class="sourceLine" id="cb127-8" data-line-number="8">    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">bar</span>() {..}</a>
+<a class="sourceLine" id="cb127-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb127-10" data-line-number="10"><span class="kw">class</span> Y {</a>
+<a class="sourceLine" id="cb127-11" data-line-number="11">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">g</span>() {..}</a>
+<a class="sourceLine" id="cb127-12" data-line-number="12">    <span class="kw">public</span> <span class="kw">static</span> <span class="dt">void</span> <span class="fu">gg</span>() {..}</a>
+<a class="sourceLine" id="cb127-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb127-14" data-line-number="14"><span class="dt">void</span> <span class="fu">xxx</span>() {</a>
+<a class="sourceLine" id="cb127-15" data-line-number="15">    cb = <span class="kw">new</span> <span class="fu">pvf</span>(foo);</a>
+<a class="sourceLine" id="cb127-16" data-line-number="16">    Y y;</a>
+<a class="sourceLine" id="cb127-17" data-line-number="17">    cb += <span class="kw">new</span> <span class="fu">pvf</span>(bar);</a>
+<a class="sourceLine" id="cb127-18" data-line-number="18">    cb += <span class="kw">new</span> <span class="fu">pvf</span>(Y.<span class="fu">gg</span>);</a>
+<a class="sourceLine" id="cb127-19" data-line-number="19">    cb += <span class="kw">new</span> <span class="fu">pvf</span>(Y.<span class="fu">g</span>);</a>
+<a class="sourceLine" id="cb127-20" data-line-number="20">    <span class="fu">cb</span>(); <span class="co">// все зарегистрированные делегаты будут вызваны</span></a>
+<a class="sourceLine" id="cb127-21" data-line-number="21">    </a></code></pre></div>
+<p>Делегаты не являются отдельным типом данных. Зато используется для оповещения о событиях (подписка: +=, отписка: -=, рассылка - вызов).</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb128-1" data-line-number="1"><span class="kw">public</span> <span class="kw">event</span> pvf myEv; <span class="co">// на этот экзамепляр: изнутри применимы все операции, извне (из другого класса) только += и -=.</span></a>
+<a class="sourceLine" id="cb128-2" data-line-number="2">myEv = <span class="kw">new</span> <span class="fu">pvf</span>(X.<span class="fu">foo</span>)</a>
+<a class="sourceLine" id="cb128-3" data-line-number="3"><span class="fu">myEv</span>();</a>
+<a class="sourceLine" id="cb128-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb128-5" data-line-number="5"><span class="kw">public</span> <span class="kw">event</span> pvf cb {</a>
+<a class="sourceLine" id="cb128-6" data-line-number="6">    add{..}</a>
+<a class="sourceLine" id="cb128-7" data-line-number="7">    remove{..}</a>
+<a class="sourceLine" id="cb128-8" data-line-number="8">    <span class="co">// можно добавить свою семантику в терминах += и -=</span></a>
+<a class="sourceLine" id="cb128-9" data-line-number="9">    <span class="co">// () нельзя переопределять</span></a>
+<a class="sourceLine" id="cb128-10" data-line-number="10">}</a></code></pre></div>
+<p><strong>Обобщения</strong> <em>C#:</em></p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb129-1" data-line-number="1"><span class="kw">class</span> X&lt;..&gt;</a>
+<a class="sourceLine" id="cb129-2" data-line-number="2"><span class="kw">delegate</span> TR Func&lt;T, TR&gt; (T x);</a>
+<a class="sourceLine" id="cb129-3" data-line-number="3"><span class="co">// уже никто не пишет delegate</span></a>
+<a class="sourceLine" id="cb129-4" data-line-number="4"><span class="dt">void</span> <span class="fu">MyMethod</span>(Func&lt;<span class="dt">int</span>,<span class="dt">int</span>, <span class="dt">int</span>&gt; f) {</a>
+<a class="sourceLine" id="cb129-5" data-line-number="5">    <span class="dt">int</span> i = <span class="fu">f</span>(<span class="dv">0</span>, <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb129-6" data-line-number="6">    ...</a>
+<a class="sourceLine" id="cb129-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb129-8" data-line-number="8">EventHandler&lt;T&gt; <span class="co">// T -&gt; EventArgs</span></a>
+<a class="sourceLine" id="cb129-9" data-line-number="9"><span class="kw">static</span> <span class="dt">int</span> <span class="fu">add</span>(<span class="dt">int</span> x, <span class="dt">int</span> y) {<span class="kw">return</span> x+y;}</a>
+<a class="sourceLine" id="cb129-10" data-line-number="10">Func&lt;<span class="dt">int</span>, <span class="dt">int</span>, <span class="dt">int</span>&gt; f = add;</a>
+<a class="sourceLine" id="cb129-11" data-line-number="11">Action&lt;T1, T2, ..., TN&gt;</a>
+<a class="sourceLine" id="cb129-12" data-line-number="12">Func&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; <span class="fu">adder</span>(<span class="dt">int</span> n) { <span class="kw">return</span> <span class="fu">add</span>(<span class="dv">1</span>, n); } <span class="co">// будет сообщение об ошибке, так как возвращается выражение типа int, а надо возвращать функцию от одного параметра</span></a>
+<a class="sourceLine" id="cb129-13" data-line-number="13">Func&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; <span class="fu">adder</span>(<span class="dt">int</span> n) {</a>
+<a class="sourceLine" id="cb129-14" data-line-number="14">    Func&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; res = <span class="dt">int</span> <span class="kw">delegate</span>(<span class="dt">int</span> k) { <span class="kw">return</span> <span class="fu">add</span>(k, n); }</a>
+<a class="sourceLine" id="cb129-15" data-line-number="15">    <span class="kw">return</span> res;</a>
+<a class="sourceLine" id="cb129-16" data-line-number="16">}</a>
+<a class="sourceLine" id="cb129-17" data-line-number="17"><span class="dt">var</span> add5 = <span class="fu">adder</span>(<span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb129-18" data-line-number="18"><span class="dt">int</span> i = <span class="fu">add5</span>(<span class="dv">18</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode c#"><code class="sourceCode cs"><a class="sourceLine" id="cb130-1" data-line-number="1"><span class="co">//лямбда выражение (не делегат, а в некотором смысле генератор экземпляров делегатского типа. непонятно, какой тип возвращается</span></a>
+<a class="sourceLine" id="cb130-2" data-line-number="2">x =&gt; x+<span class="dv">1</span>; <span class="co">// список аргументов =&gt; выражение</span></a>
+<a class="sourceLine" id="cb130-3" data-line-number="3">(x, y) =&gt; x + y</a>
+<a class="sourceLine" id="cb130-4" data-line-number="4">(x, y) =&gt; {<span class="kw">return</span> x + y;} <span class="co">// можно писать в блоках</span></a>
+<a class="sourceLine" id="cb130-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb130-6" data-line-number="6">Func&lt;<span class="dt">int</span>, <span class="dt">int</span>, <span class="dt">double</span>&gt; f = (x, y)=&gt;x+y;</a>
+<a class="sourceLine" id="cb130-7" data-line-number="7"><span class="dt">void</span> <span class="fu">M</span>(Func&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; adder);</a>
+<a class="sourceLine" id="cb130-8" data-line-number="8"><span class="fu">M</span>(x=&gt;x+<span class="dv">1</span>);</a></code></pre></div>
+<p><em>C++:</em></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb131-1" data-line-number="1"><span class="kw">class</span> Outer {</a>
+<a class="sourceLine" id="cb131-2" data-line-number="2"><span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb131-3" data-line-number="3">    <span class="kw">class</span> Inner{..}</a>
+<a class="sourceLine" id="cb131-4" data-line-number="4">    <span class="at">static</span> <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb131-5" data-line-number="5">};</a>
+<a class="sourceLine" id="cb131-6" data-line-number="6">Outer::Inner in;</a>
+<a class="sourceLine" id="cb131-7" data-line-number="7">Outer::i = <span class="dv">-1</span>;</a>
+<a class="sourceLine" id="cb131-8" data-line-number="8"><span class="co">// а в Java и С# понятие статического класса появляется</span></a></code></pre></div>
+<p><em>Java:</em></p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="kw">import</span> &lt;имя_пакета&gt;.* // внутри класс или интерфейс</a>
+<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="bu">System</span>.<span class="fu">IO</span>.<span class="fu">Path</span></a>
+<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="dt">static</span> <span class="kw">class</span> Path</a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="kw">class</span> WI {</a>
+<a class="sourceLine" id="cb133-2" data-line-number="2">    string s = <span class="st">&quot;Hello&quot;</span>;</a>
+<a class="sourceLine" id="cb133-3" data-line-number="3">    <span class="kw">public</span> <span class="bu">Button</span> <span class="fu">MakeButton</span>() {</a>
+<a class="sourceLine" id="cb133-4" data-line-number="4">        <span class="bu">Button</span> res = <span class="kw">new</span> <span class="bu">Button</span>{</a>
+<a class="sourceLine" id="cb133-5" data-line-number="5">            <span class="at">@override</span></a>
+<a class="sourceLine" id="cb133-6" data-line-number="6">            <span class="kw">protected</span> <span class="dt">void</span> <span class="fu">OnClick</span>() {</a>
+<a class="sourceLine" id="cb133-7" data-line-number="7">                caption = s;</a>
+<a class="sourceLine" id="cb133-8" data-line-number="8">            }</a>
+<a class="sourceLine" id="cb133-9" data-line-number="9">        }();</a>
+<a class="sourceLine" id="cb133-10" data-line-number="10">        <span class="kw">return</span> res;</a>
+<a class="sourceLine" id="cb133-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb133-12" data-line-number="12">}</a>
+<a class="sourceLine" id="cb133-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb133-14" data-line-number="14"><span class="kw">interface</span> ISomething {</a>
+<a class="sourceLine" id="cb133-15" data-line-number="15">    <span class="dt">void</span> foo;</a>
+<a class="sourceLine" id="cb133-16" data-line-number="16">    <span class="dt">int</span> <span class="fu">bar</span>(<span class="dt">int</span>);</a>
+<a class="sourceLine" id="cb133-17" data-line-number="17">    <span class="dt">int</span> count;</a>
+<a class="sourceLine" id="cb133-18" data-line-number="18">    <span class="dt">int</span> key; set;</a>
+<a class="sourceLine" id="cb133-19" data-line-number="19">    <span class="co">// данных у интерфейса не может быть, это только функции</span></a>
+<a class="sourceLine" id="cb133-20" data-line-number="20">    <span class="co">// для события надо указать методы add и remove</span></a>
+<a class="sourceLine" id="cb133-21" data-line-number="21">    event pvf cb; add; remove;</a>
+<a class="sourceLine" id="cb133-22" data-line-number="22">}</a></code></pre></div>
+<h3 id="лекция-29-30">Лекция 29, 30</h3>
+<h3 id="функции-в-java">Функции в Java</h3>
+<ul>
+<li>1995 – 2014: не было функций, были методы (невозможны без класса).</li>
+<li>1999: в Java2 понятия внутреннего и анонимного класса (их методы уже были замыканиями). В методы внутреннего класса могли входить ссылки на внешние переменные.</li>
+</ul>
+<div class="sourceCode" id="cb134"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">class</span> Bar {</a>
+<a class="sourceLine" id="cb134-2" data-line-number="2">    <span class="dt">int</span> _mem;</a>
+<a class="sourceLine" id="cb134-3" data-line-number="3">    <span class="dt">void</span> <span class="fu">foo</span>(<span class="dt">int</span> i) {</a>
+<a class="sourceLine" id="cb134-4" data-line-number="4">        <span class="dt">int</span> k;</a>
+<a class="sourceLine" id="cb134-5" data-line-number="5">        <span class="bu">Button</span> b = <span class="kw">new</span> <span class="bu">Button</span> {</a>
+<a class="sourceLine" id="cb134-6" data-line-number="6">            <span class="dt">void</span> <span class="fu">OnClick</span>() {<span class="co">//тут могут быть ссылки на i, k и _mem}</span></a>
+<a class="sourceLine" id="cb134-7" data-line-number="7">            <span class="co">// каждый объект внутреннего класса имеет ссылку на внешний класс</span></a>
+<a class="sourceLine" id="cb134-8" data-line-number="8">        }</a>
+<a class="sourceLine" id="cb134-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb134-10" data-line-number="10">};</a></code></pre></div>
+<ul>
+<li>2005: обобщения (классы и интерфейсы)</li>
+</ul>
+<div class="sourceCode" id="cb135"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">interface</span> ISomething {</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2">    <span class="dt">void</span> <span class="fu">foo</span>();</a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">    <span class="dt">int</span> <span class="fu">bar</span>(<span class="dt">int</span> i);</a>
+<a class="sourceLine" id="cb135-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb135-5" data-line-number="5"><span class="kw">class</span> CoClass <span class="kw">implements</span> ISomething {</a>
+<a class="sourceLine" id="cb135-6" data-line-number="6">    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">foo</span>() {..}</a>
+<a class="sourceLine" id="cb135-7" data-line-number="7">    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">bar</span>(<span class="dt">int</span> i) {..}</a>
+<a class="sourceLine" id="cb135-8" data-line-number="8">}</a>
+<a class="sourceLine" id="cb135-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb135-10" data-line-number="10">CoClass c = <span class="kw">new</span> <span class="fu">CoClass</span>();</a>
+<a class="sourceLine" id="cb135-11" data-line-number="11">ISomething f = c; <span class="co">// интерфейсы наследуемы множественным образом, так как наследуется таблица виртуальных методов</span></a>
+<a class="sourceLine" id="cb135-12" data-line-number="12">f.<span class="fu">foo</span>();</a></code></pre></div>
+<ul>
+<li>функциональный интерфейс — интерфейс, в котором есть только одна функция</li>
+</ul>
+<div class="sourceCode" id="cb136"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb136-1" data-line-number="1"><span class="at">@FunctionalInterface</span> <span class="co">// необязательно, но если добавить, то компилятор будет ругаться при попытке добавить второй метод в такой интерфейс</span></a>
+<a class="sourceLine" id="cb136-2" data-line-number="2"><span class="kw">interface</span> IFoo {</a>
+<a class="sourceLine" id="cb136-3" data-line-number="3">    <span class="dt">int</span> <span class="fu">bar</span>(<span class="dt">int</span> i);</a>
+<a class="sourceLine" id="cb136-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb136-5" data-line-number="5"><span class="co">// @override - функция переопределяется (должна замещать, полностью совпадать по прототипу)</span></a>
+<a class="sourceLine" id="cb136-6" data-line-number="6">IFoo i = (<span class="dt">int</span> x)-&gt;{<span class="kw">return</span> x+<span class="dv">1</span>;};</a>
+<a class="sourceLine" id="cb136-7" data-line-number="7"><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(i.<span class="fu">bar</span>(<span class="dv">5</span>)); <span class="co">// вывод - 6</span></a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">interface</span> Function&lt;T, R&gt; {</a>
+<a class="sourceLine" id="cb137-2" data-line-number="2">    R <span class="fu">apply</span>(T x);</a>
+<a class="sourceLine" id="cb137-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb137-4" data-line-number="4"><span class="kw">interface</span> BiFunction&lt;T1, T2, R&gt; {</a>
+<a class="sourceLine" id="cb137-5" data-line-number="5">    R <span class="fu">apply</span>(T1 x, T2 y);</a>
+<a class="sourceLine" id="cb137-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb137-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb137-8" data-line-number="8"><span class="kw">interface</span> UnaryOperator&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-9" data-line-number="9">    T <span class="fu">apply</span>(T x);</a>
+<a class="sourceLine" id="cb137-10" data-line-number="10">}</a>
+<a class="sourceLine" id="cb137-11" data-line-number="11"><span class="kw">interface</span> BinaryOperator&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-12" data-line-number="12">    T <span class="fu">apply</span>(Tx, Ty);</a>
+<a class="sourceLine" id="cb137-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb137-14" data-line-number="14"><span class="co">// в Java интерфейсы не перегружаются!</span></a>
+<a class="sourceLine" id="cb137-15" data-line-number="15"><span class="kw">interface</span> <span class="bu">Predicate</span>&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-16" data-line-number="16">    bool <span class="fu">test</span>(T x);</a>
+<a class="sourceLine" id="cb137-17" data-line-number="17">}</a>
+<a class="sourceLine" id="cb137-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb137-19" data-line-number="19"><span class="kw">interface</span> Consumer&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-20" data-line-number="20">    <span class="dt">void</span> <span class="fu">accept</span>(T x);</a>
+<a class="sourceLine" id="cb137-21" data-line-number="21">}</a>
+<a class="sourceLine" id="cb137-22" data-line-number="22"><span class="kw">interface</span> Supplier&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-23" data-line-number="23">    T <span class="fu">get</span>();</a>
+<a class="sourceLine" id="cb137-24" data-line-number="24">}</a>
+<a class="sourceLine" id="cb137-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb137-26" data-line-number="26"><span class="kw">interface</span> Compare&lt;T&gt; {</a>
+<a class="sourceLine" id="cb137-27" data-line-number="27">    bool <span class="fu">compare</span>(T x, Ty);</a>
+<a class="sourceLine" id="cb137-28" data-line-number="28">}</a></code></pre></div>
+<ul>
+<li>default-methods</li>
+</ul>
+<div class="sourceCode" id="cb138"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="kw">interface</span> Function&lt;T, R&gt; {</a>
+<a class="sourceLine" id="cb138-2" data-line-number="2">    R <span class="fu">apply</span>(T x);</a>
+<a class="sourceLine" id="cb138-3" data-line-number="3">    <span class="kw">default</span></a>
+<a class="sourceLine" id="cb138-4" data-line-number="4">    T <span class="fu">compose</span>(T x);</a>
+<a class="sourceLine" id="cb138-5" data-line-number="5">    <span class="kw">default</span></a>
+<a class="sourceLine" id="cb138-6" data-line-number="6">    T <span class="fu">andThen</span>(R x);</a>
+<a class="sourceLine" id="cb138-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb138-8" data-line-number="8">Function&lt;T, R&gt; f = (T x)-&gt;{<span class="kw">return</span> r;<span class="co">// r типа R};</span></a>
+<a class="sourceLine" id="cb138-9" data-line-number="9">Function&lt;<span class="bu">Integer</span>, <span class="bu">String</span>&gt; f1 = <span class="kw">new</span> Function&lt;<span class="bu">Integer</span>, <span class="bu">String</span>&gt;() {</a>
+<a class="sourceLine" id="cb138-10" data-line-number="10">    <span class="bu">String</span> <span class="fu">apply</span>(<span class="bu">Integer</span> i) {</a>
+<a class="sourceLine" id="cb138-11" data-line-number="11">        <span class="bu">String</span>.<span class="fu">valueOf</span>(i);</a>
+<a class="sourceLine" id="cb138-12" data-line-number="12">    }</a>
+<a class="sourceLine" id="cb138-13" data-line-number="13">}; <span class="co">// хоть и интерфейс, но тут будет анонимный внутренний класс</span></a>
+<a class="sourceLine" id="cb138-14" data-line-number="14"><span class="co">// можно записать и в виде лямбды, будет короче</span></a>
+<a class="sourceLine" id="cb138-15" data-line-number="15">Function&lt;<span class="bu">Integer</span>, <span class="bu">String</span>&gt; f2 = (<span class="bu">Integer</span> i)-&gt;{<span class="kw">return</span> <span class="bu">String</span>.<span class="fu">valueOf</span>(i);};</a>
+<a class="sourceLine" id="cb138-16" data-line-number="16"><span class="co">// можно и методы</span></a>
+<a class="sourceLine" id="cb138-17" data-line-number="17">Function&lt;<span class="bu">Integer</span>, <span class="bu">String</span>&gt; f3 = <span class="bu">String</span>::valueOf;</a>
+<a class="sourceLine" id="cb138-18" data-line-number="18">f3.<span class="fu">apply</span>(<span class="dv">2</span>);</a></code></pre></div>
+<h4 id="java.-ссылки-на-методы">Java. Ссылки на методы</h4>
+<div class="sourceCode" id="cb139"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb139-1" data-line-number="1"><span class="co">// статические</span></a>
+<a class="sourceLine" id="cb139-2" data-line-number="2">Function&lt;T, R&gt; f1 = <span class="bu">Class</span>::method; <span class="co">// method должен удовлетворять сигнатуре f.apply (Function - произвольный интерфейс)</span></a>
+<a class="sourceLine" id="cb139-3" data-line-number="3"><span class="co">// нестатический</span></a>
+<a class="sourceLine" id="cb139-4" data-line-number="4"><span class="co">//Class:method</span></a>
+<a class="sourceLine" id="cb139-5" data-line-number="5">BiFunction&lt;<span class="bu">Class</span>, T, R&gt; f2 = <span class="bu">Class</span>::method;</a>
+<a class="sourceLine" id="cb139-6" data-line-number="6"><span class="bu">Class</span> c;</a>
+<a class="sourceLine" id="cb139-7" data-line-number="7">R r = f2.<span class="fu">apply</span>(c, t);</a>
+<a class="sourceLine" id="cb139-8" data-line-number="8"><span class="co">// ссылка первого рода (самим надо передавать this)</span></a>
+<a class="sourceLine" id="cb139-9" data-line-number="9">Function&lt;T, R&gt; f3 = c::method; <span class="co">// c - объект класса, даст ссылку на this, метод нестатический</span></a>
+<a class="sourceLine" id="cb139-10" data-line-number="10">R r = f3.<span class="fu">apply</span>(t);</a>
+<a class="sourceLine" id="cb139-11" data-line-number="11"><span class="co">// ссылка на конструктор</span></a>
+<a class="sourceLine" id="cb139-12" data-line-number="12"><span class="bu">Class</span>::<span class="kw">new</span>; <span class="co">// может удовлетворять практически любому интерфейсу. если конструктор умолчания, то удовлетворяет Supplier</span></a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb140-1" data-line-number="1"><span class="co">/* ? f = ?? */</span></a>
+<a class="sourceLine" id="cb140-2" data-line-number="2"><span class="bu">Locale</span> lRu = f.<span class="fu">apply</span>(<span class="st">&quot;ru&quot;</span>, <span class="st">&quot;RU&quot;</span>);</a>
+<a class="sourceLine" id="cb140-3" data-line-number="3"><span class="bu">Locale</span> lEn = f.<span class="fu">apply</span>(<span class="st">&quot;en&quot;</span>, <span class="st">&quot;UK&quot;</span>);</a>
+<a class="sourceLine" id="cb140-4" data-line-number="4"><span class="co">// варианты f</span></a>
+<a class="sourceLine" id="cb140-5" data-line-number="5"><span class="co">// 1</span></a>
+<a class="sourceLine" id="cb140-6" data-line-number="6">BiFunction&lt;<span class="bu">String</span>, <span class="bu">String</span>, <span class="bu">Locale</span>&gt; f = <span class="kw">new</span> BiFunction&lt;<span class="bu">String</span>, <span class="bu">String</span>, <span class="bu">Locale</span>&gt;() {</a>
+<a class="sourceLine" id="cb140-7" data-line-number="7">    <span class="bu">Locale</span> <span class="fu">apply</span>(<span class="bu">String</span> lang, <span class="bu">String</span> country) {</a>
+<a class="sourceLine" id="cb140-8" data-line-number="8">        <span class="kw">return</span> <span class="kw">new</span> <span class="bu">Locale</span>(lang, country);</a>
+<a class="sourceLine" id="cb140-9" data-line-number="9">    }</a>
+<a class="sourceLine" id="cb140-10" data-line-number="10">}; <span class="co">// обертка вокруг конструктора</span></a>
+<a class="sourceLine" id="cb140-11" data-line-number="11"><span class="co">// 2</span></a>
+<a class="sourceLine" id="cb140-12" data-line-number="12">BiFunction&lt;<span class="bu">String</span>, <span class="bu">String</span>, <span class="bu">Locale</span>&gt; f = (lang, country)-&gt;<span class="kw">new</span> <span class="bu">Locale</span>(lang, country);</a>
+<a class="sourceLine" id="cb140-13" data-line-number="13"><span class="co">// 3</span></a>
+<a class="sourceLine" id="cb140-14" data-line-number="14">BiFunction&lt;<span class="bu">String</span>, <span class="bu">String</span>, <span class="bu">Locale</span>&gt; f = <span class="bu">Locale</span>::<span class="kw">new</span>;</a></code></pre></div>
+<h4 id="потоки-в-java">Потоки в Java</h4>
+<div class="sourceCode" id="cb141"><pre class="sourceCode java"><code class="sourceCode java"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="co">// Stream API</span></a>
+<a class="sourceLine" id="cb141-2" data-line-number="2"><span class="bu">List</span>&lt;<span class="dt">int</span>&gt; l = <span class="kw">new</span> <span class="bu">List</span>&lt;<span class="dt">int</span>&gt;();</a>
+<a class="sourceLine" id="cb141-3" data-line-number="3">l.<span class="fu">stream</span>().<span class="fu">max</span>((i, j)-&gt; i &gt; j);<span class="co">// max - терминальный метод, как и min(), sum()</span></a>
+<a class="sourceLine" id="cb141-4" data-line-number="4"><span class="co">// еще у потоков есть методы average(), count() и другие</span></a>
+<a class="sourceLine" id="cb141-5" data-line-number="5"><span class="co">// sum и average - варианты метода reduce</span></a>
+<a class="sourceLine" id="cb141-6" data-line-number="6">l.<span class="fu">stream</span>().<span class="fu">filter</span>(x-&gt;x&gt;<span class="dv">0</span>).<span class="fu">sorted</span>().<span class="fu">map</span>(<span class="bu">System</span>::println); <span class="co">// filter оставит только числа &gt;0, sorted - терминальный метод, сортировка, map распечатает с помощью println</span></a>
+<a class="sourceLine" id="cb141-7" data-line-number="7"><span class="co">// иначе нужно было бы делать</span></a>
+<a class="sourceLine" id="cb141-8" data-line-number="8"><span class="kw">for</span> (<span class="dt">int</span> x: l) {<span class="co">/*filter*/</span>} <span class="co">// получится какая-то последовательность l1</span></a>
+<a class="sourceLine" id="cb141-9" data-line-number="9"><span class="kw">for</span> (<span class="dt">int</span> x: l1) {<span class="co">/*sort*/</span>}</a>
+<a class="sourceLine" id="cb141-10" data-line-number="10"><span class="kw">for</span> (<span class="dt">int</span> x: l1) {<span class="co">/*print*/</span>}</a>
+<a class="sourceLine" id="cb141-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb141-12" data-line-number="12"><span class="co">// тип данных optional</span></a>
+<a class="sourceLine" id="cb141-13" data-line-number="13">Optional&lt;T&gt; <span class="co">// либо пусто, либо какое-то значение</span></a>
+<a class="sourceLine" id="cb141-14" data-line-number="14">Optional&lt;<span class="bu">Integer</span>&gt;</a>
+<a class="sourceLine" id="cb141-15" data-line-number="15"><span class="co">// вместо Stream можно сделать parallelStream, тогда операции будут применяться параллельно</span></a>
+<a class="sourceLine" id="cb141-16" data-line-number="16"><span class="co">//.reduce(initVal, BinaryOperator&lt;T&gt; f)</span></a>
+<a class="sourceLine" id="cb141-17" data-line-number="17">l.<span class="fu">stream</span>().<span class="fu">reduce</span>(<span class="dv">0</span>, (x, y)-&gt; x + y); <span class="co">// так можно записать sum через reduce</span></a></code></pre></div>
+<h3 id="go">Go</h3>
+<div class="sourceCode" id="cb142"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="co">// go-рутины</span></a>
+<a class="sourceLine" id="cb142-2" data-line-number="2"><span class="kw">go</span> <span class="kw">func</span>(...) <span class="co">/*тип*/</span> {...} (<span class="co">/*вызов с аргументами*/</span>);</a>
+<a class="sourceLine" id="cb142-3" data-line-number="3">c := <span class="bu">make</span>(<span class="kw">chan</span> <span class="dt">int</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb142-4" data-line-number="4">c&lt;-<span class="dv">0</span> <span class="co">// ввод в канал</span></a>
+<a class="sourceLine" id="cb142-5" data-line-number="5">&lt;-c <span class="co">// чтение из канала</span></a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb143-1" data-line-number="1"><span class="co">// числа Фибоначчи через каналы</span></a>
+<a class="sourceLine" id="cb143-2" data-line-number="2"><span class="kw">package</span> main</a>
+<a class="sourceLine" id="cb143-3" data-line-number="3"><span class="kw">import</span> {<span class="st">&quot;fmt&quot;</span>}</a>
+<a class="sourceLine" id="cb143-4" data-line-number="4"><span class="kw">func</span> fib(n <span class="dt">int</span>, c <span class="kw">chan</span> <span class="dt">int</span>) <span class="co">/*нет типа*/</span> {</a>
+<a class="sourceLine" id="cb143-5" data-line-number="5">    x, y := <span class="dv">0</span>, <span class="dv">1</span> </a>
+<a class="sourceLine" id="cb143-6" data-line-number="6">    <span class="kw">for</span> i := <span class="dv">0</span>; i &lt; n; i++ {</a>
+<a class="sourceLine" id="cb143-7" data-line-number="7">        c&lt;-x <span class="co">// вывод в канал, зависает, пока кто-то не считает (похоже на yield в python, сопрограмма)</span></a>
+<a class="sourceLine" id="cb143-8" data-line-number="8">        fmt.Println(<span class="st">&quot;number &quot;</span>)</a>
+<a class="sourceLine" id="cb143-9" data-line-number="9">        x, y = y, x+y</a>
+<a class="sourceLine" id="cb143-10" data-line-number="10">        </a>
+<a class="sourceLine" id="cb143-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb143-12" data-line-number="12">    <span class="bu">close</span>(c)</a>
+<a class="sourceLine" id="cb143-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb143-14" data-line-number="14"><span class="co">//fib будет работать как сопрограмма за счет нулевой емкости канала</span></a>
+<a class="sourceLine" id="cb143-15" data-line-number="15"><span class="kw">func</span> main() {</a>
+<a class="sourceLine" id="cb143-16" data-line-number="16">    c := <span class="bu">make</span>(<span class="kw">chan</span> <span class="dt">int</span>, <span class="dv">0</span>) <span class="co">// 0 по умолчанию, канал нулевой емкости</span></a>
+<a class="sourceLine" id="cb143-17" data-line-number="17">    <span class="kw">go</span> fib(<span class="dv">10</span>, c)</a>
+<a class="sourceLine" id="cb143-18" data-line-number="18">    <span class="co">// выполнение идет дальше асинхронно</span></a>
+<a class="sourceLine" id="cb143-19" data-line-number="19">    <span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++ {</a>
+<a class="sourceLine" id="cb143-20" data-line-number="20">        x := &lt;-c <span class="co">// будет ждать ввода</span></a>
+<a class="sourceLine" id="cb143-21" data-line-number="21">        fmt.Println(x)</a>
+<a class="sourceLine" id="cb143-22" data-line-number="22">    }</a>
+<a class="sourceLine" id="cb143-23" data-line-number="23">}</a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode go"><code class="sourceCode go"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">import</span> {<span class="st">&quot;fmt&quot;</span>, <span class="st">&quot;time&quot;</span>}</a>
+<a class="sourceLine" id="cb144-2" data-line-number="2"><span class="kw">func</span> main() {</a>
+<a class="sourceLine" id="cb144-3" data-line-number="3">    tick := time.Tick(<span class="dv">100</span> * time.Millisecond)</a>
+<a class="sourceLine" id="cb144-4" data-line-number="4">    boom := time.After(<span class="dv">500</span> * time.Millisecond)</a>
+<a class="sourceLine" id="cb144-5" data-line-number="5">    <span class="kw">for</span> {</a>
+<a class="sourceLine" id="cb144-6" data-line-number="6">        <span class="kw">select</span> {</a>
+<a class="sourceLine" id="cb144-7" data-line-number="7">          <span class="kw">case</span> &lt;-tick:</a>
+<a class="sourceLine" id="cb144-8" data-line-number="8">            fmt.Println(<span class="st">&quot;tick&quot;</span>)</a>
+<a class="sourceLine" id="cb144-9" data-line-number="9">          <span class="kw">case</span> &lt;-boom:</a>
+<a class="sourceLine" id="cb144-10" data-line-number="10">            fmt.Println(<span class="st">&quot;boom&quot;</span>)</a>
+<a class="sourceLine" id="cb144-11" data-line-number="11">            <span class="kw">return</span></a>
+<a class="sourceLine" id="cb144-12" data-line-number="12">          <span class="kw">default</span>:</a>
+<a class="sourceLine" id="cb144-13" data-line-number="13">            <span class="co">// есть дефолт, тогда не будет зависать, если ни в один канал ничего не вывели</span></a>
+<a class="sourceLine" id="cb144-14" data-line-number="14">            fmt.Println(<span class="st">&quot;...&quot;</span>)</a>
+<a class="sourceLine" id="cb144-15" data-line-number="15">            time.Sleep(<span class="dv">50</span> * time.Millisecond)</a>
+<a class="sourceLine" id="cb144-16" data-line-number="16">        }</a>
+<a class="sourceLine" id="cb144-17" data-line-number="17">    }</a>
+<a class="sourceLine" id="cb144-18" data-line-number="18">}</a></code></pre></div>
+<h3 id="введение-в-обобщенное-программирование">Введение в обобщенное программирование</h3>
+<p>generics C++, C#, Java поддерживают Go не поддерживает</p>
+<p><strong>Обобщенное программирование:</strong> Статическая параметризация типов (как правило во время трансляции) С++ самый мощный с точки зрния generics.</p>
+<ol type="1">
+<li>Надежность Гарантируется, что у контейнера только один тип данных</li>
+<li>Эффективность Введение обобщенных коллекций в C# (не надо поддерживать гомоморфность коллекций), у Java такой эффективности нет</li>
+</ol>
+<h4 id="c">C++</h4>
+<ul>
+<li>Определение шаблона (класса, функции)
+<ul>
+<li>Формальные параметры</li>
+</ul></li>
+<li>Конкретизация шаблона
+<ul>
+<li>Фактические параметры</li>
+</ul></li>
+<li>Специализация шаблона
+<ul>
+<li>Частичная (все равно приводит к какому-то шаблону, более специализированному)</li>
+<li>Полная</li>
+</ul></li>
+</ul>
+<p>STL контейнер -&gt; итератор &lt;- алгоритм</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">template</span>&lt;<span class="kw">class</span> T, <span class="dt">int</span> size, <span class="dt">void</span> (*pfn)()&gt; <span class="kw">class</span> X {</a>
+<a class="sourceLine" id="cb145-2" data-line-number="2">    T::iterator; <span class="co">// компилятор ничего не может сказать о Т, кроме того, что это класс</span></a>
+<a class="sourceLine" id="cb145-3" data-line-number="3">    <span class="co">// iterator - имя либо статического члена (тогда все ок), может фигурировать имя класса. компилятор считает, что более частая ситуация - статический член, поэтому надо:</span></a>
+<a class="sourceLine" id="cb145-4" data-line-number="4">    <span class="kw">typename</span> T::iterator;</a>
+<a class="sourceLine" id="cb145-5" data-line-number="5">    function&lt;<span class="dt">void</span>()&gt;</a>
+<a class="sourceLine" id="cb145-6" data-line-number="6">};</a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="bu">std::</span>basic_string&lt;<span class="dt">char</span>&gt; <span class="co">// через typedef определена как string</span></a>
+<a class="sourceLine" id="cb146-2" data-line-number="2"><span class="co">// конкретизация для функций определялась как перегрузка</span></a>
+<a class="sourceLine" id="cb146-3" data-line-number="3"><span class="co">// нельзя было написать шаблон (так как в шаблон входит возвращаемое значение)</span></a>
+<a class="sourceLine" id="cb146-4" data-line-number="4"><span class="kw">template</span>&lt;<span class="kw">typename</span> T&gt;</a>
+<a class="sourceLine" id="cb146-5" data-line-number="5">T get() {..}</a>
+<a class="sourceLine" id="cb146-6" data-line-number="6">exp(<span class="fl">1.0</span>);</a>
+<a class="sourceLine" id="cb146-7" data-line-number="7">exp(<span class="fl">1.0f</span>);</a>
+<a class="sourceLine" id="cb146-8" data-line-number="8"><span class="co">// сейчас можно явным образом указать и задать шаблон</span></a>
+<a class="sourceLine" id="cb146-9" data-line-number="9">get&lt;x&gt;();</a>
+<a class="sourceLine" id="cb146-10" data-line-number="10">exp&lt;<span class="dt">double</span>(<span class="dv">1</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="co">// специализация</span></a>
+<a class="sourceLine" id="cb147-2" data-line-number="2"><span class="co">// полная (1):</span></a>
+<a class="sourceLine" id="cb147-3" data-line-number="3"><span class="kw">template</span>&lt;<span class="kw">class</span> T&gt;</a>
+<a class="sourceLine" id="cb147-4" data-line-number="4"><span class="kw">class</span> X {..};</a>
+<a class="sourceLine" id="cb147-5" data-line-number="5"><span class="co">// частичная (2):</span></a>
+<a class="sourceLine" id="cb147-6" data-line-number="6"><span class="kw">template</span>&lt;<span class="kw">class</span> T&gt;</a>
+<a class="sourceLine" id="cb147-7" data-line-number="7"><span class="kw">class</span> X&lt;T*&gt; {..};</a>
+<a class="sourceLine" id="cb147-8" data-line-number="8"><span class="co">// у функций нет частичной чпециализации (этого можно достигнуть через специализацию параметров)</span></a>
+<a class="sourceLine" id="cb147-9" data-line-number="9">X&lt;<span class="dt">int</span>&gt; x; <span class="co">// (1)</span></a>
+<a class="sourceLine" id="cb147-10" data-line-number="10">X&lt;<span class="dt">int</span>*&gt; x1; <span class="co">// (2)</span></a>
+<a class="sourceLine" id="cb147-11" data-line-number="11">X&lt;<span class="at">const</span> <span class="dt">char</span>*&gt; x2; <span class="co">// (2)</span></a>
+<a class="sourceLine" id="cb147-12" data-line-number="12"><span class="co">// (1)</span></a>
+<a class="sourceLine" id="cb147-13" data-line-number="13"><span class="kw">template</span>&lt;<span class="kw">class</span> X, <span class="kw">class</span> Y&gt;</a>
+<a class="sourceLine" id="cb147-14" data-line-number="14"><span class="kw">class</span> T{..};</a>
+<a class="sourceLine" id="cb147-15" data-line-number="15"><span class="co">// (2)</span></a>
+<a class="sourceLine" id="cb147-16" data-line-number="16"><span class="kw">template</span>&lt;<span class="kw">class</span> X&gt;</a>
+<a class="sourceLine" id="cb147-17" data-line-number="17"><span class="kw">class</span> T&lt;X, <span class="dt">int</span>&gt; {..};<span class="co">// не имеет отношения к классу Т (1) выше, интерфейсы могут быть разные</span></a>
+<a class="sourceLine" id="cb147-18" data-line-number="18"><span class="co">//template&lt;&gt;</span></a>
+<a class="sourceLine" id="cb147-19" data-line-number="19"><span class="kw">class</span> T&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt; {..}; <span class="co">// (3)</span></a>
+<a class="sourceLine" id="cb147-20" data-line-number="20">T&lt;<span class="dt">int</span>, <span class="dt">double</span>&gt;; <span class="co">// полная (1)</span></a>
+<a class="sourceLine" id="cb147-21" data-line-number="21">T&lt;<span class="dt">double</span>, <span class="dt">int</span>&gt;; <span class="co">// частичная (2)</span></a>
+<a class="sourceLine" id="cb147-22" data-line-number="22">T&lt;<span class="dt">int</span>, <span class="dt">int</span>&gt;; <span class="co">// полная (3)</span></a></code></pre></div>
+<p>SFINAE — substitution failure is not an error</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">template</span>&lt;<span class="dt">int</span> N&gt; </a>
+<a class="sourceLine" id="cb148-2" data-line-number="2"><span class="kw">struct</span> Fact {</a>
+<a class="sourceLine" id="cb148-3" data-line-number="3">    <span class="kw">enum</span> { res = Fact&lt;N<span class="dv">-1</span>&gt;::res*N; };</a>
+<a class="sourceLine" id="cb148-4" data-line-number="4">};</a>
+<a class="sourceLine" id="cb148-5" data-line-number="5"><span class="kw">template</span>&lt;&gt;</a>
+<a class="sourceLine" id="cb148-6" data-line-number="6"><span class="kw">struct</span> Fact&lt;<span class="dv">0</span>&gt; {</a>
+<a class="sourceLine" id="cb148-7" data-line-number="7">    <span class="kw">enum</span> { res = <span class="dv">1</span>; };</a>
+<a class="sourceLine" id="cb148-8" data-line-number="8">};</a>
+<a class="sourceLine" id="cb148-9" data-line-number="9"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb148-10" data-line-number="10">    cout &lt;&lt; Fact&lt;<span class="dv">10</span>&gt;::res; <span class="co">// выдаст факториал 10</span></a>
+<a class="sourceLine" id="cb148-11" data-line-number="11">}</a></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb149-1" data-line-number="1"><span class="kw">template</span>&lt;<span class="dt">int</span> A[], <span class="dt">int</span> N&gt;</a>
+<a class="sourceLine" id="cb149-2" data-line-number="2"><span class="kw">struct</span> Sum {</a>
+<a class="sourceLine" id="cb149-3" data-line-number="3">    <span class="kw">enum</span> { res = A[N<span class="dv">-1</span>] + sum&lt;A, N<span class="dv">-1</span>&gt;; };</a>
+<a class="sourceLine" id="cb149-4" data-line-number="4">};</a>
+<a class="sourceLine" id="cb149-5" data-line-number="5"><span class="co">// для 0 тоже надо</span></a>
+<a class="sourceLine" id="cb149-6" data-line-number="6"><span class="dt">int</span> a[] = {<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">-6</span>, <span class="dv">17</span>, ..};</a>
+<a class="sourceLine" id="cb149-7" data-line-number="7"><span class="kw">constexpr</span></a>
+<a class="sourceLine" id="cb149-8" data-line-number="8">    <span class="co">//...</span></a></code></pre></div>
+</body>
+</html>
